@@ -1,6 +1,6 @@
 import React from 'react';
 
-export default class Login_input extends React.Component {
+export default class Choose_login extends React.Component {
     render() {
       return (
         <View style={styles.container}>
