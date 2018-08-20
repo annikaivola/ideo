@@ -1,0 +1,15 @@
+C:\work\Ideo\Ideo-API\Ideo-API\bin\Debug\netcoreapp2.1\Ideo-API.deps.json
+C:\work\Ideo\Ideo-API\Ideo-API\bin\Debug\netcoreapp2.1\Ideo-API.runtimeconfig.json
+C:\work\Ideo\Ideo-API\Ideo-API\bin\Debug\netcoreapp2.1\Ideo-API.runtimeconfig.dev.json
+C:\work\Ideo\Ideo-API\Ideo-API\bin\Debug\netcoreapp2.1\Ideo-API.dll
+C:\work\Ideo\Ideo-API\Ideo-API\bin\Debug\netcoreapp2.1\Ideo-API.pdb
+C:\work\Ideo\Ideo-API\Ideo-API\obj\Debug\netcoreapp2.1\Ideo-API.csprojAssemblyReference.cache
+C:\work\Ideo\Ideo-API\Ideo-API\obj\Debug\netcoreapp2.1\Ideo-API.csproj.CoreCompileInputs.cache
+C:\work\Ideo\Ideo-API\Ideo-API\obj\Debug\netcoreapp2.1\Ideo-API.RazorAssemblyInfo.cache
+C:\work\Ideo\Ideo-API\Ideo-API\obj\Debug\netcoreapp2.1\Ideo-API.RazorAssemblyInfo.cs
+C:\work\Ideo\Ideo-API\Ideo-API\obj\Debug\netcoreapp2.1\UserSecretsAssemblyInfo.cs
+C:\work\Ideo\Ideo-API\Ideo-API\obj\Debug\netcoreapp2.1\Ideo-API.AssemblyInfoInputs.cache
+C:\work\Ideo\Ideo-API\Ideo-API\obj\Debug\netcoreapp2.1\Ideo-API.AssemblyInfo.cs
+C:\work\Ideo\Ideo-API\Ideo-API\obj\Debug\netcoreapp2.1\Ideo-API.RazorTargetAssemblyInfo.cache
+C:\work\Ideo\Ideo-API\Ideo-API\obj\Debug\netcoreapp2.1\Ideo-API.dll
+C:\work\Ideo\Ideo-API\Ideo-API\obj\Debug\netcoreapp2.1\Ideo-API.pdb
