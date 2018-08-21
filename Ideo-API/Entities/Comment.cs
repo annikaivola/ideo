@@ -4,7 +4,7 @@ using System.Text;
 
 namespace Entities
 {
-    class Comment
+    public class Comment
     {
         public int comment_ID { get; set; }
         public int idea_ID { get; set; }

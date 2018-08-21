@@ -7,3 +7,5 @@ C:\work\Ideo\Ideo-API\Entities\obj\Debug\netcoreapp2.1\Entities.AssemblyInfo.cs
 C:\work\Ideo\Ideo-API\Entities\bin\Debug\netcoreapp2.1\Entities.pdb
 C:\work\Ideo\Ideo-API\Entities\obj\Debug\netcoreapp2.1\Entities.dll
 C:\work\Ideo\Ideo-API\Entities\obj\Debug\netcoreapp2.1\Entities.pdb
+C:\work\Ideo\Ideo-API\Entities\bin\Debug\netcoreapp2.1\Entities.runtimeconfig.json
+C:\work\Ideo\Ideo-API\Entities\bin\Debug\netcoreapp2.1\Entities.runtimeconfig.dev.json
