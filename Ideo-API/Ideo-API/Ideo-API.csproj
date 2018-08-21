@@ -22,10 +22,4 @@
     <ProjectReference Include="..\Entities\Entities.csproj" />
   </ItemGroup>
 
-  <ItemGroup>
-    <Reference Include="Entities">
-      <HintPath>..\..\..\viikko9\torstai\AspNetCore_WebApi\Entities\obj\Debug\netcoreapp2.1\Entities.dll</HintPath>
-    </Reference>
-  </ItemGroup>
-
 </Project>
