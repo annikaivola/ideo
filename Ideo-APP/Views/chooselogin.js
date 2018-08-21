@@ -1,5 +1,6 @@
 import React, {Component} from 'react';
 import {View, Button, StyleSheet, Alert} from 'react-native';
+import {styles} from '../Styles/styles.js'
 
 export default class ChooseLogin extends Component {
   static navigationOptions = {
@@ -14,21 +15,13 @@ export default class ChooseLogin extends Component {
         <View style={styles.container}>
 
           <View style={styles.buttonContainer}>
-            <Button
+          <Button style={styles.button}
               onPress={this._onPressButton}
               title="Log in to Ideaspace"
-              color="#841584"
+              color="#1ac5c3"
             />
             </View>
             </View>
       )
     }
 }
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    backgroundColor: '#fff',
-    alignItems: 'center',
-    justifyContent: 'center',
-  },
-});
