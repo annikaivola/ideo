@@ -24,7 +24,7 @@ namespace Ideo_API
         {
 
             services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_1);
-            services.AddDbContext<IdeoDbContext>(options =>
+            services.AddDbContext<Entities.IdeoDbContext>(options =>
                     options.UseSqlServer(Configuration.GetConnectionString("IdeoDb"),
                      sqlServerOptionsAction: sqlOptions =>
                      {
@@ -34,7 +34,7 @@ namespace Ideo_API
             services.AddSwaggerGen(c =>
             {
                 c.SwaggerDoc("v1",
-                                    new Info { Title = "Product DB WebAPI", Version = "v1" });
+                                    new Info { Title = "IdeoDb WebAPI", Version = "v1" });
             });
 
         }
