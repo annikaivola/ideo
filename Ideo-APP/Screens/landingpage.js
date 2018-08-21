@@ -1,5 +1,5 @@
 import React, {Component} from 'react';
-import {View, Text, StyleSheet} from 'react-native';
+import {View, Text, StyleSheet, Image} from 'react-native';
 import ChooseLogin from '../Views/chooselogin.js';
 import ChooseCreate from '../Views/choosecreate.js';
 import {StackNavigator} from 'react-navigation';
@@ -15,6 +15,8 @@ export default class Landingpage extends Component {
   
   
         <Text>I D E O</Text>
+        <Image style={{height: 70, width: 70}}
+            source={require('../Assets/images/light-on.png')}/>
         <ChooseCreate/>
         <ChooseLogin/>
 
