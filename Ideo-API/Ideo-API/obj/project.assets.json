@@ -4678,6 +4678,21 @@
           "lib/netstandard1.3/System.Xml.XPath.XDocument.dll": {}
         }
       },
+      "DAL/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v2.1",
+        "dependencies": {
+          "Entities": "1.0.0",
+          "Microsoft.AspNetCore.App": "2.1.1",
+          "Microsoft.NETCore.App": "2.1.0"
+        },
+        "compile": {
+          "bin/placeholder/DAL.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/DAL.dll": {}
+        }
+      },
       "Entities/1.0.0": {
         "type": "project",
         "framework": ".NETCoreApp,Version=v2.1",
@@ -12335,6 +12350,11 @@
         "system.xml.xpath.xdocument.nuspec"
       ]
     },
+    "DAL/1.0.0": {
+      "type": "project",
+      "path": "../DAL/DAL.csproj",
+      "msbuildProject": "../DAL/DAL.csproj"
+    },
     "Entities/1.0.0": {
       "type": "project",
       "path": "../Entities/Entities.csproj",
@@ -12343,6 +12363,7 @@
   },
   "projectFileDependencyGroups": {
     ".NETCoreApp,Version=v2.1": [
+      "DAL >= 1.0.0",
       "Entities >= 1.0.0",
       "Microsoft.AspNetCore.App >= 2.1.1",
       "Microsoft.EntityFrameworkCore >= 2.1.1",
@@ -12383,6 +12404,9 @@
       "frameworks": {
         "netcoreapp2.1": {
           "projectReferences": {
+            "C:\\work\\Ideo\\Ideo-API\\DAL\\DAL.csproj": {
+              "projectPath": "C:\\work\\Ideo\\Ideo-API\\DAL\\DAL.csproj"
+            },
             "C:\\work\\Ideo\\Ideo-API\\Entities\\Entities.csproj": {
               "projectPath": "C:\\work\\Ideo\\Ideo-API\\Entities\\Entities.csproj"
             }

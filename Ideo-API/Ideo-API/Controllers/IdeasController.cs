@@ -5,6 +5,8 @@ using System.Threading.Tasks;
 using Entities;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
+using DAL;
+
 
 namespace Ideo_API.Controllers
 {
