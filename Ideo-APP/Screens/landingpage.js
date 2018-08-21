@@ -1,4 +1,13 @@
 import React from 'react';
-import Choose_login from './choose_login';
-import Choose_create from './choose_create';
+import { Component } from 'react';
+import { Image } from 'react-native';
 
+export default class Landingpage extends Component {
+
+    render() {
+        return (
+            <Image style={{height: 20, width: 20}}
+            source={{uri: 'light-on'}}/>
+        )
+    }
+}
