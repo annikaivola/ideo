@@ -24,7 +24,7 @@ namespace Ideo_API
         {
 
             services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_1);
-            services.AddDbContext<Entities.IdeoDbContext>(options =>
+            services.AddDbContext<IdeoDbContext>(options =>
                     options.UseSqlServer(Configuration.GetConnectionString("IdeoDb"),
                      sqlServerOptionsAction: sqlOptions =>
                      {

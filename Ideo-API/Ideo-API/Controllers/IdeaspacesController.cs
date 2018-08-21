@@ -2,19 +2,27 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using Entities;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.EntityFrameworkCore;
 
 namespace Ideo_API.Controllers
 {
-    [Route("api/[controller]")]
+    [Route("api/[controller]/[Action]")]
     [ApiController]
-    public class ValuesController : ControllerBase
+    public class IdeaspacesController : ControllerBase
     {
-        // GET api/values
-        [HttpGet]
-        public ActionResult<IEnumerable<string>> Get()
+        private readonly IdeoDbContext _context;
+        public IdeaspacesController(IdeoDbContext context)
         {
-            return new string[] { "value1", "value2" };
+            _context = context;
+        }
+
+        // GET api/ideaspaces
+        [HttpGet]
+        public ActionResult<IEnumerable<Ideaspace>> GetAll()
+        {
+            return Ok(_context.Ideaspaces.ToList());
         }
 
         // GET api/values/5
