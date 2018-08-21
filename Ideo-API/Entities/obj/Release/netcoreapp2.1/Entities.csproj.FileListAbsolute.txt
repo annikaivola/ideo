@@ -1,0 +1,4 @@
+C:\work\Ideo\Ideo-API\Entities\obj\Release\netcoreapp2.1\Entities.csprojAssemblyReference.cache
+C:\work\Ideo\Ideo-API\Entities\obj\Release\netcoreapp2.1\Entities.csproj.CoreCompileInputs.cache
+C:\work\Ideo\Ideo-API\Entities\obj\Release\netcoreapp2.1\Entities.AssemblyInfoInputs.cache
+C:\work\Ideo\Ideo-API\Entities\obj\Release\netcoreapp2.1\Entities.AssemblyInfo.cs
