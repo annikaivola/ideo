@@ -21,7 +21,7 @@ export default class Landingpage extends Component {
         <Text style={styles.logo}>IDEO</Text>
         <ChooseCreate />
         <ChooseLogin />
-        <IdeaInput />
+        {/* <IdeaInput /> */}
         {/* <Nav /> */}
       </View>
       /* <Button 
