@@ -16,7 +16,6 @@ C:\Users\Administrator\ideo\Ideo-API\DAL\bin\Debug\netcoreapp2.1\DAL.runtimeconf
 C:\Users\Administrator\ideo\Ideo-API\DAL\bin\Debug\netcoreapp2.1\DAL.runtimeconfig.dev.json
 C:\Users\Administrator\ideo\Ideo-API\DAL\bin\Debug\netcoreapp2.1\DAL.dll
 C:\Users\Administrator\ideo\Ideo-API\DAL\bin\Debug\netcoreapp2.1\DAL.pdb
-C:\Users\Administrator\ideo\Ideo-API\DAL\obj\Debug\netcoreapp2.1\DAL.csprojAssemblyReference.cache
 C:\Users\Administrator\ideo\Ideo-API\DAL\obj\Debug\netcoreapp2.1\DAL.csproj.CoreCompileInputs.cache
 C:\Users\Administrator\ideo\Ideo-API\DAL\obj\Debug\netcoreapp2.1\DAL.AssemblyInfoInputs.cache
 C:\Users\Administrator\ideo\Ideo-API\DAL\obj\Debug\netcoreapp2.1\DAL.AssemblyInfo.cs

@@ -17,8 +17,6 @@ C:\work\Ideo\Ideo-API\Ideo-API\obj\Debug\netcoreapp2.1\Ideo-API.RazorTargetAssem
 C:\work\Ideo\Ideo-API\Ideo-API\obj\Debug\netcoreapp2.1\Ideo-API.csproj.CopyComplete
 C:\work\Ideo\Ideo-API\Ideo-API\obj\Debug\netcoreapp2.1\Ideo-API.dll
 C:\work\Ideo\Ideo-API\Ideo-API\obj\Debug\netcoreapp2.1\Ideo-API.pdb
-C:\Users\Administrator\ideo\Ideo-API\Ideo-API\obj\Debug\netcoreapp2.1\Ideo-API.dll
-C:\Users\Administrator\ideo\Ideo-API\Ideo-API\obj\Debug\netcoreapp2.1\Ideo-API.pdb
 C:\Users\Administrator\ideo\Ideo-API\Ideo-API\bin\Debug\netcoreapp2.1\appsettings.json
 C:\Users\Administrator\ideo\Ideo-API\Ideo-API\bin\Debug\netcoreapp2.1\Ideo-API.deps.json
 C:\Users\Administrator\ideo\Ideo-API\Ideo-API\bin\Debug\netcoreapp2.1\Ideo-API.runtimeconfig.json
@@ -36,3 +34,5 @@ C:\Users\Administrator\ideo\Ideo-API\Ideo-API\obj\Debug\netcoreapp2.1\Ideo-API.A
 C:\Users\Administrator\ideo\Ideo-API\Ideo-API\obj\Debug\netcoreapp2.1\Ideo-API.AssemblyInfo.cs
 C:\Users\Administrator\ideo\Ideo-API\Ideo-API\obj\Debug\netcoreapp2.1\Ideo-API.RazorTargetAssemblyInfo.cache
 C:\Users\Administrator\ideo\Ideo-API\Ideo-API\obj\Debug\netcoreapp2.1\Ideo-API.csproj.CopyComplete
+C:\Users\Administrator\ideo\Ideo-API\Ideo-API\obj\Debug\netcoreapp2.1\Ideo-API.dll
+C:\Users\Administrator\ideo\Ideo-API\Ideo-API\obj\Debug\netcoreapp2.1\Ideo-API.pdb

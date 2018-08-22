@@ -66,14 +66,14 @@ namespace Ideo_API.Controllers
             }
             return CreatedAtRoute("DefaultApi", new { id = idea.IdeaId }, idea);
             }
-        protected override void Dispose(bool disposing)
-        {
-            if (disposing)
-            {
-                dbc.Dispose();
-            }
-            base.Dispose(disposing);
-        }
+        //protected override void Dispose(bool disposing)
+        //{
+        //    if (disposing)
+        //    {
+        //        dbc.Dispose();
+        //    }
+        //    base.Dispose(disposing);
+        //}
 
         private bool IdeaExists(int id)
         {
@@ -81,4 +81,4 @@ namespace Ideo_API.Controllers
         }
     }
     }
-}
+
