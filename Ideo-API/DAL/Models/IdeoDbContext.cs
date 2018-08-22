@@ -23,7 +23,7 @@ namespace DAL.Models
         {
             if (!optionsBuilder.IsConfigured)
             {
-                optionsBuilder.UseSqlServer("Server=tcp:ideoapp.database.windows.net,1433;Initial Catalog=IdeoDb;Persist Security Info=False;User ID=Ylijumala;Password=VegaaniBrownie123!;MultipleActiveResultSets=False;Encrypt=True;TrustServerCertificate=False;Connection Timeout=30;");
+                optionsBuilder.UseSqlServer("");
             }
         }
 
