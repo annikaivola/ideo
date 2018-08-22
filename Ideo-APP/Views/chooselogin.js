@@ -10,6 +10,7 @@ export default class ChooseLogin extends Component {
       Alert.alert('You tapped the button!')
     }
   
+    
     render() {
       return (
         <View style={styles.container}>
