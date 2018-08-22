@@ -19,6 +19,17 @@ export const styles = StyleSheet.create({
     inputBox: {
         backgroundColor: '#fff',
         borderRadius: 25,
-    }
+    },
+    LPcontainer: {
+      flex: 1,
+      backgroundColor: '#1ac5c3',
+      alignItems: 'center',
+      justifyContent: 'center',
+    },
+    logo: {
+      fontFamily: 'Avenir-Medium',
+      fontSize: 100,
+      color: '#fff'
+    },
   });
   
