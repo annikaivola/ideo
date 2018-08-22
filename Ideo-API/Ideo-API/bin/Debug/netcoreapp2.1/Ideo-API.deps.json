@@ -25,7 +25,6 @@
       "Ideo-API/1.0.0": {
         "dependencies": {
           "DAL": "1.0.0",
-          "Entities": "1.0.0",
           "Microsoft.AspNetCore.App": "2.1.1",
           "Microsoft.EntityFrameworkCore": "2.1.1",
           "Microsoft.EntityFrameworkCore.SqlServer": "2.1.1",
@@ -590,7 +589,6 @@
       },
       "DAL/1.0.0": {
         "dependencies": {
-          "Entities": "1.0.0",
           "Microsoft.AspNetCore.App": "2.1.1",
           "Microsoft.NETCore.App": "2.1.0"
         },
@@ -599,18 +597,6 @@
         },
         "compile": {
           "DAL.dll": {}
-        }
-      },
-      "Entities/1.0.0": {
-        "dependencies": {
-          "Microsoft.AspNetCore.App": "2.1.1",
-          "Microsoft.EntityFrameworkCore.SqlServer": "2.1.1"
-        },
-        "runtime": {
-          "Entities.dll": {}
-        },
-        "compile": {
-          "Entities.dll": {}
         }
       },
       "Microsoft.AspNet.WebApi.Client/5.2.6": {
@@ -3768,11 +3754,6 @@
       "hashPath": "system.linq.parallel.4.3.0.nupkg.sha512"
     },
     "DAL/1.0.0": {
-      "type": "project",
-      "serviceable": false,
-      "sha512": ""
-    },
-    "Entities/1.0.0": {
       "type": "project",
       "serviceable": false,
       "sha512": ""
