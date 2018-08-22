@@ -2,10 +2,10 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
-using Entities;
+
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
-using DAL;
+using DAL.Models;
 
 namespace Ideo_API.Controllers
 {
@@ -23,7 +23,7 @@ namespace Ideo_API.Controllers
         [HttpGet]
         public ActionResult<IEnumerable<Comment>> GetAll()
         {
-            return Ok(_context.Comments.ToList());
+            return Ok(_context.Comment.ToList());
         }
 
     }

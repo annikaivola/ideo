@@ -2,10 +2,10 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
-using Entities;
+
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
-using DAL;
+using DAL.Models;
 
 
 namespace Ideo_API.Controllers
@@ -24,7 +24,7 @@ namespace Ideo_API.Controllers
         [HttpGet]
         public ActionResult<IEnumerable<Idea>> GetAll()
         {
-            return Ok(_context.Ideas.ToList());
+            return Ok(_context.Idea.ToList());
         }
        
     }

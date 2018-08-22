@@ -4682,7 +4682,6 @@
         "type": "project",
         "framework": ".NETCoreApp,Version=v2.1",
         "dependencies": {
-          "Entities": "1.0.0",
           "Microsoft.AspNetCore.App": "2.1.1",
           "Microsoft.NETCore.App": "2.1.0"
         },
@@ -4691,20 +4690,6 @@
         },
         "runtime": {
           "bin/placeholder/DAL.dll": {}
-        }
-      },
-      "Entities/1.0.0": {
-        "type": "project",
-        "framework": ".NETCoreApp,Version=v2.1",
-        "dependencies": {
-          "Microsoft.AspNetCore.App": "2.1.1",
-          "Microsoft.EntityFrameworkCore.SqlServer": "2.1.1"
-        },
-        "compile": {
-          "bin/placeholder/Entities.dll": {}
-        },
-        "runtime": {
-          "bin/placeholder/Entities.dll": {}
         }
       }
     }
@@ -12354,17 +12339,11 @@
       "type": "project",
       "path": "../DAL/DAL.csproj",
       "msbuildProject": "../DAL/DAL.csproj"
-    },
-    "Entities/1.0.0": {
-      "type": "project",
-      "path": "../Entities/Entities.csproj",
-      "msbuildProject": "../Entities/Entities.csproj"
     }
   },
   "projectFileDependencyGroups": {
     ".NETCoreApp,Version=v2.1": [
       "DAL >= 1.0.0",
-      "Entities >= 1.0.0",
       "Microsoft.AspNetCore.App >= 2.1.1",
       "Microsoft.EntityFrameworkCore >= 2.1.1",
       "Microsoft.EntityFrameworkCore.SqlServer >= 2.1.1",
@@ -12406,9 +12385,6 @@
           "projectReferences": {
             "C:\\work\\Ideo\\Ideo-API\\DAL\\DAL.csproj": {
               "projectPath": "C:\\work\\Ideo\\Ideo-API\\DAL\\DAL.csproj"
-            },
-            "C:\\work\\Ideo\\Ideo-API\\Entities\\Entities.csproj": {
-              "projectPath": "C:\\work\\Ideo\\Ideo-API\\Entities\\Entities.csproj"
             }
           }
         }

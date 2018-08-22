@@ -2,8 +2,8 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
-using Entities;
-using DAL;
+
+using DAL.Models;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using System.Collections.ObjectModel;
@@ -24,7 +24,7 @@ namespace Ideo_API.Controllers
         [HttpGet]
         public ActionResult<Ideaspace> Get()
         {
-            return Ok(dbc.Ideaspaces);
+            return Ok(dbc.Ideaspace);
         }
 
         // GET api/values/5

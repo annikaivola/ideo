@@ -7,7 +7,7 @@ namespace DAL
 {
     class Program
     {
-        static IdeoDbContext dbc;
+        static DAL.Models.IdeoDbContext dbc;
         static void Main(string[] args)
         {
             IConfigurationRoot Configuration;
@@ -16,10 +16,10 @@ namespace DAL
                 .AddJsonFile("appsettings.json", optional: false, reloadOnChange: true);
             Configuration = builder.Build();
             string connectionStr = Configuration.GetConnectionString("IdeoDb");
-            var options = new DbContextOptionsBuilder<IdeoDbContext>()
+            var options = new DbContextOptionsBuilder<DAL.Models.IdeoDbContext>()
                 .UseSqlServer(connectionStr)
                 .Options;
-            dbc = new IdeoDbContext(options);
+            dbc = new DAL.Models.IdeoDbContext(options);
 
         }
     }
