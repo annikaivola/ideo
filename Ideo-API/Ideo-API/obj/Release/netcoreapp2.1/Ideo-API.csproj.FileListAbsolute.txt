@@ -13,6 +13,7 @@ C:\work\Ideo\Ideo-API\Ideo-API\obj\Release\netcoreapp2.1\Ideo-API.AssemblyInfo.c
 C:\work\Ideo\Ideo-API\Ideo-API\obj\Release\netcoreapp2.1\Ideo-API.RazorTargetAssemblyInfo.cache
 C:\work\Ideo\Ideo-API\Ideo-API\obj\Release\netcoreapp2.1\Ideo-API.dll
 C:\work\Ideo\Ideo-API\Ideo-API\obj\Release\netcoreapp2.1\Ideo-API.pdb
-C:\work\Ideo\Ideo-API\Ideo-API\bin\Release\netcoreapp2.1\Entities.dll
-C:\work\Ideo\Ideo-API\Ideo-API\bin\Release\netcoreapp2.1\Entities.pdb
 C:\work\Ideo\Ideo-API\Ideo-API\obj\Release\netcoreapp2.1\Ideo-API.csproj.CopyComplete
+C:\work\Ideo\Ideo-API\Ideo-API\bin\Release\netcoreapp2.1\appsettings.json
+C:\work\Ideo\Ideo-API\Ideo-API\bin\Release\netcoreapp2.1\DAL.dll
+C:\work\Ideo\Ideo-API\Ideo-API\bin\Release\netcoreapp2.1\DAL.pdb

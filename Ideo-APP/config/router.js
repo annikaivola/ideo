@@ -5,10 +5,10 @@ import Createpage from '../Screens/createpage.js';
 import Loginpage from '../Screens/loginpage.js';
 
 const Nav = createStackNavigator({
-    Createpage: { screen :Createpage 
-        navigationOptions: 
-    },
-    Loginpage: { screen: Loginpage },
+    // Createpage: { screen :Createpage 
+    //     navigationOptions: 
+    // },
+    // Loginpage: { screen: Loginpage },
   });
 
   export default Nav;
