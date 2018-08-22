@@ -1,16 +1,17 @@
 import React, {Component} from 'react';
-import {View, Text, StyleSheet} from 'react-native';
+import {View, Text, StyleSheet, TextInput} from 'react-native';
+import {StackNavigator} from 'react-navigation';
+import Createpage from '../Screens/createpage';
 
 
 export default class Createinput extends Component {
+//   static navigationOptions = {
+//     header:null
+// };
     render() {
       return (
         <View style={styles.container}>
-  
-  
-          <Text>I D E O</Text>
-  
-  
+
         </View>
       );
     }

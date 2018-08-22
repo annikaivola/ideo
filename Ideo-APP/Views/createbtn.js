@@ -1,15 +1,24 @@
 import React, {Component} from 'react';
-import {View, Text, StyleSheet} from 'react-native';
+import {View, Text, Button, StyleSheet} from 'react-native';
+import {StackNavigator} from 'react-navigation';
 
 
 export default class Createbtn extends Component {
+//   static navigationOptions = {
+//     header:null
+// };
+_onPressButton() {
+  Alert.alert('You tapped the button!')
+}
     render() {
       return (
         <View style={styles.container}>
   
-  
-          <Text>I D E O</Text>
-  
+  <Button
+              onPress={this._onPressButton}
+              title="Create"
+              color="gray"
+            />
   
         </View>
       );
