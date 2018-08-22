@@ -12354,23 +12354,23 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\Anni Kaivola\\.nuget\\packages\\": {},
+    "C:\\Users\\Administrator\\.nuget\\packages\\": {},
     "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\work\\Ideo\\Ideo-API\\Ideo-API\\Ideo-API.csproj",
+      "projectUniqueName": "C:\\Users\\Administrator\\ideo\\Ideo-API\\Ideo-API\\Ideo-API.csproj",
       "projectName": "Ideo-API",
-      "projectPath": "C:\\work\\Ideo\\Ideo-API\\Ideo-API\\Ideo-API.csproj",
-      "packagesPath": "C:\\Users\\Anni Kaivola\\.nuget\\packages\\",
-      "outputPath": "C:\\work\\Ideo\\Ideo-API\\Ideo-API\\obj\\",
+      "projectPath": "C:\\Users\\Administrator\\ideo\\Ideo-API\\Ideo-API\\Ideo-API.csproj",
+      "packagesPath": "C:\\Users\\Administrator\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\Administrator\\ideo\\Ideo-API\\Ideo-API\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
       ],
       "configFilePaths": [
-        "C:\\Users\\Anni Kaivola\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\Administrator\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [
@@ -12383,8 +12383,8 @@
       "frameworks": {
         "netcoreapp2.1": {
           "projectReferences": {
-            "C:\\work\\Ideo\\Ideo-API\\DAL\\DAL.csproj": {
-              "projectPath": "C:\\work\\Ideo\\Ideo-API\\DAL\\DAL.csproj"
+            "C:\\Users\\Administrator\\ideo\\Ideo-API\\DAL\\DAL.csproj": {
+              "projectPath": "C:\\Users\\Administrator\\ideo\\Ideo-API\\DAL\\DAL.csproj"
             }
           }
         }

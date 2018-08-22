@@ -13,17 +13,17 @@ namespace Ideo_API.Controllers
     [ApiController]
     public class CommentsController : ControllerBase
     {
-      private readonly IdeoDbContext _context;
-        public CommentsController(IdeoDbContext context)
+      private readonly IdeoDbContext dbc;
+        public CommentsController(IdeoDbContext dbc)
         {
-            _context = context;
+            this.dbc = dbc;
         }
 
         // GET api/ideaspaces
         [HttpGet]
         public ActionResult<IEnumerable<Comment>> GetAll()
         {
-            return Ok(_context.Comment.ToList());
+            return Ok(dbc.Comment.ToList());
         }
 
     }

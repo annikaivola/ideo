@@ -1,9 +1,0 @@
-C:\work\Ideo\Ideo-API\Entities\obj\Release\netcoreapp2.1\Entities.csprojAssemblyReference.cache
-C:\work\Ideo\Ideo-API\Entities\obj\Release\netcoreapp2.1\Entities.csproj.CoreCompileInputs.cache
-C:\work\Ideo\Ideo-API\Entities\obj\Release\netcoreapp2.1\Entities.AssemblyInfoInputs.cache
-C:\work\Ideo\Ideo-API\Entities\obj\Release\netcoreapp2.1\Entities.AssemblyInfo.cs
-C:\work\Ideo\Ideo-API\Entities\bin\Release\netcoreapp2.1\Entities.deps.json
-C:\work\Ideo\Ideo-API\Entities\bin\Release\netcoreapp2.1\Entities.dll
-C:\work\Ideo\Ideo-API\Entities\bin\Release\netcoreapp2.1\Entities.pdb
-C:\work\Ideo\Ideo-API\Entities\obj\Release\netcoreapp2.1\Entities.dll
-C:\work\Ideo\Ideo-API\Entities\obj\Release\netcoreapp2.1\Entities.pdb
