@@ -9,7 +9,7 @@ using DAL.Models;
 
 namespace Ideo_API.Controllers
 {
-    [Route("api/[controller]")]
+    [Route("api/[controller]/[action]")]
     [ApiController]
     public class CommentsController : ControllerBase
     {

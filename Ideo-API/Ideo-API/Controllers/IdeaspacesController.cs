@@ -16,18 +16,18 @@ namespace Ideo_API.Controllers
     [ApiController]
     public class IdeaspacesController : ControllerBase
     {
-            public static byte[] Hash(string value, byte[] salt)
-            {
-                return Hash(Encoding.UTF8.GetBytes(value), salt);
-            }
+        public static byte[] Hash(string value, byte[] salt)
+        {
+            return Hash(Encoding.UTF8.GetBytes(value), salt);
+        }
 
-            public static byte[] Hash(byte[] value, byte[] salt)
-            {
-                byte[] saltedValue = value.Concat(salt).ToArray();
+        public static byte[] Hash(byte[] value, byte[] salt)
+        {
+            byte[] saltedValue = value.Concat(salt).ToArray();
 
-                return new SHA256Managed().ComputeHash(saltedValue);
-            }
-            private readonly IdeoDbContext dbc;
+            return new SHA256Managed().ComputeHash(saltedValue);
+        }
+        private readonly IdeoDbContext dbc;
         public IdeaspacesController(IdeoDbContext dbc)
         {
             this.dbc = dbc;
@@ -35,11 +35,16 @@ namespace Ideo_API.Controllers
 
         // GET api/ideaspaces
         [HttpGet]
-        public ActionResult<Ideaspace> GetIdeaspaces()
+        public ActionResult<Ideaspace> GetAllIdeaspaces()
         {
             return Ok(dbc.Ideaspace);
         }
 
+        //[HttpGet]
+        //public ActionResult<Ideaspace> GetIdeaspace()
+        //{
+        //    return Ok(dbc.Ideaspace);
+        //}
         // GET api/ideaspaces/:name/:password
         [HttpGet]
         public ActionResult GetIdeaspace(string name, string password)
@@ -48,19 +53,24 @@ namespace Ideo_API.Controllers
             if (ideaspace != null)
             {
                 //byte[] passwordHash = Hash(password, Convert.FromBase64String(ideaspace.PasswordSalt));
-                var pol = Encoding.UTF8.GetBytes(ideaspace.Password);
+                //var pol = Encoding.UTF8.GetBytes(ideaspace.Password);
                 //bool correct = Convert.FromBase64String(ideaspace.Password).SequenceEqual(passwordHash);
                 //if (correct)
                 //{
                 //    return Ok(ideaspace);
                 //}
+                if (password == ideaspace.Password)
+
+                    return Ok(ideaspace);
+                else
+                    return NotFound();
             }
             return NotFound();
         }
         // POST api/ideaspaces
         [HttpPost]
         [ProducesResponseType(201)]
-        public ActionResult<Ideaspace>PostIdeaSpace(Ideaspace ideaspace)
+        public ActionResult<Ideaspace> PostIdeaSpace(Ideaspace ideaspace)
         {
             if (!ModelState.IsValid)
             {
@@ -74,7 +84,7 @@ namespace Ideo_API.Controllers
             dbc.Ideaspace.Add(ideaspace);
             dbc.SaveChanges();
 
-            return CreatedAtRoute("DefaultApi", new { id = ideaspace.IdeaspaceId }, ideaspace);
+            return Ok(ideaspace);
         }
 
         //protected override void Dispose(bool disposing)
