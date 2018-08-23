@@ -64,21 +64,10 @@ namespace Ideo_API.Controllers
                     throw;
                 }
             }
-<<<<<<< HEAD
+
             return Ok(idea);
-            }
-=======
-            return CreatedAtRoute("DefaultApi", new { id = idea.IdeaId }, idea);
         }
->>>>>>> katri2
-        //protected override void Dispose(bool disposing)
-        //{
-        //    if (disposing)
-        //    {
-        //        dbc.Dispose();
-        //    }
-        //    base.Dispose(disposing);
-        //}
+
 
         private bool IdeaExists(int id)
         {
