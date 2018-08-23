@@ -8,7 +8,7 @@ import Ideafeed from './ideafeed';
 import IdeaPost from '../Views/ideapost';
 
 
-export default class Createpage extends Component {
+export default class AddComment extends Component {
     //navigoi submitin jälkeen takaisin ideafeediin
     render() {
         return (
