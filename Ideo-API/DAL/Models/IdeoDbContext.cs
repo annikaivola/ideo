@@ -24,6 +24,7 @@ namespace DAL.Models
             if (!optionsBuilder.IsConfigured)
             {
                 optionsBuilder.UseSqlServer("");
+
             }
         }
 
