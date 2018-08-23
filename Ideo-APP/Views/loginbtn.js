@@ -4,9 +4,6 @@ import {StackNavigator} from 'react-navigation';
 import Loginpage from '../Screens/loginpage.js';
 
 export default class Loginbtn extends Component {
-//   static navigationOptions = {
-//     header:null
-// };
     render() {
       return (
         <View style={styles.container}>

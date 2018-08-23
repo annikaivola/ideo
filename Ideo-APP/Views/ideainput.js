@@ -12,8 +12,9 @@ export default class IdeaInput extends Component {
       <View style={styles.ideaInput}>
         <TextInput
           style={styles.ideaInputText}
-          onChangeText={text => this.setState({ text })}
-          value={this.state.text}
+          onChangeText={(idea) => this.setState({ idea })}
+          value={this.state.idea}
+          multiline ={true}
         />
       </View>
     );

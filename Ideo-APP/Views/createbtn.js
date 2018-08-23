@@ -4,12 +4,20 @@ import { StackNavigator } from "react-navigation";
 import { styles } from '../Styles/styles.js'
 
 export default class Createbtn extends Component {
-  render() {
-    return (
-      <View style={styles.container}>
-        <Button onPress={this._onPressButton} title="Create" color="gray" />
-      </View>
-    );
+static navigationOptions 
+    render() {
+      return (
+        <View style={styles.container}>
+  
+  <Button
+              onPress={this._onPressButton}
+              title="Create"
+              color="gray"
+            />
+  
+        </View>
+      );
+    }
   }
 }
 
