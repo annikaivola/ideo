@@ -31,5 +31,14 @@ export const styles = StyleSheet.create({
       fontSize: 100,
       color: '#fff'
     },
+    ideapost: {
+      backgroundColor: '#fff',
+      borderRadius: 10,
+      color: '#000',
+      paddingBottom: 5,
+      paddingLeft: 5,
+      paddingRight: 5,
+      paddingTop: 5,
+    }
   });
   
