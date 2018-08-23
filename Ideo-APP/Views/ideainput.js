@@ -1,8 +1,7 @@
-// import React, {Component} from 'react';
-// import {View, Button, TextInput} from 'react-native';
-// import {styles} from '../Styles/styles.js'
+import React, {Component} from 'react';
+import {View, Button, TextInput} from 'react-native';
+import {styles} from '../Styles/styles.js'
 
-<<<<<<< HEAD
 // export default class IdeaInput extends Component {
 //     constructor(props) {
 //         super(props);
@@ -16,31 +15,45 @@
 //         )
 //     }
 // }
-=======
+
+// export default class IdeaInput extends Component {
+//     constructor(props) {
+//         super(props);
+//         this.state = { text: 'Your idea:' };
+//     }
+//     //clearFields =()=> this.setState({idea:''});
+
+//     render() {
+//         return (
+//             <TextInput style={styles.inputBox} 
+//             onChangeText={(idea) => this.setState({idea})}
+//             value={this.state.idea}
+//             multiline = {true}
+//             />
+//         )
+//     }
+// }
+// const styles = StyleSheet.create({
+//     container: {
+//       flex: 1,
+//       backgroundColor: '#fff',
+//       alignItems: 'center',
+//       justifyContent: 'center',
+//       paddingBottom: '45%',
+//     },
+//   });
+
 export default class IdeaInput extends Component {
     constructor(props) {
         super(props);
-        this.state = { text: 'Your idea:' };
+        this.state = { text: 'Write your idea here!' };
     }
-    //clearFields =()=> this.setState({idea:''});
-
     render() {
-        return (
+        return (<View>
             <TextInput style={styles.inputBox} 
-            onChangeText={(idea) => this.setState({idea})}
-            value={this.state.idea}
-            multiline = {true}
-            />
+            onChangeText={(text) => this.setState({text})}
+            value={this.state.text}/></View>
         )
     }
 }
-const styles = StyleSheet.create({
-    container: {
-      flex: 1,
-      backgroundColor: '#fff',
-      alignItems: 'center',
-      justifyContent: 'center',
-      paddingBottom: '45%',
-    },
-  });
->>>>>>> sara
+
