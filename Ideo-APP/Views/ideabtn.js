@@ -18,3 +18,4 @@ export default class IdeaBtn extends Component {
       </View>
     );
   }
+}
