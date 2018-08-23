@@ -18,6 +18,7 @@ export default class Createpage extends Component {
     );
   }
 }
+<<<<<<< HEAD
 const styles = StyleSheet.create({
   container: {
     flex: 1,
@@ -26,3 +27,5 @@ const styles = StyleSheet.create({
     justifyContent: "center"
   }
 });
+=======
+>>>>>>> sara

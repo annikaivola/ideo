@@ -1,7 +1,14 @@
+<<<<<<< HEAD
 import React, { Component } from "react";
 import { View, Text, Button, StyleSheet } from "react-native";
 import { styles } from "../Styles/styles.js";
 import { RateBtn } from "../Views/ratebtn.js";
+=======
+import React, {Component} from 'react';
+import {View, Text, Button, StyleSheet} from 'react-native';
+import {styles} from '../Styles/styles.js'
+import Ideainput from './ideainput';
+>>>>>>> sara
 
 export default class IdeaPost extends Component {
   render() {

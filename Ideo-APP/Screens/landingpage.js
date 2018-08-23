@@ -4,14 +4,11 @@ import ChooseLogin from '../Views/chooselogin.js';
 import ChooseCreate from '../Views/choosecreate.js';
 import IdeaInput from '../Views/ideainput.js';
 import { StackNavigator } from 'react-navigation';
-import Nav from '../config/router.js';
 import {styles} from '../Styles/styles.js';
 
 
 export default class Landingpage extends Component {
-  // static navigationOptions = {
-  //     header:null
-  // };
+
   render() {
 
     return (
@@ -21,24 +18,18 @@ export default class Landingpage extends Component {
         <Text style={styles.logo}>IDEO</Text>
         <ChooseCreate />
         <ChooseLogin />
+<<<<<<< HEAD
         {/* <IdeaInput /> */}
         {/* <Nav /> */}
+=======
+
+>>>>>>> sara
       </View>
-      /* <Button 
-        onPress={() =>
-          Nav.navigation.navigate('Loginpage')}
-        title="Log in to Ideaspace"
-        color="gray"
-      />
-      <Button 
-        onPress={() =>
-          Nav.navigation.navigate('Loginpage')}
-        title="Log in to Ideaspace"
-        color="gray"
-      /> */
+
     );
 
   }
 
 }
+
 
