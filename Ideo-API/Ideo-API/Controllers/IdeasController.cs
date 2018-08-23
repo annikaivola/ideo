@@ -26,12 +26,12 @@ namespace Ideo_API.Controllers
         {
             return Ok(dbc.Idea.ToList());
         }
-       // GET api/ideabyid
+        // GET api/ideabyid
         [HttpGet]
-        public ActionResult <IEnumerable<Idea>> GetIdea(int id)
+        public ActionResult<IEnumerable<Idea>> GetIdea(int id)
         {
             Idea idea = dbc.Idea.Find(id);
-            if(idea == null)
+            if (idea == null)
             {
                 return NotFound();
             }
@@ -65,7 +65,7 @@ namespace Ideo_API.Controllers
                 }
             }
             return CreatedAtRoute("DefaultApi", new { id = idea.IdeaId }, idea);
-            }
+        }
         //protected override void Dispose(bool disposing)
         //{
         //    if (disposing)
@@ -80,5 +80,5 @@ namespace Ideo_API.Controllers
             return dbc.Idea.Count(e => e.IdeaId == id) > 0;
         }
     }
-    }
+}
 

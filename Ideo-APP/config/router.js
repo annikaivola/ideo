@@ -1,9 +1,9 @@
-<<<<<<< HEAD
-// import React, {Component} from 'react';
-// import {View, Text, StyleSheet, Button} from 'react-native';
-// import {createStackNavigator, navigationOptions} from 'react-navigation'; 
-// import Createpage from '../Screens/createpage.js';
-// import Loginpage from '../Screens/loginpage.js';
+import React, { Component } from 'react';
+import { View, Text, StyleSheet, Button } from 'react-native';
+import { createBottomTabNavigator, navigationOptions } from 'react-navigation';
+import Createpage from '../Screens/createpage';
+import Loginpage from '../Screens/loginpage';
+import Landingpage from '../Screens/landingpage';
 
 // const Nav = createStackNavigator({
 //     // Createpage: { screen :Createpage 
@@ -13,13 +13,7 @@
 //   });
 
 //   export default Nav;
-=======
-import React, { Component } from 'react';
-import { View, Text, StyleSheet, Button } from 'react-native';
-import { createBottomTabNavigator, navigationOptions } from 'react-navigation';
-import Createpage from '../Screens/createpage';
-import Loginpage from '../Screens/loginpage';
-import Landingpage from '../Screens/landingpage';
+
 
 // export const Tabs = createBottomTabNavigator({
 //   'Landingpage': {
@@ -44,4 +38,4 @@ import Landingpage from '../Screens/landingpage';
 //     },
 //   },
 // });
->>>>>>> anni
+
