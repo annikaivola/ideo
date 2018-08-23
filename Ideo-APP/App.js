@@ -6,6 +6,7 @@ import Landingpage from './Screens/landingpage';
 import Createpage from './Screens/createpage';
 import Loginpage from './Screens/loginpage';
 import Ideafeed from './Screens/ideafeed';
+import AddComment from './Screens/comment';
 
 
 
@@ -15,6 +16,7 @@ export const RootStack = StackNavigator(
     Create: Createpage,
     Loginpage: Loginpage,
     Ideafeed: Ideafeed,
+    Comment: AddComment,
   },
   {
     initialRouteName: 'Landingpage',
