@@ -4,12 +4,7 @@ import {StackNavigator} from 'react-navigation';
 
 
 export default class Createbtn extends Component {
-//   static navigationOptions = {
-//     header:null
-// };
-_onPressButton() {
-  Alert.alert('You tapped the button!')
-}
+
     render() {
       return (
         <View style={styles.container}>

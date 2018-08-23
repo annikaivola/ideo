@@ -4,14 +4,7 @@ import { StackNavigator } from 'react-navigation';
 import { styles } from '../Styles/styles.js'
 
 export default class ChooseCreate extends Component {
-  static navigationOptions = {
-    header: null
-  };
-  _onPressButton() {
-    Alert.alert('You tapped the button!')
-  }
 
-  
   render() {
     return (
       <View style={styles.container}>

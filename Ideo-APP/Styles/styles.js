@@ -27,7 +27,7 @@ export const styles = StyleSheet.create({
       justifyContent: 'center',
     },
     logo: {
-      fontFamily: 'Avenir-Medium',
+      //fontFamily: 'Avenir-Medium',
       fontSize: 100,
       color: '#fff'
     },
