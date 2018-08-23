@@ -287,3 +287,6 @@ FakesAssemblies/
 .Ideo-API/DAL/obj
 .Ideo-API/DAL/bin
 .vscode
+.Ideo-APP/node_modules/
+.Ideo-APP/node_modules
+.Ideo-APP/.expo
