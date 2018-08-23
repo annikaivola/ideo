@@ -4,7 +4,7 @@ import {StackNavigator} from 'react-navigation';
 
 
 export default class Createbtn extends Component {
-
+static navigationOptions 
     render() {
       return (
         <View style={styles.container}>

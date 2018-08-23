@@ -1,34 +1,10 @@
-<<<<<<< HEAD
-import React, { Component } from "react";
-import Logininput from "../Views/logininput.js";
-import Loginbtn from "../Views/loginbtn.js";
-import { View, Text, StyleSheet, TextInput } from "react-native";
-import { StackNavigator } from "react-navigation";
-import Nav from "../config/router.js";
 
-export default class Loginpage extends Component {
-  static navigationOptions = ({ navigation }) => ({
-    header: null,
-    title: "Loginpage"
-  });
-  render() {
-    return <Loginbtn />;
-  }
-}
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    backgroundColor: "#fff",
-    alignItems: "center",
-    justifyContent: "center"
-  }
-});
-=======
 import React, { Component } from 'react';
 import Logininput from '../Views/logininput.js';
 import Loginbtn from '../Views/loginbtn.js';
-import { View, Text, StyleSheet, TextInput } from 'react-native';
+import { View, Text, StyleSheet, TextInput, Button } from 'react-native';
 import { StackNavigator } from 'react-navigation';
+import {styles} from '../Styles/styles'; 
 
 
 
@@ -36,13 +12,28 @@ export default class Loginpage extends Component {
 
     render() {
         return (
-            <View>
-                <Logininput />
-                <Loginbtn />
-            </View>
+          <View>
+        {/* <TextInput style={styles.inputBox} 
+        onChangeText={(name) => this.setState({name})}
+        value={this.state.name}/>
+
+        <TextInput style={styles.inputBox} 
+        onChangeText={(password) => this.setState({password})}
+        value={this.state.password}/> */}
+
+         <Button
+              onPress={() =>
+                this.props.navigation.navigate('Ideafeed')
+               }
+              title="Log in"
+              color="gray"
+            />
+
+        </View>
+        
 
         );
     }
 
 }
->>>>>>> sara
+
