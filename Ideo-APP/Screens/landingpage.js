@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { View, Text, StyleSheet, Image } from 'react-native';
+import { View, Text, StyleSheet, Image, Button } from 'react-native';
 import ChooseLogin from '../Views/chooselogin.js';
 import ChooseCreate from '../Views/choosecreate.js';
 import IdeaInput from '../Views/ideainput.js';
@@ -16,15 +16,22 @@ export default class Landingpage extends Component {
         <Image style={{ height: 150, width: 150 }}
           source={require('../Assets/images/light-on.png')} />
         <Text style={styles.logo}>IDEO</Text>
-        <ChooseCreate />
-        <ChooseLogin />
-<<<<<<< HEAD
-        {/* <IdeaInput /> */}
-        {/* <Nav /> */}
-=======
+        <Button title="Create Ideaspace"
+        onPress={() =>
+          this.props.navigation.navigate('Create')
+        }
+            color="#1ac5c3"
+          />
+          <Button style={styles.button}
+               onPress={() =>
+                this.props.navigation.navigate('Loginpage')
+               }
+              title="Log in to Ideaspace"
+              color="#1ac5c3"
 
->>>>>>> sara
-      </View>
+            />
+        </View>
+
 
     );
 

@@ -3,12 +3,11 @@ import Createinput from "../Views/createinput";
 import { View, Button, StyleSheet, Alert } from "react-native";
 import Createbtn from "../Views/createbtn";
 import { StackNavigator } from "react-navigation";
-import Nav from "../config/router.js";
+import ChooseCreate from '../Views/choosecreate';
 
 export default class Createpage extends Component {
-  // static navigationOptions = {
-  //     header:null
-  // };
+
+
   render() {
     return (
       <View>
@@ -18,14 +17,5 @@ export default class Createpage extends Component {
     );
   }
 }
-<<<<<<< HEAD
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    backgroundColor: "#fff",
-    alignItems: "center",
-    justifyContent: "center"
-  }
-});
-=======
->>>>>>> sara
+
+
