@@ -10,7 +10,7 @@ using Microsoft.EntityFrameworkCore;
 
 namespace Ideo_API.Controllers
 {
-    [Route("api/[controller]")]
+    [Route("api/[controller]/[Action]")]
     [ApiController]
     public class IdeasController : ControllerBase
     {
@@ -22,9 +22,9 @@ namespace Ideo_API.Controllers
 
         // GET api/idea
         [HttpGet]
-        public ActionResult<IEnumerable<Idea>> GetAllIdeas()
+        public ActionResult<Idea> GetAllIdeas()
         {
-            return Ok(dbc.Idea.ToList());
+            return Ok(dbc.Idea);
         }
        // GET api/ideabyid
         [HttpGet]
@@ -64,7 +64,7 @@ namespace Ideo_API.Controllers
                     throw;
                 }
             }
-            return CreatedAtRoute("DefaultApi", new { id = idea.IdeaId }, idea);
+            return Ok(idea);
             }
         //protected override void Dispose(bool disposing)
         //{
