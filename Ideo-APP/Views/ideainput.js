@@ -2,6 +2,7 @@ import React, {Component} from 'react';
 import {View, Button, TextInput} from 'react-native';
 import {styles} from '../Styles/styles.js'
 
+<<<<<<< HEAD
 // export default class IdeaInput extends Component {
 //     constructor(props) {
 //         super(props);
@@ -43,6 +44,8 @@ import {styles} from '../Styles/styles.js'
 //     },
 //   });
 
+=======
+>>>>>>> 7f77647d90b7958125a019de8ea719fa90fc2333
 export default class IdeaInput extends Component {
     constructor(props) {
         super(props);
@@ -56,4 +59,16 @@ export default class IdeaInput extends Component {
         )
     }
 }
+<<<<<<< HEAD
 
+=======
+const styles = StyleSheet.create({
+    container: {
+      flex: 1,
+      backgroundColor: '#fff',
+      alignItems: 'center',
+      justifyContent: 'center',
+      paddingBottom: '45%',
+    },
+  });
+>>>>>>> 7f77647d90b7958125a019de8ea719fa90fc2333
