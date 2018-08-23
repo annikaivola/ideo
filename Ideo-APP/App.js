@@ -7,6 +7,7 @@ import Loginpage from './Screens/loginpage';
 import Ideafeed from './Screens/ideafeed';
 import {Tabs} from './config/router';
 
+
 // const RootStack = createStackNavigator(
 //   {
 //     // Tabs: Tabs,
@@ -25,7 +26,8 @@ export default class App extends Component {
   render() {
     return (
     
-      <Landingpage/>
+      // <Landingpage/>
+      <IdeaFeed/>
 
     );
   }
