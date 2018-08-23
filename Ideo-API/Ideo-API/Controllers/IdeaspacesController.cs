@@ -12,7 +12,6 @@ using System.Security.Cryptography;
 
 namespace Ideo_API.Controllers
 {
-
     [Route("api/[controller]/[Action]")]
     [ApiController]
     public class IdeaspacesController : ControllerBase
