@@ -8,8 +8,8 @@ import RateBtn from "./Views/ratebtn.js";
 export default class App extends Component {
   render() {
     return (
-      // <Landingpage />
-      <IdeaFeed/>
+      <Landingpage />
+      // <IdeaFeed/>
     );
   }
 }
