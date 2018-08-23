@@ -16,6 +16,7 @@ export default class Landingpage extends Component {
         <Image style={{ height: 150, width: 150 }}
           source={require('../Assets/images/light-on.png')} />
         <Text style={styles.logo}>IDEO</Text>
+
         <Button title="Create Ideaspace"
         onPress={() =>
           this.props.navigation.navigate('Create')
@@ -31,8 +32,6 @@ export default class Landingpage extends Component {
 
             />
         </View>
-
-
     );
 
   }

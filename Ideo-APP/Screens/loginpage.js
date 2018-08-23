@@ -36,4 +36,3 @@ export default class Loginpage extends Component {
     }
 
 }
-

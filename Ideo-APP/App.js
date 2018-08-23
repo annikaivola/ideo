@@ -27,9 +27,9 @@ export const RootStack = StackNavigator(
 export default class App extends Component {
   render() {
     return (
-    
+      <Landingpage />
+      // <IdeaFeed/>
       <RootStack/>
-
     );
   }
       }

@@ -1,30 +1,20 @@
-import React, {Component} from 'react';
-import {View, Text, Button, StyleSheet} from 'react-native';
-import {StackNavigator} from 'react-navigation';
 
+import React, { Component } from "react";
+import { StackNavigator } from "react-navigation";
+import { styles } from "../Styles/styles.js";
+import {View, Text, Button, StyleSheet, TouchableOpacity, Image} from 'react-native';
 
-export default class Createbtn extends Component {
-
-    render() {
-      return (
-        <View style={styles.container}>
-  
-  <Button
-              onPress={this._onPressButton}
-              title="Create"
-              color="gray"
-            />
-  
-        </View>
-      );
-    }
+export default class IdeaBtn extends Component {
+  render() {
+    return (
+      <View>
+        <TouchableOpacity>
+          <Image
+            onPress={this._onPressButton}
+            style={styles.arrow}
+            source={require("../Assets/images/arrow2.png")}
+          />
+        </TouchableOpacity>
+      </View>
+    );
   }
-  const styles = StyleSheet.create({
-    container: {
-      flex: 1,
-      backgroundColor: '#fff',
-      alignItems: 'center',
-      justifyContent: 'center',
-    },
-  });
-
