@@ -17,12 +17,14 @@ export const styles = StyleSheet.create({
     paddingRight: 7,
     marginBottom: 5
   },
-    containerStyle: {
+    formi: {
     // backgroundColor: "#fff",
-    borderWidth: 3,
-    borderRadius: 10,
-    borderColor: "#fff",
-    width: "75%",
+    // borderWidth: 3,
+    // borderRadius: 10,
+    // borderColor: "#fff",
+    alignItems: "center",
+    justifyContent: "center",
+    width: "90%",
     paddingBottom: 15,
     paddingLeft: 15,
     paddingRight: 15,

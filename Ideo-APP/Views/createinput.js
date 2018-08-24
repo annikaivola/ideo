@@ -32,38 +32,44 @@ export default class Createinput extends Component {
   }
   render() {
     return (
-
-
-      <View style={styles.containerStyle}>
+      <View style={styles.formi}>
         <FormInput style={styles.inputStyle}
           placeholder="Ideaspace name"
-          placeholderTextColor="#fff"
+          placeholderTextColor="#1ac5c3"
           onChangeText={name => this.setState({ name })}
           value={this.state.name}
+          containerStyle={{backgroundColor: '#fff', border: 2, borderRadius: 10, borderColor:'#fff', width: '80%', height: 40}}
+          inputStyle={{color: '#fff', fontSize: 18, paddingLeft: 20, paddingRight: 20}}
         />
-        <FormValidationMessage style={styles.required} >This field is required</FormValidationMessage>
+        <FormValidationMessage style={styles.required} >*required</FormValidationMessage>
 
         <FormInput style={styles.inputStyle}
           placeholder="Password"
-          placeholderTextColor="#fff"
+          placeholderTextColor="#1ac5c3"
           onChangeText={password => this.setState({ password })}
           value={this.state.password}
+          containerStyle={{backgroundColor: '#fff', border: 2, borderRadius: 10, borderColor:'#fff', width: '80%' }}
+          inputStyle={{color: '#fff', fontSize: 18, paddingLeft: 20, paddingRight: 20}}
         />
-        <FormValidationMessage style={styles.required}>This field is required</FormValidationMessage>
+        <FormValidationMessage>This field is required</FormValidationMessage>
 
         <FormInput style={styles.inputStyle}
           placeholder="What do you need ideas on? Describe."
-          placeholderTextColor="#fff"
+          placeholderTextColor="#1ac5c3"
           onChangeText={description => this.setState({ description })}
           value={this.state.description}
-          multiline
+          multiline={true}
+          containerStyle={{backgroundColor: '#fff', border: 2, borderRadius: 10, borderColor:'#fff', width: '80%' }}
+          inputStyle={{color: '#fff', fontSize: 18, paddingLeft: 20, paddingRight: 20}}
         />
         <FormValidationMessage style={styles.required}>This field is required</FormValidationMessage>
         <FormInput style={styles.inputStyle}
           placeholder="Email (optional)"
-          placeholderTextColor="#fff"
+          placeholderTextColor="#1ac5c3"
           onChangeText={email => this.setState({ email })}
           value={this.state.email}
+          containerStyle={{backgroundColor: '#fff', border: 2, borderRadius: 10, borderColor:'#fff', width: '80%' }}
+          inputStyle={{color: '#fff', fontSize: 18, paddingLeft: 20, paddingRight: 20}}
         />
       </View>
     )
