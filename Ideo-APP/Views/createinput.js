@@ -1,3 +1,4 @@
+
 import React, { Component } from 'react';
 import { View, Text, StyleSheet, TextInput, Form, Button } from 'react-native';
 import { StackNavigator } from 'react-navigation';
@@ -9,80 +10,74 @@ import { addNewIdeaspace } from './ServiceDesk';
 
 import {styles} from '../Styles/styles.js'
 
+import React, { Component } from "react";
+import { View, Text, StyleSheet, TextInput, Form } from "react-native";
+import { StackNavigator } from "react-navigation";
+import Createpage from "../Screens/createpage";
+import { styles } from "../Styles/styles.js";
+import {
+  FormLabel,
+  FormInput,
+  FormValidationMessage
+} from "react-native-elements";
 
 
 export default class Createinput extends Component {
-
   constructor(props) {
     super(props);
 
-    this.state = { name: '', password: '', email: '', description: '' };
+    this.state = { name: "", password: "", email: "", description: "" };
   }
-  //email ei pakollinen, voidaan lähettää ideaspacen nimi ja salasana koska ei ole tapaa recoveraa niitä myöhemmin
+//   isEnabled =
+//   name.length > 0 &&
+//   password.length > 0;
 
+
+// <button disabled={!isEnabled}>Sign up</button>
+  //email ei pakollinen, voidaan lähettää ideaspacen nimi ja salasana koska ei ole tapaa recoveraa niitä myöhemmin
 
   render() {
     return (
-      <View>
-        
-      
-        <FormLabel>Name</FormLabel>
-        <FormInput onChangeText={(name) => this.setState({ name })}
-          value={this.state.name} />
 
-
-        <FormLabel>Password</FormLabel>
-        <FormInput onChangeText={(password) => this.setState({ password })}
-          value={this.state.password} />
-        <FormValidationMessage>This field is required</FormValidationMessage>
-
-        <FormLabel>Email</FormLabel>
-        <FormInput onChangeText={(email) => this.setState({ email })}
-          value={this.state.email} />
-
-        <FormLabel>Description</FormLabel>
-        <FormInput onChangeText={(description) => this.setState({ description })}
-          value={this.state.description} />
-        <FormValidationMessage>This field is required</FormValidationMessage>
-
-<Button
-        type="submit"
-          onPress={() =>
-            this.props.navigation.navigate('Ideafeed')
-             
-          }
-          title="Create Ideaspace"
-          color="#1ac5c3"
-
-        />
-        {/* <TextInput style={styles.inputBox} 
-        onChangeText={(name) => this.setState({name})}
-        value={this.state.name}/>
-
-        <TextInput style={styles.loginInput} 
-        placeholder="Password"
-        onChangeText={(password) => this.setState({password})}
-        value={this.state.password}/>
-
-        <TextInput style={styles.loginInput} 
-        placeholder="Email (optional)"
-        onChangeText={(email) => this.setState({email})}
-        value={this.state.email}/> 
-
-        <TextInput style={styles.inputBox} 
-        onChangeText={(description) => this.setState({description})}
-        value={this.state.description}
-        multiline= {true}/>  */}
-
-      </View>
-
-    )
-  }
-}
 function validationError() {
   var x = this.setState;
   if (x == '') {
     alert('this field');
+  }
+
+      <View style={styles.containerStyle}>
+        <FormInput style={styles.inputStyle}
+          placeholder="Ideaspace name"
+          placeholderTextColor="#fff"
+          onChangeText={name => this.setState({ name })}
+          value={this.state.name}
+        />
+        <FormValidationMessage style={styles.required} >This field is required</FormValidationMessage>
+
+        <FormInput style={styles.inputStyle}
+          placeholder="Password"
+          placeholderTextColor="#fff"
+          onChangeText={password => this.setState({ password })}
+          value={this.state.password}
+        />
+        <FormValidationMessage style={styles.required}>This field is required</FormValidationMessage>
+
+        <FormInput style={styles.inputStyle}
+          placeholder="What do you need ideas on? Describe."
+          placeholderTextColor="#fff"
+          onChangeText={description => this.setState({ description })}
+          value={this.state.description}
+          multiline={true}
+        />
+        <FormValidationMessage style={styles.required}>This field is required</FormValidationMessage>
+        <FormInput style={styles.inputStyle}
+          placeholder="Email (optional)"
+          placeholderTextColor="#fff"
+          onChangeText={email => this.setState({ email })}
+          value={this.state.email}
+        />
+      </View>
+    );
   }
 
 }

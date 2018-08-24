@@ -30,8 +30,8 @@ export function sortIdeaswithVoteCounter(votecounter, callback)
     });
     }
 
-export function getIdeaSpaces(callback) {
-    fetch( url + "api/ideaspaces/")
+export function getAllIdeaSpaces(callback) {
+    fetch( url + "api/ideaspaces/getideaspace")
     .then(function (response) {
       if (!response.ok) {
         const errormsg = {
@@ -58,7 +58,7 @@ export function getIdeaSpaces(callback) {
     });
   }
   export function getIdeaspace(name, password, callback) {
-    fetch( Url + "api/ideaspaces/" + name + "/" + password)
+    fetch( Url + "api/ideaspaces/getideaspace" + name + "/" + password)
     .then(function (response) {
       if (!response.ok) {
         const errormsg = {
