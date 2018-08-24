@@ -25,7 +25,24 @@ namespace Ideo_API.Controllers
         {
             return Ok(dbc.Comment.ToList());
         }
-
+        // GET api/comments/getcommentsbyideaid
+        [HttpGet]
+        public ActionResult<IEnumerable<List<Comment>>> GetCommentByIdeaId(int id)
+        {
+            Idea idea = dbc.Idea.Find(id);
+            
+            if (idea == null)
+            {
+                return NotFound();
+            }
+            List<Comment> comments=new List<Comment>();
+            var q = dbc.Comment.Where(i => i.IdeaId == id);
+            foreach (var a in q)
+            {
+                comments.Add(a);
+            }
+            return Ok(comments);
+        }
         //POST api/comment
         [HttpPost]
         public ActionResult PostComment(int idea, string comment, int plusmiinus)
