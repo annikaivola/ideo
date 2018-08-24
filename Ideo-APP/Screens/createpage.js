@@ -4,6 +4,7 @@ import { View, Button, StyleSheet, Alert } from "react-native";
 import Createbtn from "../Views/createbtn";
 import { StackNavigator } from "react-navigation";
 import ChooseCreate from '../Views/choosecreate';
+import styles from '../Styles/styles';
 
 export default class Createpage extends Component {
 
@@ -12,7 +13,14 @@ export default class Createpage extends Component {
     return (
       <View>
         <Createinput />
-        <Createbtn />
+        <Button
+          onPress={() =>
+            this.props.navigation.navigate('Ideafeed')
+          }
+          title="Log in to Ideaspace"
+          color="#1ac5c3"
+
+        />
       </View>
     );
   }

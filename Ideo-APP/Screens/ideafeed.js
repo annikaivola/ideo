@@ -6,7 +6,7 @@ export default class Ideafeed extends Component {
     render() {
         return (
             <View>
-                <Text>Ideafeed</Text>
+                
             </View>
         );
     }
