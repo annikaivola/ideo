@@ -5,8 +5,6 @@ import React, { Component } from "react";
 import { View, Button, StyleSheet, Alert } from "react-native";
 import { StackNavigator } from "react-navigation";
 import Ideafeed from './ideafeed';
-import IdeaPost from '../Views/ideapost';
-
 
 export default class AddComment extends Component {
     //navigoi submitin jälkeen takaisin ideafeediin

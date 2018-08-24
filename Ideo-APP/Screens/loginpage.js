@@ -13,20 +13,20 @@ export default class Loginpage extends Component {
     render() {
         return (
           <View>
-        {/* <TextInput style={styles.inputBox} 
+        <TextInput style={styles.inputBox} 
         onChangeText={(name) => this.setState({name})}
         value={this.state.name}/>
 
         <TextInput style={styles.inputBox} 
         onChangeText={(password) => this.setState({password})}
-        value={this.state.password}/> */}
+        value={this.state.password}/>
 
          <Button
               onPress={() =>
                 this.props.navigation.navigate('Ideafeed')
                }
               title="Log in"
-              color="gray"
+              color="#1ac5c3"
             />
 
         </View>
@@ -36,4 +36,3 @@ export default class Loginpage extends Component {
     }
 
 }
-

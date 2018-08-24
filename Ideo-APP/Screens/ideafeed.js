@@ -1,35 +1,23 @@
-<<<<<<< HEAD
 import React, {Component} from 'react';
-import {View, Text, StyleSheet, Image} from 'react-native';
+import {View, Text, KeyboardAvoidingView } from 'react-native';
 import IdeaPostList from '../Views/ideapostlist.js';
 import IdeaBtn from '../Views/ideabtn.js';
 import IdeaInput from '../Views/ideainput';
+import { styles } from '../Styles/styles.js'
 
 
 export default class IdeaFeed extends Component {
     render() {
         return (
-            <View>
+          <View>
+            <KeyboardAvoidingView style={styles.container} behavior="padding" enabled>
             <Text>IDEO</Text>
             <IdeaPostList/>
+            <View style={styles.inputDiv}>
             <IdeaInput/>
-            {/* <IdeaBtn/> */}
+            <IdeaBtn/>
             </View>
+            </KeyboardAvoidingView>
         );
     }
-=======
-import React, { Component } from 'react';
-import { View, Text, StyleSheet, Image } from 'react-native';
-
-
-export default class Ideafeed extends Component {
-    render() {
-        return (
-            <View>
-                <Text>Ideafeed</Text>
-            </View>
-        );
-    }
-
->>>>>>> 7f77647d90b7958125a019de8ea719fa90fc2333
 }
