@@ -1,11 +1,4 @@
 
-
-import React, { Component } from 'react';
-import { View, Text, StyleSheet, TextInput, Button } from 'react-native';
-import { StackNavigator } from 'react-navigation';
-import Loginpage from '../Screens/loginpage.js';
-import { FormLabel, FormInput, FormValidationMessage } from 'react-native-elements'
-import { getIdeaspace, addNewIdeaspace } from './ServiceDesk.js';
 import React, { Component } from "react";
 import { View, Text, StyleSheet, TextInput } from "react-native";
 import { StackNavigator } from "react-navigation";
@@ -50,14 +43,3 @@ export default class Logininput extends Component {
 
   }
 }
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    backgroundColor: '#fff',
-    alignItems: 'center',
-    justifyContent: 'center',
-    paddingBottom: '45%',
-  },
-});
-
-
