@@ -10,27 +10,14 @@ export default class Loginpage extends Component {
   render() {
     return (
       <KeyboardAvoidingView style={styles.container}>
-      <Text style={styles.heading2}> Log in to an Ideaspace. </Text>
-      <Logininput/>
+        <Text style={styles.heading2}> Log in to an Ideaspace. </Text>
+        <Logininput />
         <View style={styles.buttonContainer}>
           <Button
             onPress={() => this.props.navigation.navigate("Ideafeed")}
             title="Log in"
             color="#1ac5c3"
-
-              
-    render() {
-        return (
-          <View>
-            <Logininput/>
-<Button
-              onPress={() =>
-                this.props.navigation.navigate('Ideafeed')
-               }
-              title="Log in"
-              color="#1ac5c3"
-
-
+          />
         </View>
       </KeyboardAvoidingView>
     );

@@ -1,15 +1,3 @@
-
-import React, { Component } from 'react';
-import { View, Text, StyleSheet, TextInput, Form, Button } from 'react-native';
-import { StackNavigator } from 'react-navigation';
-import Createpage from '../Screens/createpage';
-
-import { FormLabel, FormInput, FormValidationMessage } from 'react-native-elements'
-import { addNewIdeaspace } from './ServiceDesk';
-
-
-import {styles} from '../Styles/styles.js'
-
 import React, { Component } from "react";
 import { View, Text, StyleSheet, TextInput, Form } from "react-native";
 import { StackNavigator } from "react-navigation";
@@ -28,22 +16,23 @@ export default class Createinput extends Component {
 
     this.state = { name: "", password: "", email: "", description: "" };
   }
-//   isEnabled =
-//   name.length > 0 &&
-//   password.length > 0;
+  //   isEnabled =
+  //   name.length > 0 &&
+  //   password.length > 0;
 
 
-// <button disabled={!isEnabled}>Sign up</button>
+  // <button disabled={!isEnabled}>Sign up</button>
   //email ei pakollinen, voidaan lähettää ideaspacen nimi ja salasana koska ei ole tapaa recoveraa niitä myöhemmin
 
+  validationError() {
+    var x = this.setState;
+    if (x == '') {
+      alert('this field');
+    }
+  }
   render() {
     return (
 
-function validationError() {
-  var x = this.setState;
-  if (x == '') {
-    alert('this field');
-  }
 
       <View style={styles.containerStyle}>
         <FormInput style={styles.inputStyle}
@@ -67,7 +56,7 @@ function validationError() {
           placeholderTextColor="#fff"
           onChangeText={description => this.setState({ description })}
           value={this.state.description}
-          multiline={true}
+          multiline
         />
         <FormValidationMessage style={styles.required}>This field is required</FormValidationMessage>
         <FormInput style={styles.inputStyle}
@@ -77,19 +66,9 @@ function validationError() {
           value={this.state.email}
         />
       </View>
-    );
+    )
   }
 
 }
 
-
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    backgroundColor: '#fff',
-    alignItems: 'center',
-    justifyContent: 'center',
-    paddingBottom: '45%',
-  },
-});
 

@@ -33,7 +33,7 @@ export const styles = StyleSheet.create({
   inputStyle: {
     fontFamily: "Avenir-Medium",
     color: "#fff",
-    multiline: true
+    // multiline: true
     // flexWrap: 'wrap',
   
   },
