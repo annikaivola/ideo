@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import Createinput from "../Views/createinput";
-import { View, Button, KeyboardAvoidingView, StyleSheet, Alert, TextInput, Form } from "react-native";
+import { View, Button, KeyboardAvoidingView, StyleSheet, Text } from "react-native";
 import Createbtn from "../Views/createbtn";
 import { StackNavigator } from "react-navigation";
 import ChooseCreate from '../Views/choosecreate';
@@ -19,7 +19,7 @@ export default class Createpage extends Component {
         <View style={styles.buttonContainer}>
           <Button
             onPress={() => this.props.navigation.navigate("Ideafeed")}
-            title="Log in to Ideaspace"
+            title="Create & Log in to Ideaspace"
             color="#1ac5c3"
           />
         </View>
@@ -28,19 +28,5 @@ export default class Createpage extends Component {
   }
 }
 
-     /* <View>
-        <Createinput/>
-        <Button
-          onPress={() =>
-            this.props.navigation.navigate('Ideafeed')
-             
-          }
-          title="Create Ideaspace"
-          color="#1ac5c3"
 
-        />
-      </View>'/
-    );
-  }
-}
 

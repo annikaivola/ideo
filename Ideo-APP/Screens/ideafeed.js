@@ -17,7 +17,7 @@ export default class IdeaFeed extends Component {
             <IdeaBtn/>
             </View>
             </KeyboardAvoidingView>
-            </View>
+           
         );
     }
 }
