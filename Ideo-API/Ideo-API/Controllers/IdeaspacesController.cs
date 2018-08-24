@@ -52,13 +52,6 @@ namespace Ideo_API.Controllers
             Ideaspace ideaspace = dbc.Ideaspace.Where(u => u.Name == name).FirstOrDefault();
             if (ideaspace != null)
             {
-                //byte[] passwordHash = Hash(password, Convert.FromBase64String(ideaspace.PasswordSalt));
-                //var pol = Encoding.UTF8.GetBytes(ideaspace.Password);
-                //bool correct = Convert.FromBase64String(ideaspace.Password).SequenceEqual(passwordHash);
-                //if (correct)
-                //{
-                //    return Ok(ideaspace);
-                //}
                 if (password == ideaspace.Password)
 
                     return Ok(ideaspace);
@@ -76,16 +69,29 @@ namespace Ideo_API.Controllers
             {
                 return BadRequest(ModelState);
             }
-            byte[] salt = new byte[16];
-
-            ideaspace.Password = Convert.ToBase64String(Hash(ideaspace.Password, salt));
-            //ideaspace.PasswordSalt = Convert.ToBase64String(salt);
-
             dbc.Ideaspace.Add(ideaspace);
             dbc.SaveChanges();
 
             return Ok(ideaspace);
         }
+        //[HttpPost]
+        //[ProducesResponseType(201)]
+        //public ActionResult<Ideaspace> PostIdeaSpace(Ideaspace ideaspace)
+        //{
+        //    if (!ModelState.IsValid)
+        //    {
+        //        return BadRequest(ModelState);
+        //    }
+        //    byte[] salt = new byte[16];
+
+        //    ideaspace.Password = Convert.ToBase64String(Hash(ideaspace.Password, salt));
+        //    //ideaspace.PasswordSalt = Convert.ToBase64String(salt);
+
+        //    dbc.Ideaspace.Add(ideaspace);
+        //    dbc.SaveChanges();
+
+        //    return Ok(ideaspace);
+        //}
 
         //protected override void Dispose(bool disposing)
         //{

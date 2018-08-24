@@ -1,34 +1,29 @@
 
 import React, { Component } from "react";
-import { View, Button, TextInput } from "react-native";
+import { Alert, View, Button, TextInput, TouchableOpacity, Image } from "react-native";
 import { styles } from "../Styles/styles.js";
 
 export default class RateBtn extends Component {
-  static navigationOptions = {
-    header: null
-  };
-  onPressPlus() {
-    Alert.alert("Plus vote!");
-  }
-  onPressPlus() {
-    Alert.alert("Minus vote");
+  _onPressButton() {
+    Alert.alert("Plus vote");
   }
 
   render() {
     return (
-      <View>
-        <Image
-          style={{ height: 50, width: 50 }}
-          source={require("../Assets/images/minus.png")}
-        //   onPress={this._onPressButton}
-        />
-        <Image
-          style={{ height: 50, width: 50 }}
-          source={require("../Assets/images/plus.png")}
-        //   onPress={this._onPressButton}
-        />
+      <View style={styles.ratebtndiv}>
+        <TouchableOpacity onPress={this._onPressButton}>
+          <Image
+            style={{ height: 50, width: 50 }}
+            source={require("../Assets/images/plus.png")}
+          />
+        </TouchableOpacity>
+        <TouchableOpacity onPress={this._onPressButton}>
+          <Image
+            style={{ height: 50, width: 50 }}
+            source={require("../Assets/images/minus.png")}
+          />
+        </TouchableOpacity>
       </View>
     );
   }
 }
-

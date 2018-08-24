@@ -26,12 +26,12 @@ namespace Ideo_API.Controllers
         {
             return Ok(dbc.Idea);
         }
-       // GET api/ideabyid
+        // GET api/ideabyid
         [HttpGet]
-        public ActionResult <IEnumerable<Idea>> GetIdea(int id)
+        public ActionResult<IEnumerable<Idea>> GetIdea(int id)
         {
             Idea idea = dbc.Idea.Find(id);
-            if(idea == null)
+            if (idea == null)
             {
                 return NotFound();
             }
@@ -64,21 +64,15 @@ namespace Ideo_API.Controllers
                     throw;
                 }
             }
+
             return Ok(idea);
-            }
-        //protected override void Dispose(bool disposing)
-        //{
-        //    if (disposing)
-        //    {
-        //        dbc.Dispose();
-        //    }
-        //    base.Dispose(disposing);
-        //}
+        }
+
 
         private bool IdeaExists(int id)
         {
             return dbc.Idea.Count(e => e.IdeaId == id) > 0;
         }
     }
-    }
+}
 

@@ -36,7 +36,8 @@ namespace Ideo_API
             services.AddDbContext<IdeoDbContext>(options =>
             options.UseSqlServer(Configuration.GetConnectionString("IdeoDb")));
             services.AddMvc()
-                .SetCompatibilityVersion(CompatibilityVersion.Version_2_1);
+                .SetCompatibilityVersion(CompatibilityVersion.Version_2_1)
+                .AddJsonOptions(c => c.SerializerSettings.ContractResolver = new Newtonsoft.Json.Serialization.DefaultContractResolver());
             services.AddSwaggerGen(c =>
             {
                 c.SwaggerDoc("v1", new Info { Title = "IdeoDb API", Version = "v1", Description = "API for Ideo APP", Contact = new Contact { Email = "joku@jossain.fi", Name = "Admin" } });
