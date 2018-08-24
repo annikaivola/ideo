@@ -290,3 +290,4 @@ FakesAssemblies/
 .Ideo-APP/node_modules/
 .Ideo-APP/node_modules
 .Ideo-APP/.expo
+.Ideo-API/Ideo-API/appsettings.json

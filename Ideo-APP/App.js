@@ -1,7 +1,7 @@
 
-import React, {Component} from 'react';
-import { StyleSheet, Text, View, AppRegistry} from 'react-native';
-import {StackNavigator} from 'react-navigation';
+import React, { Component } from 'react';
+import { StyleSheet, Text, View, AppRegistry } from 'react-native';
+import { StackNavigator } from 'react-navigation';
 import Landingpage from './Screens/landingpage';
 import Createpage from './Screens/createpage';
 import Loginpage from './Screens/loginpage';
@@ -27,11 +27,8 @@ export const RootStack = StackNavigator(
 export default class App extends Component {
   render() {
     return (
- 
-     
-      <RootStack/>
-     
+      <RootStack />
     );
   }
-      }
+}
 
