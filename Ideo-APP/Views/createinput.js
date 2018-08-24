@@ -1,8 +1,10 @@
-import React, {Component} from 'react';
-import {View, Text, StyleSheet, TextInput, Form} from 'react-native';
-import {StackNavigator} from 'react-navigation';
+import React, { Component } from 'react';
+import { View, Text, StyleSheet, TextInput, Form, Button } from 'react-native';
+import { StackNavigator } from 'react-navigation';
 import Createpage from '../Screens/createpage';
-import { FormLabel, FormInput, FormValidationMessage} from 'react-native-elements'
+import { FormLabel, FormInput, FormValidationMessage } from 'react-native-elements'
+import { addNewIdeaspace } from './ServiceDesk';
+
 
 
 
@@ -10,35 +12,47 @@ export default class Createinput extends Component {
 
   constructor(props) {
     super(props);
-    this.state = { name: '', password: '', email:'', description: '' };
-}
-//email ei pakollinen, voidaan lähettää ideaspacen nimi ja salasana koska ei ole tapaa recoveraa niitä myöhemmin
+    this.state = { name: '', password: '', email: '', description: '' };
+  }
+  //email ei pakollinen, voidaan lähettää ideaspacen nimi ja salasana koska ei ole tapaa recoveraa niitä myöhemmin
 
 
-render() {
+  render() {
     return (
-<View>
-<FormLabel>Name</FormLabel>
-<FormInput onChangeText={(name) => this.setState({name})}
-        value={this.state.name}/>
-<FormValidationMessage>This field is required</FormValidationMessage>
+      <View>
+        
+      
+        <FormLabel>Name</FormLabel>
+        <FormInput onChangeText={(name) => this.setState({ name })}
+          value={this.state.name} />
+        
 
-<FormLabel>Password</FormLabel>
-<FormInput onChangeText={(password) => this.setState({password})}
-        value={this.state.password}/>
-<FormValidationMessage>This field is required</FormValidationMessage>
 
-<FormLabel>Email</FormLabel>
-<FormInput onChangeText={(email) => this.setState({email})}
-        value={this.state.email}/>
+        <FormLabel>Password</FormLabel>
+        <FormInput onChangeText={(password) => this.setState({ password })}
+          value={this.state.password} />
+        <FormValidationMessage>This field is required</FormValidationMessage>
+
+        <FormLabel>Email</FormLabel>
+        <FormInput onChangeText={(email) => this.setState({ email })}
+          value={this.state.email} />
 
         <FormLabel>Description</FormLabel>
-<FormInput onChangeText={(description) => this.setState({description})}
-        value={this.state.description}/>
-<FormValidationMessage>This field is required</FormValidationMessage>
+        <FormInput onChangeText={(description) => this.setState({ description })}
+          value={this.state.description} />
+        <FormValidationMessage>This field is required</FormValidationMessage>
 
-       
-         {/* <TextInput style={styles.inputBox} 
+<Button
+        type="submit"
+          onPress={() =>
+            this.props.navigation.navigate('Ideafeed')
+             
+          }
+          title="Create Ideaspace"
+          color="#1ac5c3"
+
+        />
+        {/* <TextInput style={styles.inputBox} 
         onChangeText={(name) => this.setState({name})}
         value={this.state.name}/>
 
@@ -55,11 +69,19 @@ render() {
         value={this.state.description}
         multiline= {true}/>  */}
 
-        </View>
+      </View>
 
     )
+  }
 }
+function validationError() {
+  var x = this.setState;
+  if (x == '') {
+    alert('this field');
+  }
+
 }
+
 const styles = StyleSheet.create({
   container: {
     flex: 1,

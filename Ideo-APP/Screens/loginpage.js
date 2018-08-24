@@ -22,13 +22,13 @@ export default class Loginpage extends Component {
         onChangeText={(password) => this.setState({password})}
         value={this.state.password}/> */}
 
-         <Button
+         {/* <Button
               onPress={() =>
                 this.props.navigation.navigate('Ideafeed')
                }
               title="Log in"
               color="#1ac5c3"
-            />
+            /> */}
 
         </View>
         

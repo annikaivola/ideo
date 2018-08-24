@@ -14,15 +14,6 @@ export default class Createpage extends Component {
     return (
       <View>
         <Createinput/>
-        <Button
-          onPress={() =>
-            this.props.navigation.navigate('Ideafeed')
-             
-          }
-          title="Create Ideaspace"
-          color="#1ac5c3"
-
-        />
       </View>
     );
   }
