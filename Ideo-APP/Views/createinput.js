@@ -1,3 +1,15 @@
+
+import React, { Component } from 'react';
+import { View, Text, StyleSheet, TextInput, Form, Button } from 'react-native';
+import { StackNavigator } from 'react-navigation';
+import Createpage from '../Screens/createpage';
+
+import { FormLabel, FormInput, FormValidationMessage } from 'react-native-elements'
+import { addNewIdeaspace } from './ServiceDesk';
+
+
+import {styles} from '../Styles/styles.js'
+
 import React, { Component } from "react";
 import { View, Text, StyleSheet, TextInput, Form } from "react-native";
 import { StackNavigator } from "react-navigation";
@@ -9,6 +21,7 @@ import {
   FormValidationMessage
 } from "react-native-elements";
 
+
 export default class Createinput extends Component {
   constructor(props) {
     super(props);
@@ -19,11 +32,19 @@ export default class Createinput extends Component {
 //   name.length > 0 &&
 //   password.length > 0;
 
+
 // <button disabled={!isEnabled}>Sign up</button>
   //email ei pakollinen, voidaan lähettää ideaspacen nimi ja salasana koska ei ole tapaa recoveraa niitä myöhemmin
 
   render() {
     return (
+
+function validationError() {
+  var x = this.setState;
+  if (x == '') {
+    alert('this field');
+  }
+
       <View style={styles.containerStyle}>
         <FormInput style={styles.inputStyle}
           placeholder="Ideaspace name"
@@ -58,4 +79,17 @@ export default class Createinput extends Component {
       </View>
     );
   }
+
 }
+
+
+const styles = StyleSheet.create({
+  container: {
+    flex: 1,
+    backgroundColor: '#fff',
+    alignItems: 'center',
+    justifyContent: 'center',
+    paddingBottom: '45%',
+  },
+});
+

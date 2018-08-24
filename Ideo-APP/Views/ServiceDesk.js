@@ -19,7 +19,7 @@ export function getIdeas(callback) {
 }
 export function sortIdeaswithVoteCounter(votecounter, callback)
 
-export function addNewIdea (idea, callback) {
+{}export function addNewIdea (idea, callback) {
     fetch(url + "api/ideas/", {
         method: 'POST',
         headers: {'Content-Type': 'application/json'},

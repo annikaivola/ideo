@@ -17,7 +17,20 @@ export default class Loginpage extends Component {
             onPress={() => this.props.navigation.navigate("Ideafeed")}
             title="Log in"
             color="#1ac5c3"
-          />
+
+              
+    render() {
+        return (
+          <View>
+            <Logininput/>
+<Button
+              onPress={() =>
+                this.props.navigation.navigate('Ideafeed')
+               }
+              title="Log in"
+              color="#1ac5c3"
+
+
         </View>
       </KeyboardAvoidingView>
     );
