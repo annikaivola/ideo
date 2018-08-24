@@ -13,9 +13,27 @@ export const styles = StyleSheet.create({
     borderColor: "#fff",
     paddingTop: 3,
     paddingBottom: 3,
-    paddingLeft: 5,
-    paddingRight: 5,
+    paddingLeft: 7,
+    paddingRight: 7,
     marginBottom: 5
+  },
+  loginInput: {
+    backgroundColor: "#fff",
+    borderWidth: 1,
+    borderRadius: 10,
+    borderColor: "#fff",
+    width: "70%",
+    paddingBottom: 15,
+    paddingLeft: 15,
+    paddingRight: 15,
+    paddingTop: 15,
+    marginBottom: 10,
+  },
+  logInputdiv: {
+    marginBottom: 25,
+    width: '90%',
+    alignItems: "center",
+    justifyContent: "center"
   },
   LPcontainer: {
     flex: 1,
@@ -27,6 +45,20 @@ export const styles = StyleSheet.create({
     //fontFamily: 'Avenir-Medium',
     fontSize: 100,
     color: "#fff"
+  },
+  heading2: {
+    fontSize: 25,
+    color: '#fff',
+    alignItems: "center",
+    justifyContent: "center",
+    marginBottom: 30
+  },
+  heading1: {
+    fontSize: 40,
+    color: '#fff',
+    alignItems: "center",
+    justifyContent: "center",
+    marginBottom: 20
   },
   ideapost: {
     backgroundColor: "#fff",
@@ -49,13 +81,12 @@ export const styles = StyleSheet.create({
   },
   IdeaPostText: {
     fontSize: 18,
-    paddingBottom: 5,
-
+    paddingBottom: 5
   },
 
   inputDiv: {
-    flexDirection: 'row',
-    width: '98%',
+    flexDirection: "row",
+    width: "98%",
     backgroundColor: "#fff",
     borderWidth: 1,
     borderRadius: 10,

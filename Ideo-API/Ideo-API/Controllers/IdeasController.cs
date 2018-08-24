@@ -20,15 +20,15 @@ namespace Ideo_API.Controllers
             this.dbc = dbc;
         }
 
-        // GET api/idea
+        // GET api/ideas/getideas
         [HttpGet]
-        public ActionResult<Idea> GetAllIdeas()
+        public ActionResult<IEnumerable<Idea>> GetIdeas()
         {
-            return Ok(dbc.Idea);
+            return Ok(dbc.Idea.ToList());
         }
-        // GET api/ideabyid
+        // GET api/idea/getideabyid
         [HttpGet]
-        public ActionResult<IEnumerable<Idea>> GetIdea(int id)
+        public ActionResult<IEnumerable<Idea>> GetIdeabyId(int id)
         {
             Idea idea = dbc.Idea.Find(id);
             if (idea == null)
@@ -39,39 +39,19 @@ namespace Ideo_API.Controllers
         }
         // POST api/idea
         [HttpPost]
-        public ActionResult PostIdea(Idea idea)
+        public ActionResult PostIdea(int ideaspace, string idea)
         {
+            Idea createIdea = new Idea{ IdeaspaceId=ideaspace, Idea1 = idea, Time = DateTime.Now };
             if (!ModelState.IsValid)
             {
                 return BadRequest(ModelState);
             }
 
-            idea.Time = DateTime.Now;
-            dbc.Idea.Add(idea);
+            dbc.Idea.Add(createIdea);
 
-            try
-            {
-                dbc.SaveChanges();
-            }
-            catch (DbUpdateException)
-            {
-                if (IdeaExists(idea.IdeaId))
-                {
-                    return Conflict();
-                }
-                else
-                {
-                    throw;
-                }
-            }
+            dbc.SaveChanges();
 
             return Ok(idea);
-        }
-
-
-        private bool IdeaExists(int id)
-        {
-            return dbc.Idea.Count(e => e.IdeaId == id) > 0;
         }
     }
 }

@@ -9,15 +9,15 @@ export default class Createbtn extends Component {
   static navigationOptions
   render() {
     return (
-      <View>
-        {/* <Button style={styles.button}
+      <View style={styles.buttonContainer}>
+        <Button 
           onPress={() =>
             this.props.navigation.navigate('Ideafeed')
           }
           title="Log in to Ideaspace"
           color="#1ac5c3"
 
-        /> */}
+        />
       </View>
     );
   }

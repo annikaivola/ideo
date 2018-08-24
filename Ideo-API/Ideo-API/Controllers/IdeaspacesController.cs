@@ -35,45 +35,39 @@ namespace Ideo_API.Controllers
 
         // GET api/ideaspaces
         [HttpGet]
-        public ActionResult<Ideaspace> GetAllIdeaspaces()
+        public ActionResult<Ideaspace> GetIdeaspaces()
         {
             return Ok(dbc.Ideaspace);
         }
 
-        //[HttpGet]
-        //public ActionResult<Ideaspace> GetIdeaspace()
-        //{
-        //    return Ok(dbc.Ideaspace);
-        //}
-        // GET api/ideaspaces/:name/:password
         [HttpGet]
-        public ActionResult GetIdeaspace(string name, string password)
+        public ActionResult<Ideaspace> GetIdeaspace(string name, string password)
         {
-            Ideaspace ideaspace = dbc.Ideaspace.Where(u => u.Name == name).FirstOrDefault();
+            Ideaspace ideaspace = dbc.Ideaspace.Where(i => i.Name == name).FirstOrDefault(); ;
             if (ideaspace != null)
             {
-                if (password == ideaspace.Password)
 
-                    return Ok(ideaspace);
-                else
-                    return NotFound();
+                return Ok(ideaspace);
             }
-            return NotFound();
+            else
+                return NotFound();
         }
+        // GET api/ideaspaces/:name/:password
+        //[HttpGet]
+        //public ActionResult GetIdeaspace(string name, string password)
+        //{
+        //    Ideaspace ideaspace = dbc.Ideaspace.Where(u => u.Name == name).FirstOrDefault();
+        //    if (ideaspace != null)
+        //    {
+        //        if (password == ideaspace.Password)
+
+        //            return Ok(ideaspace);
+        //        else
+        //            return NotFound();
+        //    }
+        //    return NotFound();
+        //}
         // POST api/ideaspaces
-        [HttpPost]
-        [ProducesResponseType(201)]
-        public ActionResult<Ideaspace> PostIdeaSpace(Ideaspace ideaspace)
-        {
-            if (!ModelState.IsValid)
-            {
-                return BadRequest(ModelState);
-            }
-            dbc.Ideaspace.Add(ideaspace);
-            dbc.SaveChanges();
-
-            return Ok(ideaspace);
-        }
         //[HttpPost]
         //[ProducesResponseType(201)]
         //public ActionResult<Ideaspace> PostIdeaSpace(Ideaspace ideaspace)
@@ -82,16 +76,31 @@ namespace Ideo_API.Controllers
         //    {
         //        return BadRequest(ModelState);
         //    }
-        //    byte[] salt = new byte[16];
-
-        //    ideaspace.Password = Convert.ToBase64String(Hash(ideaspace.Password, salt));
-        //    //ideaspace.PasswordSalt = Convert.ToBase64String(salt);
-
         //    dbc.Ideaspace.Add(ideaspace);
         //    dbc.SaveChanges();
 
         //    return Ok(ideaspace);
         //}
+        [HttpPost]
+        [ProducesResponseType(201)]
+        public ActionResult<Ideaspace> PostIdeaSpace(string name, string password, string description)
+        {
+            Ideaspace ideaspace = new Ideaspace { Name = name, Password = password, Description = description };
+
+            if (!ModelState.IsValid)
+            {
+                return BadRequest(ModelState);
+            }
+            byte[] salt = new byte[16];
+
+            ideaspace.Password = Convert.ToBase64String(Hash(ideaspace.Password, salt));
+            ideaspace.PasswordSalt = Convert.ToBase64String(salt);
+
+            dbc.Ideaspace.Add(ideaspace);
+            dbc.SaveChanges();
+
+            return Ok(ideaspace);
+        }
 
         //protected override void Dispose(bool disposing)
         //{

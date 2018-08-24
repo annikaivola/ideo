@@ -19,17 +19,18 @@ export default class Landingpage extends Component {
         />
         <Text style={styles.logo}>IDEO</Text>
 
-        <Button
+        <View style={styles.buttonContainer}>
+        <Button 
           title="Create Ideaspace"
           onPress={() => this.props.navigation.navigate("Create")}
-          color="#1ac5c3"
-        />
+          color= '#1ac5c3'
+        /></View>
+        <View style={styles.buttonContainer}>
         <Button
-          style={styles.button}
           onPress={() => this.props.navigation.navigate("Loginpage")}
           title="Log in to Ideaspace"
-          color="#1ac5c3"
-        />
+          color= '#1ac5c3'
+        /></View>
       </View>
     );
   }

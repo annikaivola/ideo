@@ -30,11 +30,22 @@ namespace DAL.Models
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
+            modelBuilder.Entity<Ideaspace>()
+                .ToTable("Ideaspace")
+                .HasMany(c => c.Idea)
+                .WithOne();
+            modelBuilder.Entity<Idea>()
+                .ToTable("Idea")
+                .HasMany(c => c.Comment)
+                .WithOne();
+            modelBuilder.Entity<Comment>()
+                .ToTable("Comment");
+
             modelBuilder.Entity<Comment>(entity =>
             {
                 entity.Property(e => e.CommentId)
                     .HasColumnName("comment_ID")
-                    .ValueGeneratedNever();
+                    .ValueGeneratedOnAdd();
 
                 entity.Property(e => e.Comment1)
                     .IsRequired()
@@ -56,7 +67,7 @@ namespace DAL.Models
             {
                 entity.Property(e => e.IdeaId)
                     .HasColumnName("idea_ID")
-                    .ValueGeneratedNever();
+                    .ValueGeneratedOnAdd();
 
                 entity.Property(e => e.Idea1)
                     .IsRequired()
@@ -71,11 +82,11 @@ namespace DAL.Models
 
                 entity.Property(e => e.Votecounter).HasColumnName("votecounter");
 
-                entity.HasOne(d => d.IdeaNavigation)
-                    .WithOne(p => p.InverseIdeaNavigation)
-                    .HasForeignKey<Idea>(d => d.IdeaId)
-                    .OnDelete(DeleteBehavior.ClientSetNull)
-                    .HasConstraintName("FK_Idea_Idea");
+                //entity.HasOne(d => d.IdeaNavigation)
+                //    .WithOne(p => p.InverseIdeaNavigation)
+                //    .HasForeignKey<Idea>(d => d.IdeaId)
+                //    .OnDelete(DeleteBehavior.ClientSetNull)
+                //    .HasConstraintName("FK_Idea_Idea");
 
                 entity.HasOne(d => d.Ideaspace)
                     .WithMany(p => p.Idea)
@@ -88,7 +99,7 @@ namespace DAL.Models
             {
                 entity.Property(e => e.IdeaspaceId)
                     .HasColumnName("ideaspace_ID")
-                    .ValueGeneratedNever();
+                    .ValueGeneratedOnAdd();
 
                 entity.Property(e => e.Description)
                     .IsRequired()
@@ -103,6 +114,10 @@ namespace DAL.Models
                 entity.Property(e => e.Password)
                     .IsRequired()
                     .HasColumnName("password")
+                    .HasMaxLength(50);
+                entity.Property(e => e.PasswordSalt)
+                    .IsRequired()
+                    .HasColumnName("passwordSalt")
                     .HasMaxLength(50);
             });
         }
