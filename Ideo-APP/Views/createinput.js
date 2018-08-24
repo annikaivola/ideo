@@ -1,24 +1,51 @@
 import React, {Component} from 'react';
-import {View, Text, StyleSheet, TextInput} from 'react-native';
+import {View, Text, StyleSheet, TextInput, Form} from 'react-native';
 import {StackNavigator} from 'react-navigation';
 import Createpage from '../Screens/createpage';
 import {styles} from '../Styles/styles.js'
+import { FormLabel, FormInput, FormValidationMessage} from 'react-native-elements'
 
 
 export default class Createinput extends Component {
 
   constructor(props) {
     super(props);
-    this.state = { name: '', password: '', email:'' };
+
+    this.state = { name: '', password: '', email:'', description: '' };
+
 }
 //email ei pakollinen, voidaan lähettää ideaspacen nimi ja salasana koska ei ole tapaa recoveraa niitä myöhemmin
-//clearFields =()=> this.setState({name:'', password:'', email:''});
+
 
 render() {
     return (
+
       <View style={styles.logInputdiv}>
         <TextInput style={styles.loginInput} 
         placeholder="Ideaspace name"
+
+<View>
+<FormLabel>Name</FormLabel>
+<FormInput onChangeText={(name) => this.setState({name})}
+        value={this.state.name}/>
+<FormValidationMessage>This field is required</FormValidationMessage>
+
+<FormLabel>Password</FormLabel>
+<FormInput onChangeText={(password) => this.setState({password})}
+        value={this.state.password}/>
+<FormValidationMessage>This field is required</FormValidationMessage>
+
+<FormLabel>Email</FormLabel>
+<FormInput onChangeText={(email) => this.setState({email})}
+        value={this.state.email}/>
+
+        <FormLabel>Description</FormLabel>
+<FormInput onChangeText={(description) => this.setState({description})}
+        value={this.state.description}/>
+<FormValidationMessage>This field is required</FormValidationMessage>
+
+       
+         {/* <TextInput style={styles.inputBox} 
         onChangeText={(name) => this.setState({name})}
         value={this.state.name}/>
 
@@ -30,8 +57,15 @@ render() {
         <TextInput style={styles.loginInput} 
         placeholder="Email (optional)"
         onChangeText={(email) => this.setState({email})}
-        value={this.state.email}/>
+        value={this.state.email}/> 
+
+        <TextInput style={styles.inputBox} 
+        onChangeText={(description) => this.setState({description})}
+        value={this.state.description}
+        multiline= {true}/>  */}
+
         </View>
+
     )
 }
 }
