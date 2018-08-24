@@ -2,21 +2,28 @@ import React, {Component} from 'react';
 import {View, Text, StyleSheet, TextInput, Form} from 'react-native';
 import {StackNavigator} from 'react-navigation';
 import Createpage from '../Screens/createpage';
+import {styles} from '../Styles/styles.js'
 import { FormLabel, FormInput, FormValidationMessage} from 'react-native-elements'
-
 
 
 export default class Createinput extends Component {
 
   constructor(props) {
     super(props);
+
     this.state = { name: '', password: '', email:'', description: '' };
+
 }
 //email ei pakollinen, voidaan lähettää ideaspacen nimi ja salasana koska ei ole tapaa recoveraa niitä myöhemmin
 
 
 render() {
     return (
+
+      <View style={styles.logInputdiv}>
+        <TextInput style={styles.loginInput} 
+        placeholder="Ideaspace name"
+
 <View>
 <FormLabel>Name</FormLabel>
 <FormInput onChangeText={(name) => this.setState({name})}
@@ -42,11 +49,13 @@ render() {
         onChangeText={(name) => this.setState({name})}
         value={this.state.name}/>
 
-        <TextInput style={styles.inputBox} 
+        <TextInput style={styles.loginInput} 
+        placeholder="Password"
         onChangeText={(password) => this.setState({password})}
         value={this.state.password}/>
 
-        <TextInput style={styles.inputBox} 
+        <TextInput style={styles.loginInput} 
+        placeholder="Email (optional)"
         onChangeText={(email) => this.setState({email})}
         value={this.state.email}/> 
 
@@ -60,12 +69,3 @@ render() {
     )
 }
 }
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    backgroundColor: '#fff',
-    alignItems: 'center',
-    justifyContent: 'center',
-    paddingBottom: '45%',
-  },
-});

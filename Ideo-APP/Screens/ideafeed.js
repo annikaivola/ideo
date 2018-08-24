@@ -9,11 +9,10 @@ import { styles } from '../Styles/styles.js'
 export default class IdeaFeed extends Component {
     render() {
         return (
-          <View>
             <KeyboardAvoidingView style={styles.container} behavior="padding" enabled>
             <Text>IDEO</Text>
             <IdeaPostList/>
-            <View style={styles.inputDiv}>
+            <View style={styles.inputDiv} behavior="padding" enabled>
             <IdeaInput/>
             <IdeaBtn/>
             </View>
