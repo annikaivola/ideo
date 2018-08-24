@@ -21,4 +21,4 @@ export default class Createbtn extends Component {
       </View>
     );
   }
-
+}
