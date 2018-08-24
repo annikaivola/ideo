@@ -291,3 +291,4 @@ FakesAssemblies/
 .Ideo-APP/node_modules
 .Ideo-APP/.expo
 .Ideo-API/Ideo-API/appsettings.json
+.Ideo-API/Ideo-API/appsettings.Development.json
