@@ -13,13 +13,14 @@ export default class Loginpage extends Component {
     render() {
         return (
           <View>
-        <TextInput style={styles.inputBox} 
+            <Logininput/>
+        {/* <TextInput style={styles.inputBox} 
         onChangeText={(name) => this.setState({name})}
         value={this.state.name}/>
 
         <TextInput style={styles.inputBox} 
         onChangeText={(password) => this.setState({password})}
-        value={this.state.password}/>
+        value={this.state.password}/> */}
 
          <Button
               onPress={() =>
