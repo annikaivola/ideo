@@ -17,7 +17,27 @@ export const styles = StyleSheet.create({
     paddingRight: 7,
     marginBottom: 5
   },
-  loginInput: {
+    containerStyle: {
+    // backgroundColor: "#fff",
+    borderWidth: 3,
+    borderRadius: 10,
+    borderColor: "#fff",
+    width: "75%",
+    paddingBottom: 15,
+    paddingLeft: 15,
+    paddingRight: 15,
+    paddingTop: 15,
+    marginBottom: 10,
+
+  },
+  inputStyle: {
+    fontFamily: "Avenir-Medium",
+    color: "#fff",
+    multiline: true
+    // flexWrap: 'wrap',
+  
+  },
+  loginInputlong: {
     backgroundColor: "#fff",
     borderWidth: 1,
     borderRadius: 10,
@@ -28,12 +48,17 @@ export const styles = StyleSheet.create({
     paddingRight: 15,
     paddingTop: 15,
     marginBottom: 10,
+    height: 40
   },
-  logInputdiv: {
-    marginBottom: 25,
-    width: '90%',
-    alignItems: "center",
-    justifyContent: "center"
+  // logInputdiv: {
+  //   backgroundColor: '#fff',
+  //   marginBottom: 25,
+  //   width: '90%',
+  //   alignItems: "center",
+  //   justifyContent: "center"
+  // ,
+  required: {
+    color: '#fa8072'
   },
   LPcontainer: {
     flex: 1,
@@ -47,6 +72,7 @@ export const styles = StyleSheet.create({
     color: "#fff"
   },
   heading2: {
+    fontFamily: 'Avenir-Medium',
     fontSize: 25,
     color: '#fff',
     alignItems: "center",
@@ -54,6 +80,7 @@ export const styles = StyleSheet.create({
     marginBottom: 30
   },
   heading1: {
+    fontFamily: 'Avenir-Medium',
     fontSize: 40,
     color: '#fff',
     alignItems: "center",
@@ -105,6 +132,7 @@ export const styles = StyleSheet.create({
     paddingLeft: 5,
     paddingRight: 120, // parempi tapa saada nuoli oikealle? right:0 ei toimi
     paddingTop: 5
+
   },
   arrow: {
     right: 0,
