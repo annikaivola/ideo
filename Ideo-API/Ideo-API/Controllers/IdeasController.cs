@@ -37,6 +37,22 @@ namespace Ideo_API.Controllers
             }
             return Ok(idea);
         }
+
+        // GET api/ideas/getideasbyideaspaceid
+        [HttpGet]
+        public ActionResult<List<Idea>> GetIdeasByIdeaspaceId(int ideaspaceId)
+        {
+            Ideaspace ids = dbc.Ideaspace.Find(ideaspaceId);
+            if (ids == null)
+                return NotFound();
+            List<Idea> ideasById = new List<Idea>();
+            var ideaquery = dbc.Idea.Where(i => i.IdeaspaceId == ideaspaceId);
+            foreach (var idea in ideaquery)
+            {
+                ideasById.Add(idea);
+            }
+            return Ok(ideasById.ToList());
+        }
         // POST api/idea
         [HttpPost]
         public ActionResult PostIdea(int ideaspace, string idea)

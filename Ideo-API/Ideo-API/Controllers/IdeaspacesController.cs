@@ -91,6 +91,11 @@ namespace Ideo_API.Controllers
             {
                 return BadRequest(ModelState);
             }
+            Ideaspace unique = dbc.Ideaspace.Where(i => i.Name == ideaspace.Name).FirstOrDefault();
+            if (unique != null)
+            {
+                throw new ArgumentException("Ideaspace already exists!");
+            }
             byte[] salt = new byte[16];
 
             ideaspace.Password = Convert.ToBase64String(Hash(ideaspace.Password, salt));
