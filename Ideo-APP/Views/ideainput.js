@@ -9,14 +9,15 @@ export default class IdeaInput extends Component {
   }
   render() {
     return (
-      <View style={styles.ideaInput}>
         <TextInput
           style={styles.ideaInputText}
           onChangeText={(idea) => this.setState({ idea })}
           value={this.state.idea}
           multiline ={true}
+          maxLength={100}
+          placeholder="Write your idea here!"
+          placeholderTextColor="#000"
         />
-      </View>
     );
   }
 }

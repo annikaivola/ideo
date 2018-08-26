@@ -14,10 +14,15 @@ export default class Landingpage extends Component {
     return (
       <View style={styles.LPcontainer}>
         <Image
-          style={{ height: 150, width: 150 }}
-          source={require("../Assets/images/light-on.png")}
+          style={{ height: 140, width: 150 }}
+          source={require("../Assets/images/lightbulb2.png")}
+          resizeMode="contain"
         />
-        <Text style={styles.logo}>IDEO</Text>
+         <Image
+          style={{ height: 200, width: 300 }}
+          source={require("../Assets/images/ideo_logo2.png")}
+          resizeMode="contain"
+        />
 
         <View style={styles.buttonContainer}>
         <Button 
