@@ -12,7 +12,8 @@ export default class IdeaBtn extends Component {
           <Image
             onPress={this._onPressButton}
             style={styles.arrow}
-            source={require("../Assets/images/arrow2.png")}
+            source={require("../Assets/images/ideo_arrow.png")}
+            resizeMode='contain'
           />
         </TouchableOpacity>
       </View>
