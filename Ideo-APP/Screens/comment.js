@@ -11,7 +11,13 @@ export default class AddComment extends Component {
     render() {
         return (
             <View>
-<Text>HEll'</Text>
+                {/* ideapost
+                vote
+                scrollview
+                textinput
+                commentfeed */}
+
+
             </View>
         );
     }

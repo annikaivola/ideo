@@ -10,6 +10,7 @@ export default class Landingpage extends Component {
   static navigationOptions={
     header:null
   }
+  
   render() {
     return (
       <View style={styles.LPcontainer}>

@@ -48,7 +48,7 @@ export function getAllIdeaSpaces(callback) {
     });
   }
   export function addNewIdeaspace(ideaspace, callback){
-    fetch( Url + "api/ideaspaces/",{
+    fetch( url + "api/ideaspaces/postideaspace",{
       method: 'POST',
       headers: {'Content-Type': 'application/json'},
       body: JSON.stringify(ideaspace)
@@ -84,3 +84,4 @@ export function getAllIdeaSpaces(callback) {
       callback(response.status);
     });
   }
+  
