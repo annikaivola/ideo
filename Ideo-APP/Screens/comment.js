@@ -45,3 +45,4 @@ export default class AddComment extends Component {
     );
   }
 }
+

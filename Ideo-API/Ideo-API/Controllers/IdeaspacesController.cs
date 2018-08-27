@@ -46,8 +46,17 @@ namespace Ideo_API.Controllers
             Ideaspace ideaspace = dbc.Ideaspace.Where(i => i.Name == name).FirstOrDefault(); ;
             if (ideaspace != null)
             {
-
-                return Ok(ideaspace);
+                byte[] passwordHash = Hash(password, Convert.FromBase64String(ideaspace.PasswordSalt));
+                var pol = Encoding.UTF8.GetBytes(ideaspace.Password);
+                bool correct = Convert.FromBase64String(ideaspace.Password).SequenceEqual(passwordHash);
+                if (correct)
+                {
+                    return Ok(ideaspace);
+                }
+                else
+                {
+                   return Unauthorized();
+                }
             }
             else
                 return NotFound();
@@ -83,19 +92,19 @@ namespace Ideo_API.Controllers
         //}
         [HttpPost]
         [ProducesResponseType(201)]
-        public ActionResult<Ideaspace> PostIdeaSpace(string name, string password, string description)
+        public ActionResult<Ideaspace> PostIdeaSpace(Ideaspace ideaspace)
         {
-            Ideaspace ideaspace = new Ideaspace { Name = name, Password = password, Description = description };
-
+            //Ideaspace ideaspace = new Ideaspace { Name = name, Password = password, Description = description };
+            var q = dbc.Ideaspace.Where(i => i.Name == ideaspace.Name).FirstOrDefault();
+            if (q!= null)
+            {
+                return Unauthorized();
+            }
             if (!ModelState.IsValid)
             {
                 return BadRequest(ModelState);
             }
-            Ideaspace unique = dbc.Ideaspace.Where(i => i.Name == ideaspace.Name).FirstOrDefault();
-            if (unique != null)
-            {
-                throw new ArgumentException("Ideaspace already exists!");
-            }
+            
             byte[] salt = new byte[16];
 
             ideaspace.Password = Convert.ToBase64String(Hash(ideaspace.Password, salt));
