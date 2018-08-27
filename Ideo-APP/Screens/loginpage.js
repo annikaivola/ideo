@@ -90,7 +90,7 @@ export default class Loginpage extends Component {
       </View>
         <View style={styles.buttonContainer}>
           <Button
-            onPress={() => this.props.navigation.navigate("Ideafeed")}
+            onPress={() => this.props.navigation.navigate("Description")}
             title="Log in"
             color="#1ac5c3"
           />

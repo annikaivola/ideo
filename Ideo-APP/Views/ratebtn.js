@@ -13,7 +13,7 @@ export default class RateBtn extends Component {
       <View style={styles.ratebtndiv}>
         <TouchableOpacity onPress={this._onPressButton}>
           <Image
-            style={{ height: 50, width: 50 }}
+            style={{ height: 50, width: 50, marginRight: '4%'}}
             source={require("../Assets/images/plus.png")}
           />
         </TouchableOpacity>

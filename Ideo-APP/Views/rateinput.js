@@ -13,7 +13,7 @@ export default class IdeaInput extends Component {
         // <View>
         <View style={styles.commentDiv}>
         <Image
-            style={{ height: 30, width: 30, alignSelf: 'flex-start'}}
+            style={{ height: 30, width: 30, alignSelf: 'center', justifyContent: 'center'}}
             source={require("../Assets/images/plus.png")}/>
 
         <TextInput
