@@ -83,6 +83,12 @@ export const styles = StyleSheet.create({
     marginBottom: 5,
     marginTop: 5
   },
+  commentdiv: {
+    flexDirection: "row",
+    alignItems: "center",
+    justifyContent: "center"
+
+  },
   ratebtndiv: {
     flexDirection: "row",
     alignItems: "center",
@@ -90,10 +96,16 @@ export const styles = StyleSheet.create({
     // marginTop: 8
   },
   IdeaPostText: {
-    fontSize: 18,
+    fontSize: 20,
     paddingBottom: 5,
   },
-
+  CommentText: {
+    fontSize: 17,
+  },
+  commentInputText: {
+    alignSelf: "center",
+    justifyContent: "center",
+  },
   inputDiv: {
     flexDirection: "row",
     backgroundColor: "#fff",
@@ -116,11 +128,43 @@ export const styles = StyleSheet.create({
     paddingLeft: 80,
     paddingRight: 15, 
     paddingTop: 15,
-
+  },
+  commentPage: {
+    flex: 1,
+    backgroundColor: "#1ac5c3",
+    justifyContent: "center"
+  },
+  iconAndCommentDiv: {
+    flexDirection: "row",
+    alignItems: "center",
+    justifyContent: "center",
+  },
+  commentDiv: {
+    flexDirection: "row",
+    backgroundColor: "#fff",
+    alignItems: "center",
+    justifyContent: "center",
+    paddingTop: '5%',
+    paddingBottom: '5%',
+    borderWidth: 8,
+    borderRadius: 20,
+    borderColor: "#1ac5c3",
+  },
+  ideaAndComments: {
+    backgroundColor: "#fff",
+    borderWidth: 8,
+    borderRadius: 20,
+    borderColor: "#1ac5c3",
+    paddingBottom: 15,
+    paddingLeft: 15,
+    paddingRight: 15,
+    paddingTop: 15,
+    marginBottom: 5,
+    marginTop: 5
   },
   arrow: {
     height: 30,
     width: 30,
-    marginBottom: '30%'
+    // marginBottom: '20%',
   }
 });

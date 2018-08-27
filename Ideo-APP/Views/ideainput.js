@@ -16,7 +16,7 @@ export default class IdeaInput extends Component {
           multiline ={true}
           maxLength={100}
           placeholder="Write your idea here!"
-          placeholderTextColor="#000"
+          placeholderTextColor="#C0C0C0"
         />
     );
   }
