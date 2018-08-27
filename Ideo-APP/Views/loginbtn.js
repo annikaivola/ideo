@@ -3,7 +3,7 @@ import {View, Text, Button, StyleSheet} from 'react-native';
 import {StackNavigator} from 'react-navigation';
 import Loginpage from '../Screens/loginpage.js';
 import {styles} from '../Styles/styles.js'
-
+//Tää class ei oo käytössä
 export default class Loginbtn extends Component {
     render() {
       return (
