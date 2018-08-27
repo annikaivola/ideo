@@ -2,7 +2,7 @@ import IdeaPost from '../Views/ideapost';
 import RateBtn from '../Views/ratebtn';
 import RateInput from '../Views/rateinput';
 import React, { Component } from "react";
-import { View, Button, StyleSheet, Alert } from "react-native";
+import { View, Button, StyleSheet, Alert, Text } from "react-native";
 import { StackNavigator } from "react-navigation";
 import Ideafeed from './ideafeed';
 
@@ -11,9 +11,7 @@ export default class AddComment extends Component {
     render() {
         return (
             <View>
-                <IdeaPost />
-                <RateInput />
-                <RateBtn />
+<Text>HEll'</Text>
             </View>
         );
     }
