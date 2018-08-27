@@ -6,6 +6,9 @@ import RateBtn from "../Views/ratebtn.js";
 import Ideainput from './ideainput';
 
 export default class IdeaPost extends Component {
+  static navigationOptions={
+    header:null
+  }
   render() {
     return (
       <View style={styles.ideapost}>
