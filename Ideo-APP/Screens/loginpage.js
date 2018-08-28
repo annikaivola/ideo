@@ -38,17 +38,19 @@ export default class Loginpage extends Component {
       getIdeaspace(this.state.name, this.state.password).then( ideaspace => {
         //this.activateIdeaspace(ideaspace);
         this.setState({ activeIdeaspace: ideaspace });
-        Alert.alert('Login successful', Ideaspace.id);
+        Alert.alert('Login successful', deaspace);
+        this.props.navigation.navigate('Ideafeed')
       })
       .catch(err=> {
         console.log(err);
       })
   }
-  }
+}
+  
   loginn = (e) => {
     e.preventDefault();
     this.foundInDatabase();
-    this.props.navigation.navigate('Ideafeed')
+    //this.props.navigation.navigate('Ideafeed')
   }
 
   render() {
@@ -114,5 +116,5 @@ export default class Loginpage extends Component {
       </TouchableWithoutFeedback>
     );
   }
-}
+  }
 
