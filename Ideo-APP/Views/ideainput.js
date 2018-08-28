@@ -1,11 +1,8 @@
 import React, { Component } from "react";
-
 import { getIdeas, addNewIdea } from "./ServiceDesk.js";
-
 import { Alert, View, Button, TextInput, KeyboardAvoidingView, TouchableOpacity, Image } from "react-native";
 import { styles } from "../Styles/styles.js";
 import IdeaBtn from "../Views/ideabtn.js";
-
 
 export default class IdeaInput extends Component {
   state = {
@@ -17,6 +14,7 @@ export default class IdeaInput extends Component {
     this.addIdea = this.addIdea.bind(this);
     this.sendIdea = this.sendIdea.bind(this);
   }
+
   // componentWillReceiveProps(props) {
   //   this.setState({ activeIdeaspace: props.activeIdeaspace })
   // }
@@ -69,14 +67,16 @@ export default class IdeaInput extends Component {
             placeholder="Your idea:"
             placeholderTextColor="#C0C0C0"
 
-          />{""}
+          />
+          {""}
+
           <View>
             <TouchableOpacity>
               <Image
                 onPress={this.sendIdea}
                 style={styles.arrow}
                 source={require("../Assets/images/ideo_arrow.png")}
-                resizeMode='contain'
+                resizeMode="contain"
               />
             </TouchableOpacity>
           </View>

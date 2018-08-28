@@ -7,7 +7,6 @@ import {
   ScrollView,
   TouchableOpacity,
   FlatList,
-
   keyExtractor,
   Alert
 } from "react-native";
@@ -15,33 +14,28 @@ import IdeaPostList from "../Views/ideapostlist.js";
 import IdeaBtn from "../Views/ideabtn.js";
 import IdeaInput from "../Views/ideainput";
 import { styles } from "../Styles/styles.js";
-
-import Comment from './comment';
-import { activeIdeaspace } from '../Screens/loginpage';
+import Comment from "./comment";
+import { activeIdeaspace } from "../Screens/loginpage";
 //import IdeaPost from "../Views/ideapost.js";
 //import { runInThisContext } from "vm";
 import { getIdeas } from "../Views/ServiceDesk.js";
-
 import IdeaPost from "../Views/ideapost.js";
 
 var DismissKeyboard = require("dismissKeyboard");
 
 export default class IdeaFeed extends Component {
-
   constructor(props) {
     super(props);
     const { navigation } = this.props;
-    const activeIdeaspace = navigation.getParam('activeIdeaspace', '...')
-
+    const activeIdeaspace = navigation.getParam("activeIdeaspace", "...");
 
     this.state = {
       id: activeIdeaspace.ideaspaceId,
       isLoading: false,
       data: []
-
     }
-
   }
+  
   fetchData = async()=>{
     const response = await fetch("https://ideo-api.azurewebsites.net/api/ideas/getideasbyideaspaceid?ideaspaceid=" + this.state.id);
     const ideas = await response.json(); //ideas have array data
@@ -58,7 +52,6 @@ export default class IdeaFeed extends Component {
       ideaId={item.ideaId}
       idea={item.idea1}
       />
-
     </TouchableOpacity>
   );
 
@@ -68,8 +61,8 @@ export default class IdeaFeed extends Component {
     //     let ideas= this.state.ideaposts.map(function(ideadata) {
     // return (<IdeaPost ideaposts = {ideadata} key = {ideadata.IdeaId}/>);
     //     });
-
     // Alert.alert(' ', this.state.id)
+
     return (
       <TouchableWithoutFeedback
         onPress={() => {
@@ -80,7 +73,6 @@ export default class IdeaFeed extends Component {
           style={styles.feedi}
           containerStyle={{ alignItems: "center", justifyContent: "center" }}
         >
-
           {/* <ScrollView> */}
             <FlatList data={this.state.data} keyExtractor={this._keyExtractor} renderItem={this._renderItem} />
           {/* </ScrollView> */}
@@ -90,12 +82,10 @@ export default class IdeaFeed extends Component {
             enabled
             keyboardVerticalOffset={65}
           >
-
             <IdeaInput
               activeIdeaspace={this.state.id}
               // updateIdeas={this.updateIdeas}
               data={this.state.data} />
-
 
           </KeyboardAvoidingView>
         </View>

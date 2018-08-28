@@ -19,9 +19,10 @@ export const styles = StyleSheet.create({
     paddingBottom: 3,
     paddingLeft: 7,
     paddingRight: 7,
-    marginBottom: 5
+    marginBottom: 5,
+    marginTop: 5
   },
-    formi: {
+  formi: {
     alignItems: "center",
     justifyContent: "center",
     width: "90%",
@@ -29,7 +30,6 @@ export const styles = StyleSheet.create({
     paddingLeft: 15,
     paddingRight: 15,
     paddingTop: 15,
-    marginBottom: 10,
   },
   descriptionBox: {
     backgroundColor: "#fff",
