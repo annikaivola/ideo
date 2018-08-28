@@ -39,7 +39,27 @@ namespace Ideo_API.Controllers
         {
             return Ok(dbc.Ideaspace);
         }
-
+        //[HttpGet]
+        //public ActionResult<Ideaspace> GetIdeaspace(Ideaspace login)
+        //{
+        //    Ideaspace ideaspace = dbc.Ideaspace.Where(i => i.Name == login.Name).FirstOrDefault(); ;
+        //    if (ideaspace != null)
+        //    {
+        //        byte[] passwordHash = Hash(login.Password, Convert.FromBase64String(ideaspace.PasswordSalt));
+        //        var pol = Encoding.UTF8.GetBytes(ideaspace.Password);
+        //        bool correct = Convert.FromBase64String(ideaspace.Password).SequenceEqual(passwordHash);
+        //        if (correct)
+        //        {
+        //            return Ok(ideaspace);
+        //        }
+        //        else
+        //        {
+        //            return Unauthorized();
+        //        }
+        //    }
+        //    else
+        //        return NotFound();
+        
         [HttpGet]
         public ActionResult<Ideaspace> GetIdeaspace(string name, string password)
         {
@@ -55,7 +75,7 @@ namespace Ideo_API.Controllers
                 }
                 else
                 {
-                   return Unauthorized();
+                    return Unauthorized();
                 }
             }
             else

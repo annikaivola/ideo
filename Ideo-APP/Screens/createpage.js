@@ -95,8 +95,7 @@ export default class Createpage extends Component {
             width: "80%"
           }}
         />
-        {/* <FormValidationMessage style={styles.required}>This field is required</FormValidationMessage> */}
-
+  
         <FormInput
           placeholder="Password"
           placeholderTextColor="#1ac5c3"
@@ -118,7 +117,6 @@ export default class Createpage extends Component {
             width: "80%"
           }}
         />
-        {/* <FormValidationMessage>This field is required</FormValidationMessage> */}
 
         <FormInput
           placeholder="What do you need ideas on? Describe."
@@ -145,7 +143,7 @@ export default class Createpage extends Component {
             width: "80%"
           }}
         />
-        {/* <FormValidationMessage style={styles.required}>This field is required</FormValidationMessage> */}
+
         <FormInput
           placeholder="Email (optional)"
           placeholderTextColor="#1ac5c3"
@@ -156,7 +154,7 @@ export default class Createpage extends Component {
             backgroundColor: "#fff",
             borderRadius: 10,
             borderColor: "#fff",
-            marginBottom: 5,
+            marginBottom: 15,
             width: "80%"
           }}
           inputStyle={{
