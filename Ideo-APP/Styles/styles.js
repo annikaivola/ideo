@@ -49,7 +49,7 @@ export const styles = StyleSheet.create({
 
   },
   inputStyle: {
-    fontFamily: "Avenir-Medium",
+    //fontFamily: "Avenir-Medium",
     color: "#fff",
   },
 
@@ -60,15 +60,16 @@ export const styles = StyleSheet.create({
     justifyContent: "center"
   },
   heading2: {
-    fontFamily: 'Avenir-Medium',
-    fontSize: 26,
+
+    //fontFamily: 'Avenir-Medium',
+    fontSize: 25,
     color: '#fff',
     alignItems: "center",
     justifyContent: "center",
     marginBottom: 5
   },
   heading1: {
-    fontFamily: 'Avenir-Medium',
+    //fontFamily: 'Avenir-Medium',
     fontSize: 40,
     color: '#fff',
     alignItems: "center",
