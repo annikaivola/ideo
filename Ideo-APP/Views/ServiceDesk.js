@@ -57,25 +57,28 @@ export function getAllIdeaSpaces(callback) {
       callback(response.status);
     });
   }
-  export function getIdeaspace(name, password, callback) {
-    fetch( Url + "api/ideaspaces/getideaspace" + name + "/" + password)
+  export function getIdeaspace(name, password) {
+    return fetch( url + "api/ideaspaces/getideaspace?name=" + name + "&password=" + password)
     .then(function (response) {
-      if (!response.ok) {
+      if (response === 401) {
+        Alert.alert('', 'Login failed')
+      }
+      else if (!response.ok) {
         const errormsg = {
           status: response.status,
           statusText: response.statusText,
           msg: "Ideaspacehaku"
         };
-        throw errmsg;
+        throw errormsg;
       }
       return response.json();
     })
     .then(function (ideaspace) {
-      callback(ideaspace);
+      return ideaspace;
     });
   }
   export function addComment(idea, callback){ 
-    fetch( Url + "api/ideas/" + idea.IdeaId,{
+    fetch( url + "api/ideas/" + idea.IdeaId,{
       method: 'PUT', // vai POST? put metodia ei vielä apissa
       headers: {'Content-Type': 'application/json'},
       body: JSON.stringify(idea)
