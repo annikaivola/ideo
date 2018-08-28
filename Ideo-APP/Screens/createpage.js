@@ -75,7 +75,6 @@ export default class Createpage extends Component {
   };
 
   render() {
->>>>>>> master
     return (
       <TouchableWithoutFeedback
         onPress={() => {
