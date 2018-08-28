@@ -1,7 +1,16 @@
 import React, { Component } from "react";
 import Logininput from "../Views/logininput.js";
 import Loginbtn from "../Views/loginbtn.js";
-import { View, KeyboardAvoidingView, Text, TouchableWithoutFeedback, StyleSheet, TextInput, Button, Alert } from "react-native";
+import {
+  View,
+  KeyboardAvoidingView,
+  Text,
+  TouchableWithoutFeedback,
+  StyleSheet,
+  TextInput,
+  Button,
+  Alert
+} from "react-native";
 import { StackNavigator } from "react-navigation";
 import { styles } from "../Styles/styles";
 import { getIdeaspace } from "../Views/ServiceDesk.js";
@@ -11,54 +20,66 @@ import {
   FormValidationMessage
 } from "react-native-elements";
 
-var DismissKeyboard = require('dismissKeyboard');
+var DismissKeyboard = require("dismissKeyboard");
 
 export default class Loginpage extends Component {
   constructor(props) {
     super(props);
-    this.state = { name: "", password: "", activeIdeaspace: null};
+    this.state = { name: "", password: "", activeIdeaspace: null };
   }
 
-  activateIdeaspace = (ideaspace) => this.setState({ activeIdeaspace: ideaspace });
+  activateIdeaspace = ideaspace =>
+    this.setState({ activeIdeaspace: ideaspace });
 
-  nameChanged = (e) => {
-    this.setState({ name: e.target.value })
-  }
-  passwordChanged = (e) => {
-    this.setState({ password: e.target.value })
-  }
+  nameChanged = e => {
+    this.setState({ name: e.target.value });
+  };
+  passwordChanged = e => {
+    this.setState({ password: e.target.value });
+  };
 
   foundInDatabase = () => {
-    if (this.state.name === '') {
-      Alert.alert('', 'Ideaspace name is a required field')
-    }
-    else if (this.state.password === '') {
-      Alert.alert('', 'Password is a required field')
+    if (this.state.name === "") {
+      Alert.alert("", "Ideaspace name is a required field");
+    } else if (this.state.password === "") {
+      Alert.alert("", "Password is a required field");
     } else {
-      getIdeaspace(this.state.name, this.state.password).then( ideaspace => {
-        //this.activateIdeaspace(ideaspace);
-        this.setState({ activeIdeaspace: ideaspace });
-        //Alert.alert('Login successful', ideaspace);
-        this.props.navigation.navigate('Ideafeed', {activeIdeaspace: ideaspace})
-      })
-      .catch(err=> {
-        console.log(err);
-      })
-  }
-}
-  
-  loginn = (e) => {
+      getIdeaspace(this.state.name, this.state.password)
+        .then(ideaspace => {
+          //this.activateIdeaspace(ideaspace);
+          this.setState({ activeIdeaspace: ideaspace });
+          //Alert.alert('Login successful', ideaspace);
+          this.props.navigation.navigate("Ideafeed", {
+            activeIdeaspace: ideaspace
+          });
+        })
+        .catch(err => {
+          console.log(err);
+        });
+    }
+  };
+
+  loginn = e => {
     e.preventDefault();
     this.foundInDatabase();
     //this.props.navigation.navigate('Ideafeed')
-  }
+  };
 
   render() {
     return (
-      <TouchableWithoutFeedback onPress={() => { DismissKeyboard() }}>
-        <KeyboardAvoidingView style={styles.container}>
+      <TouchableWithoutFeedback
+        onPress={() => {
+          DismissKeyboard();
+        }}
+      >
+        <View style={styles.container}>
           <Text style={styles.heading2}> Log in to an Ideaspace. </Text>
-          <View style={styles.formi}>
+          <KeyboardAvoidingView
+            style={styles.formi}
+            behavior="padding"
+            enabled
+            keyboardVerticalOffset={140}
+            >
             <FormInput
               placeholder="Ideaspace name"
               placeholderTextColor="#1ac5c3"
@@ -81,8 +102,6 @@ export default class Loginpage extends Component {
                 width: "80%"
               }}
             />
-
-
             <FormInput
               placeholder="Password"
               placeholderTextColor="#1ac5c3"
@@ -104,19 +123,12 @@ export default class Loginpage extends Component {
                 width: "80%"
               }}
             />
-          </View>
-          <View style={styles.buttonContainer}>
-            <Button
-              onPress={this.loginn
-              }
-              title="Log in"
-              color="#1ac5c3"
-            />
-          </View>
-        </KeyboardAvoidingView>
-
+            <View style={styles.buttonContainer}>
+              <Button onPress={this.loginn} title="Log in" color="#1ac5c3" />
+            </View>
+          </KeyboardAvoidingView>
+        </View>
       </TouchableWithoutFeedback>
     );
   }
-  }
-
+}
