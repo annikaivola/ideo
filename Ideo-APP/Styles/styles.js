@@ -47,12 +47,6 @@ export const styles = StyleSheet.create({
     color: "#1ac5c3",
     fontSize: 20,
 
-    // width: '65%',
-    // paddingBottom: '6%',
-    // paddingTop: '6%',
-    // paddingLeft: '6%',
-    // paddingRight: '6%',
-
   },
   inputStyle: {
     fontFamily: "Avenir-Medium",
@@ -64,11 +58,6 @@ export const styles = StyleSheet.create({
     backgroundColor: "#1ac5c3",
     alignItems: "center",
     justifyContent: "center"
-  },
-  logo: {
-    //fontFamily: 'Avenir-Medium',
-    fontSize: 100,
-    color: "#fff"
   },
   heading2: {
     fontFamily: 'Avenir-Medium',
@@ -101,7 +90,7 @@ export const styles = StyleSheet.create({
     marginBottom: 5,
     marginTop: 5
   },
-  commentdiv: {
+  commentDiv: {
     flexDirection: "row",
     alignItems: "center",
     justifyContent: "center"
@@ -127,25 +116,25 @@ export const styles = StyleSheet.create({
     width: '70%',
     paddingLeft: '5%'
   },
-  inputDiv: {
-    flexDirection: "row",
-    backgroundColor: "#fff",
-    borderWidth: 4,
-    borderRadius: 15,
-    borderColor: "#1ac5c3",
-    height: '10%',
-    alignItems: "center",
-    justifyContent: "flex-end"
-  },
+  // inputDiv: {
+  //   flexDirection: "row",
+  //   backgroundColor: "#fff",
+  //   borderWidth: 4,
+  //   borderRadius: 15,
+  //   borderColor: "#1ac5c3",
+  //   height: '10%',
+  //   alignItems: "center",
+  //   justifyContent: "flex-end"
+  // },
   ideaInputText: {
     color: "#000",
+    width: "80%",
     fontSize: 18,
     alignSelf: "flex-start",
     justifyContent: "center",
     paddingBottom: '3%',
-    paddingLeft: 80,
+    paddingLeft: 15,
     paddingRight: 15, 
- 
   },
   ideaInputandButton: {
     flexDirection: "row",
@@ -166,7 +155,7 @@ export const styles = StyleSheet.create({
     alignItems: "center",
     justifyContent: "center",
     paddingTop: '2%',
-    paddingBottom: '15%',
+    paddingBottom: '10%',
     borderWidth: 8,
     borderRadius: 20,
     borderColor: "#1ac5c3",
