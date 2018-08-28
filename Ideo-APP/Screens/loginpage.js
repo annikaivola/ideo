@@ -82,6 +82,7 @@ export default class Loginpage extends Component {
               }}
             />
 
+
             <FormInput
               placeholder="Password"
               placeholderTextColor="#1ac5c3"
@@ -113,6 +114,7 @@ export default class Loginpage extends Component {
             />
           </View>
         </KeyboardAvoidingView>
+
       </TouchableWithoutFeedback>
     );
   }
