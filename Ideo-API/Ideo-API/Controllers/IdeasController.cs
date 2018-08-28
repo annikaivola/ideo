@@ -50,9 +50,9 @@ namespace Ideo_API.Controllers
         }
         // POST api/idea
         [HttpPost]
-        public ActionResult PostIdea(int ideaspace, string idea)
+        public ActionResult PostIdea(Idea idea)
         {
-            Idea createIdea = new Idea{ IdeaspaceId=ideaspace, Idea1 = idea, Time = DateTime.Now };
+            Idea createIdea = new Idea{ Time = DateTime.Now };
             if (!ModelState.IsValid)
             {
                 return BadRequest(ModelState);

@@ -20,9 +20,10 @@ export function getIdeas(id) {
     });
 }
 export function sortIdeaswithVoteCounter(votecounter, callback)
+{}
 
-{}export function addNewIdea (idea, callback) {
-    fetch(url + "api/ideas/", {
+export function addNewIdea (idea, callback) {
+    fetch(url + "api/ideas/postidea", {
         method: 'POST',
         headers: {'Content-Type': 'application/json'},
         body: JSON.stringify(idea)
