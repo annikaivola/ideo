@@ -36,7 +36,7 @@ export default class AddComment extends Component {
           <KeyboardAvoidingView
             behavior="padding"
             enabled
-            keyboardVerticalOffset={130}
+            keyboardVerticalOffset={170}
           >
             <RateInput />
           </KeyboardAvoidingView>

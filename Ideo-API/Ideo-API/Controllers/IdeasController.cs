@@ -45,13 +45,8 @@ namespace Ideo_API.Controllers
             Ideaspace ids = dbc.Ideaspace.Find(ideaspaceId);
             if (ids == null)
                 return NotFound();
-            List<Idea> ideasById = new List<Idea>();
-            var ideaquery = dbc.Idea.Where(i => i.IdeaspaceId == ideaspaceId);
-            foreach (var idea in ideaquery)
-            {
-                ideasById.Add(idea);
-            }
-            return Ok(ideasById.ToList());
+            List<Idea> ideasById = dbc.Idea.Where(i => i.IdeaspaceId == ideaspaceId).ToList<Idea>();
+            return Ok(ideasById);
         }
         // POST api/idea
         [HttpPost]

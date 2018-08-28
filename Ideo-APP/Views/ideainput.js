@@ -1,7 +1,11 @@
 import React, { Component } from "react";
-import { View, Button, TextInput, TouchableOpacity, Image} from "react-native";
-import { styles } from "../Styles/styles.js";
+
 import { getIdeas, addNewIdea } from "./ServiceDesk.js";
+
+import { View, Button, TextInput, KeyboardAvoidingView} from "react-native";
+import { styles } from "../Styles/styles.js";
+import IdeaBtn from "../Views/ideabtn.js";
+
 
 export default class IdeaInput extends Component {
     state = { 
@@ -41,7 +45,11 @@ sendIdea = (e) => {
 
   render() {
     return (
-      <View>
+
+      <View  
+      style={styles.commentDiv}>
+      <View style={styles.ideaInputandButton}>
+
         <TextInput
           style={styles.ideaInputText}
           onChangeText={(idea) => this.setState({ idea })}
@@ -50,6 +58,7 @@ sendIdea = (e) => {
           maxLength={100}
           placeholder="Your idea:"
           placeholderTextColor="#C0C0C0"
+
         />{""}
         <View>
         <TouchableOpacity>
@@ -62,6 +71,7 @@ sendIdea = (e) => {
         </TouchableOpacity>
         </View>
         </View>
+
     );
   }
 }
