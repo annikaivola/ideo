@@ -1,7 +1,7 @@
 const url = "https://ideo-api.azurewebsites.net/";
 
-export function getIdeas(callback) {
-  fetch(url + "api/ideas")
+export function getIdeas(id) {
+  return fetch(url + "api/ideas/getideasbyideaspaceid?ideaspaceid=" + id)
     .then(function(response) {
       if (!response.ok) {
         const errormsg = {
@@ -14,7 +14,7 @@ export function getIdeas(callback) {
       return response.json();
     })
     .then(function(list) {
-      callback(list);
+      return list;
     });
 }
 export function sortIdeaswithVoteCounter(votecounter, callback)

@@ -38,8 +38,8 @@ export default class Loginpage extends Component {
       getIdeaspace(this.state.name, this.state.password).then( ideaspace => {
         //this.activateIdeaspace(ideaspace);
         this.setState({ activeIdeaspace: ideaspace });
-        Alert.alert('Login successful', deaspace);
-        this.props.navigation.navigate('Ideafeed')
+        //Alert.alert('Login successful', ideaspace);
+        this.props.navigation.navigate('Ideafeed', {activeIdeaspace: ideaspace})
       })
       .catch(err=> {
         console.log(err);
