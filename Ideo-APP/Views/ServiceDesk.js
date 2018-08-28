@@ -1,7 +1,7 @@
 const url = "https://ideo-api.azurewebsites.net/";
 
 export function getIdeas(callback) {
-  fetch(url + "api/ideas")
+  fetch(url + "api/ideas/getideasbyideaspaceid?ideaspaceid=" + id)
     .then(function(response) {
       if (!response.ok) {
         const errormsg = {

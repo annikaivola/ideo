@@ -61,14 +61,12 @@ export default class IdeaFeed extends Component {
               renderItem={this._renderItem}
             />
           </ScrollView>
-          {/* <IdeaPostList /> */}
           <KeyboardAvoidingView
-            style={styles.inputDiv}
             behavior="padding"
             enabled
-            // keyboardVerticalOffset={30}
+            keyboardVerticalOffset={65}
           >
-            <IdeaInput />
+          <IdeaInput />
           </KeyboardAvoidingView>
         </View>
       </TouchableWithoutFeedback>

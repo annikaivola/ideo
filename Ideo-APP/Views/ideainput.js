@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import { View, Button, TextInput } from "react-native";
+import { View, Button, TextInput, KeyboardAvoidingView} from "react-native";
 import { styles } from "../Styles/styles.js";
 import IdeaBtn from "../Views/ideabtn.js";
 
@@ -10,6 +10,8 @@ export default class IdeaInput extends Component {
   }
   render() {
     return (
+      <View  
+      style={styles.commentDiv}>
       <View style={styles.ideaInputandButton}>
         <TextInput
           style={styles.ideaInputText}
@@ -22,6 +24,8 @@ export default class IdeaInput extends Component {
         />
          <IdeaBtn />
          </View>
+         </View>
+          
     );
   }
 }
