@@ -20,7 +20,7 @@ import Comment from "./comment";
 import { activeIdeaspace } from "../Screens/loginpage";
 //import IdeaPost from "../Views/ideapost.js";
 //import { runInThisContext } from "vm";
-import { addNewIdea } from "../app/services/ServiceDesk.js";
+import { addNewIdea } from "../Views/ServiceDesk.js";
 import IdeaPost from "../Views/ideapost.js";
 
 var DismissKeyboard = require("dismissKeyboard");

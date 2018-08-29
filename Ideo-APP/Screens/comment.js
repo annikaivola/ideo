@@ -20,7 +20,7 @@ import Ideafeed from "./ideafeed";
 import Commentpost from "../Views/commentpost";
 import { styles } from "../Styles/styles";
 import IdeaBtn from "../Views/ideabtn";
-import { addNewComment } from "../app/services/ServiceDesk";
+import { addNewComment } from "../Views/ServiceDesk";
 import IdeaToComment from "../Views/ideapost2";
 
 var DismissKeyboard = require("dismissKeyboard");
