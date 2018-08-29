@@ -8,7 +8,9 @@ import {
   TouchableOpacity,
   FlatList,
   keyExtractor,
-  Alert
+  Alert,
+  TextInput,
+  Image
 } from "react-native";
 import IdeaPostList from "../Views/ideapostlist.js";
 import IdeaBtn from "../Views/ideabtn.js";
@@ -18,7 +20,7 @@ import Comment from "./comment";
 import { activeIdeaspace } from "../Screens/loginpage";
 //import IdeaPost from "../Views/ideapost.js";
 //import { runInThisContext } from "vm";
-import { getIdeas } from "../Views/ServiceDesk.js";
+import { addNewIdea } from "../Views/ServiceDesk.js";
 import IdeaPost from "../Views/ideapost.js";
 
 var DismissKeyboard = require("dismissKeyboard");
@@ -28,29 +30,46 @@ export default class IdeaFeed extends Component {
     super(props);
     const { navigation } = this.props;
     const activeIdeaspace = navigation.getParam("activeIdeaspace", "...");
-
+    // this.changeProcon = this.changeProcon.bind(this);
     this.state = {
-      id: activeIdeaspace.ideaspaceId,
+      ideaspaceId: activeIdeaspace.ideaspaceId,
       isLoading: false,
-      data: []
+      data: [],
+      // activeProcon: null
     }
   }
-  
-  fetchData = async()=>{
-    const response = await fetch("https://ideo-api.azurewebsites.net/api/ideas/getideasbyideaspaceid?ideaspaceid=" + this.state.id);
+  // changeProcon = (procon) => {
+  //   this.setState({ activeProcon: procon });
+  //  console.log(activeProcon)
+  // }
+
+  fetchData = async () => {
+    const response = await fetch("https://ideo-api.azurewebsites.net/api/ideas/getideasbyideaspaceid?ideaspaceid=" + this.state.ideaspaceId);
     const ideas = await response.json(); //ideas have array data
-    this.setState({data:ideas}); //filled data with dynamic array
+    this.setState({ data: ideas }); //filled data with dynamic array
   }
 
-  componentDidMount(){
+  componentDidMount() {
     this.fetchData();
   }
+
+  addIdea = (state) => {
+    addNewIdea(state, function (response) {
+
+    }.bind(this));
+  }
+  sendIdea = (e) => {
+    e.preventDefault();
+    this.addIdea(this.state);
+    this.fetchData();
+    this.setState({ idea1: '' });
+  }
   _renderItem = ({ item }) => (
-    <TouchableOpacity onPress={() => this.props.navigation.navigate("Comment", {idea: item})}>
-      <IdeaPost 
-      id={item.ideaspaceId}
-      ideaId={item.ideaId}
-      idea={item.idea1}
+    <TouchableOpacity onPress={() => this.props.navigation.navigate("Comment", { idea: item})}>
+      <IdeaPost
+        id={item.ideaspaceId}
+        ideaId={item.ideaId}
+        idea={item.idea1}
       />
     </TouchableOpacity>
   );
@@ -74,7 +93,7 @@ export default class IdeaFeed extends Component {
           containerStyle={{ alignItems: "center", justifyContent: "center" }}
         >
           {/* <ScrollView> */}
-            <FlatList data={this.state.data} keyExtractor={this._keyExtractor} renderItem={this._renderItem} />
+          <FlatList data={this.state.data} keyExtractor={this._keyExtractor} renderItem={this._renderItem} />
           {/* </ScrollView> */}
 
           <KeyboardAvoidingView
@@ -82,10 +101,38 @@ export default class IdeaFeed extends Component {
             enabled
             keyboardVerticalOffset={65}
           >
-            <IdeaInput
+            <View
+              style={styles.commentDiv}>
+              <View style={styles.ideaInputandButton}>
+
+                <TextInput
+                  style={styles.ideaInputText}
+                  onChangeText={idea1 => this.setState({ idea1 })}
+                  value={this.state.idea1}
+                  multiline={true}
+                  maxLength={100}
+                  placeholder="Your idea:"
+                  placeholderTextColor="#C0C0C0"
+
+                />
+                {""}
+
+                <View>
+                  <TouchableOpacity onPress={this.sendIdea}>
+                    <Image
+
+                      style={styles.arrow}
+                      source={require("../Assets/images/ideo_arrow.png")}
+                      resizeMode="contain"
+                    />
+                  </TouchableOpacity>
+                </View>
+              </View>
+            </View>
+            {/* <IdeaInput
               activeIdeaspace={this.state.id}
               // updateIdeas={this.updateIdeas}
-              data={this.state.data} />
+              data={this.state.data} /> */}
 
           </KeyboardAvoidingView>
         </View>

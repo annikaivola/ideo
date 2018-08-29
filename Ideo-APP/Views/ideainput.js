@@ -3,11 +3,12 @@ import { getIdeas, addNewIdea } from "./ServiceDesk.js";
 import { Alert, View, Button, TextInput, KeyboardAvoidingView, TouchableOpacity, Image } from "react-native";
 import { styles } from "../Styles/styles.js";
 import IdeaBtn from "../Views/ideabtn.js";
-
+//tämä komponentti ei ole käytössä
 export default class IdeaInput extends Component {
   state = {
     // ideaspaceId: this.props.activeIdeaspace.ideaspaceId,
-    idea: " ",
+    idea1: " ",
+    ideaspaceId: this.props.activeIdeaspace
   };
   constructor(props) {
     super(props);
@@ -35,10 +36,10 @@ export default class IdeaInput extends Component {
   //     this.props.updateIdeas(list)
   //   }.bind(this));
   // }
-  ideaChanged = (e) => this.setState({idea: e.target.value});
+  ideaChanged = (e) => this.setState({idea1: e.target.value});
 
-  addIdea = (idea) => {
-    addNewIdea(idea, function (response) {
+  addIdea = (state) => {
+    addNewIdea(state, function (response) {
       if(!response.ok){
         Alert.alert("","Something went wrong, try again!"+response)
       }
@@ -48,7 +49,7 @@ export default class IdeaInput extends Component {
   sendIdea = (e) => {
     e.preventDefault();
     this.addIdea(this.state);
-    this.setState({ idea: '' });
+    this.setState({ idea1: '' });
   }
 
   render() {
@@ -60,8 +61,8 @@ export default class IdeaInput extends Component {
 
           <TextInput
             style={styles.ideaInputText}
-            onChangeText={(idea) => this.setState({ idea })}
-            value={this.state.idea}
+            onChangeText={idea => this.setState({ idea })}
+            value={this.state.idea1}
             multiline={true}
             maxLength={100}
             placeholder="Your idea:"
@@ -71,9 +72,9 @@ export default class IdeaInput extends Component {
           {""}
 
           <View>
-            <TouchableOpacity>
+            <TouchableOpacity onPress={this.sendIdea}>
               <Image
-                onPress={this.sendIdea}
+                
                 style={styles.arrow}
                 source={require("../Assets/images/ideo_arrow.png")}
                 resizeMode="contain"

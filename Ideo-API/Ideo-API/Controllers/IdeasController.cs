@@ -52,13 +52,12 @@ namespace Ideo_API.Controllers
         [HttpPost]
         public ActionResult PostIdea(Idea idea)
         {
-            Idea createIdea = new Idea{ Time = DateTime.Now };
             if (!ModelState.IsValid)
             {
                 return BadRequest(ModelState);
             }
-
-            dbc.Idea.Add(createIdea);
+            idea.Time = DateTime.Now;
+            dbc.Idea.Add(idea);
 
             dbc.SaveChanges();
 

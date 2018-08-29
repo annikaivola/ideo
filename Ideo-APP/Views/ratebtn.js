@@ -5,9 +5,11 @@ import { styles } from "../Styles/styles.js";
 
 export default class RateBtn extends Component {
   _onPressButton() {
-    Alert.alert("Plus vote");
+    Alert.alert("Plus vote","");
   }
-
+onPressPlus=()=>{
+  
+}
   render() {
     return (
       <View style={styles.ratebtndiv}>
