@@ -22,6 +22,7 @@ import Commentpost from "../Views/commentpost";
 import { styles } from "../Styles/styles";
 import IdeaBtn from "../Views/ideabtn";
 import { addNewComment } from "../Views/ServiceDesk";
+import IdeaToComment from "../Views/ideapost2";
 
 var DismissKeyboard = require("dismissKeyboard");
 
@@ -31,6 +32,7 @@ export default class AddComment extends Component {
     super(props);
     const { navigation } = this.props;
     const idea = navigation.getParam("idea", "...");
+    const procon = navigation.getParam("procon","...");
     // this.props.activeProcon=navigation.getParam('activeProcon','...');
     // changeProcon()=navigation.getParam('changeProcon','...');
     // this.props.procon=this.props.procon.bind(this);
@@ -41,7 +43,7 @@ export default class AddComment extends Component {
       _idea: idea.idea1,
       activeProcon: this.props.activeProcon,
       isLoading: false,
-      procon: 1
+      procon: procon
     };
   }
 
@@ -106,7 +108,7 @@ export default class AddComment extends Component {
       <ScrollView style={{backgroundColor: '#1ac5c3'}}>
         <View style={styles.commentPage}>
           <View style={styles.ideaAndComments}>
-            <IdeaPost2 idea={this.state._idea} />
+            <IdeaToComment idea={this.state._idea} />
             <View style={styles.ratebtndiv}>
               <TouchableOpacity onPress={()=>this.changeProcon(1)}>
                 <Image
