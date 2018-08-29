@@ -2,7 +2,7 @@ import React, { Component } from "react";
 
 import { getIdeas, addNewIdea } from "./ServiceDesk.js";
 
-import { View, Button, TextInput, KeyboardAvoidingView} from "react-native";
+import { View, Button, TextInput, KeyboardAvoidingView, TouchableOpacity, Image} from "react-native";
 import { styles } from "../Styles/styles.js";
 import IdeaBtn from "../Views/ideabtn.js";
 
@@ -46,7 +46,7 @@ sendIdea = (e) => {
   render() {
     return (
 
-      <View  
+      <View>  
       style={styles.commentDiv}>
       <View style={styles.ideaInputandButton}>
 
@@ -60,7 +60,7 @@ sendIdea = (e) => {
           placeholderTextColor="#C0C0C0"
 
         />{""}
-        <View>
+        
         <TouchableOpacity>
           <Image
             onPress={this.sendIdea}

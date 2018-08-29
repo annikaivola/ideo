@@ -1,14 +1,15 @@
 import React, { Component } from "react";
-import { View, Button, KeyboardAvoidingView, Keyboard, TouchableWithoutFeedback, StyleSheet, Text, Alert } from "react-native";
+import { View, Button, KeyboardAvoidingView, Keyboard, TouchableWithoutFeedback, StyleSheet, Text, Alert, Linking, TouchableOpacity } from "react-native";
 import Createbtn from "../Views/createbtn";
 import { StackNavigator } from "react-navigation";
 import ChooseCreate from '../Views/choosecreate';
 import { styles } from '../Styles/styles';
 import { FormLabel, FormInput, FormValidationMessage } from 'react-native-elements'
 import { addNewIdeaspace } from "../Views/ServiceDesk";
+import Communications from 'react-native-communications';
+
 
 var DismissKeyboard = require('dismissKeyboard');
-
 
 export default class Createpage extends Component {
   constructor(props) {
@@ -44,10 +45,12 @@ export default class Createpage extends Component {
         Alert.alert(" ","This Ideaspace name is already taken, please try something else")
         // this.props.navigation.navigate('Create')
       }
-
+      else if (this.state.email != '' ) {
+        Communications.email([this.state.email],null,null,'Ideo: Your Shared Ideaspace', 'Ideaspace name: '+ this.state.name + ', ' +'Password: '+ this.state.password + ', '+'Description: ' +this.state.description)
+      }
       else {
         Alert.alert(" ",'Ideaspace created')
-        this.props.navigation.navigate('Ideafeed')
+        // this.props.navigation.navigate('Ideafeed')
       }
     }.bind(this));
 
@@ -59,9 +62,12 @@ export default class Createpage extends Component {
       alert("This is a required field");
     }
   }
+
   createIdeaspace =(e) =>{
     e.preventDefault ();
     this.addIdeaspace(this.state);
+    // this.handleMail();
+
 
     
   }
@@ -71,7 +77,7 @@ export default class Createpage extends Component {
       <TouchableWithoutFeedback onPress={() => { DismissKeyboard() }}>
         <KeyboardAvoidingView style={styles.container} onPress={Keyboard.dismiss} behavior="padding" enabled>
           <Text style={styles.heading1}>Let's brainstorm! </Text>
-          <Text style={styles.heading2}> First create an Ideaspace. </Text>
+          <Text style={styles.heading2}> First, create an Ideaspace. </Text>
           <View style={styles.formi}>
         <FormInput
           placeholder="Ideaspace name"
@@ -145,7 +151,7 @@ export default class Createpage extends Component {
         />
 
         <FormInput
-          placeholder="Email (optional)"
+          placeholder="Share Ideaspace login info"
           placeholderTextColor="#1ac5c3"
           onChangeText={email => this.setState({ email })}
           value={this.state.email}
@@ -165,11 +171,12 @@ export default class Createpage extends Component {
             width: "80%"
           }}
         />
+
           <View style={styles.buttonContainer}>
             <Button
-              onPress={ this.createIdeaspace
-
+              onPress={this.createIdeaspace
               }
+              
               title="Create"
               color="#1ac5c3"
             />
