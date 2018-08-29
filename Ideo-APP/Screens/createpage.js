@@ -20,7 +20,7 @@ import {
   FormInput,
   FormValidationMessage
 } from "react-native-elements";
-import { addNewIdeaspace } from "../Views/ServiceDesk";
+import { addNewIdeaspace } from "../app/services/ServiceDesk";
 import Communications from 'react-native-communications';
 
 var DismissKeyboard = require("dismissKeyboard");

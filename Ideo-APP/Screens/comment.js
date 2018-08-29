@@ -1,4 +1,3 @@
-import IdeaToComment from "../Views/ideapost2";
 import RateBtn from "../Views/ratebtn";
 import RateInput from "../Views/rateinput";
 import React, { Component } from "react";
@@ -21,7 +20,7 @@ import Ideafeed from "./ideafeed";
 import Commentpost from "../Views/commentpost";
 import { styles } from "../Styles/styles";
 import IdeaBtn from "../Views/ideabtn";
-import { addNewComment } from "../Views/ServiceDesk";
+import { addNewComment } from "../app/services/ServiceDesk";
 import IdeaToComment from "../Views/ideapost2";
 
 var DismissKeyboard = require("dismissKeyboard");
@@ -32,10 +31,7 @@ export default class AddComment extends Component {
     super(props);
     const { navigation } = this.props;
     const idea = navigation.getParam("idea", "...");
-    const procon = navigation.getParam("procon","...");
-    // this.props.activeProcon=navigation.getParam('activeProcon','...');
-    // changeProcon()=navigation.getParam('changeProcon','...');
-    // this.props.procon=this.props.procon.bind(this);
+    const procon = navigation.getParam("procon", "...");
 
     this.state = {
       ideaId: idea.ideaId,
@@ -67,16 +63,16 @@ export default class AddComment extends Component {
 
   addComment = (state) => {
     addNewComment(state, function (response) {
-if(response>=200 && response<300){
-  this.fetchData();
-}
+      if (response >= 200 && response < 300) {
+        this.fetchData();
+      }
     }.bind(this));
   }
 
   sendComment = (e) => {
     e.preventDefault();
     this.addComment(this.state);
-     this.fetchData();
+    this.fetchData();
     this.setState({ comment1: "" });
   };
 
@@ -89,13 +85,13 @@ if(response>=200 && response<300){
     />
   );
 
-  plusorminus=()=>{
-    if(this.state.procon===1){
-     return true;
+  plusorminus = () => {
+    if (this.state.procon === 1) {
+      return true;
     }
-    else if(this.state.procon===-1){
+    else if (this.state.procon === -1) {
       return false;
-    }  
+    }
   }
   _keyExtractor = (item, index) => item.commentId.toString();
 
@@ -107,77 +103,77 @@ if(response>=200 && response<300){
           DismissKeyboard();
         }}
       >
-      <ScrollView style={{backgroundColor: '#1ac5c3'}}>
-        <View style={styles.commentPage}>
-          <View style={styles.ideaAndComments}>
-            <IdeaToComment idea={this.state._idea} />
-            <View style={styles.ratebtndiv}>
-              <TouchableOpacity onPress={()=>this.changeProcon(1)}>
-                <Image
-                  style={{ height: 60, width: 60, marginRight: "4%", marginBottom: '15%' }}
-                  source={require("../Assets/images/plus.png")}
-                />
-              </TouchableOpacity>
-              <TouchableOpacity onPress={()=>this.changeProcon(-1)}>
-                <Image
-                  style={{ height: 60, width: 60, marginBottom: '15%'}}
-                  source={require("../Assets/images/minus.png")}
-                />
-              </TouchableOpacity>
-            </View>
-            <FlatList
-              contentContainerStyle={{
-                alignItems: "flex-start",
-                justifyContent: "center",
-                marginLeft: '7%',
-                marginRight: '7%',
-                width:'80%'
-              }}
-              input
-              data={this.state.data}
-              keyExtractor={this._keyExtractor}
-              renderItem={this._renderItem}
-            />
-          </View>
-          <KeyboardAvoidingView
-            behavior="position"
-            enabled
-            // keyboardVerticalOffset={65}
-          >
-            <View style={styles.commentDiv}>
-              <Image
-                style={{
-                  height: 35,
-                  width: 35,
-                  alignSelf: "center",
-                  justifyContent: "center"
-                }}
-                source={this.plusorminus() ? require("..//Assets/images/plus.png") : require("..//Assets/images/minus.png")}
-              />
-
-              <TextInput
-                style={styles.commentInputText}
-                onChangeText={comment1 => this.setState({ comment1 })}
-                value={this.state.comment1}
-                multiline={true}
-                maxLength={100}
-                placeholder={this.plusorminus()? "What's good about this idea?" : "What's bad about this idea?"}
-                placeholderTextColor="#C0C0C0"
-              />
-              <View>
-                <TouchableOpacity onPress={this.sendComment}>
+        <ScrollView style={{ backgroundColor: '#1ac5c3' }}>
+          <View style={styles.commentPage}>
+            <View style={styles.ideaAndComments}>
+              <IdeaToComment idea={this.state._idea} />
+              <View style={styles.ratebtndiv}>
+                <TouchableOpacity onPress={() => this.changeProcon(1)}>
                   <Image
-                    style={styles.arrow}
-                    source={require("../Assets/images/ideo_arrow.png")}
-                    resizeMode="contain"
+                    style={{ height: 60, width: 60, marginRight: "4%", marginBottom: '15%' }}
+                    source={require("../Assets/images/plus.png")}
+                  />
+                </TouchableOpacity>
+                <TouchableOpacity onPress={() => this.changeProcon(-1)}>
+                  <Image
+                    style={{ height: 60, width: 60, marginBottom: '15%' }}
+                    source={require("../Assets/images/minus.png")}
                   />
                 </TouchableOpacity>
               </View>
-              {/* <IdeaBtn /> */}
+              <FlatList
+                contentContainerStyle={{
+                  alignItems: "flex-start",
+                  justifyContent: "center",
+                  marginLeft: '7%',
+                  marginRight: '7%',
+                  width: '80%'
+                }}
+                input
+                data={this.state.data}
+                keyExtractor={this._keyExtractor}
+                renderItem={this._renderItem}
+              />
             </View>
-            {/* <RateInput /> */}
-          </KeyboardAvoidingView>
-        </View>
+            <KeyboardAvoidingView
+              behavior="position"
+              enabled
+            // keyboardVerticalOffset={65}
+            >
+              <View style={styles.commentDiv}>
+                <Image
+                  style={{
+                    height: 35,
+                    width: 35,
+                    alignSelf: "center",
+                    justifyContent: "center"
+                  }}
+                  source={this.plusorminus() ? require("..//Assets/images/plus.png") : require("..//Assets/images/minus.png")}
+                />
+
+                <TextInput
+                  style={styles.commentInputText}
+                  onChangeText={comment1 => this.setState({ comment1 })}
+                  value={this.state.comment1}
+                  multiline={true}
+                  maxLength={100}
+                  placeholder={this.plusorminus() ? "What's good about this idea?" : "What's bad about this idea?"}
+                  placeholderTextColor="#C0C0C0"
+                />
+                <View>
+                  <TouchableOpacity onPress={this.sendComment}>
+                    <Image
+                      style={styles.arrow}
+                      source={require("../Assets/images/ideo_arrow.png")}
+                      resizeMode="contain"
+                    />
+                  </TouchableOpacity>
+                </View>
+                {/* <IdeaBtn /> */}
+              </View>
+              {/* <RateInput /> */}
+            </KeyboardAvoidingView>
+          </View>
         </ScrollView>
       </TouchableWithoutFeedback>
     );

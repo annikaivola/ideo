@@ -20,7 +20,7 @@ import Comment from "./comment";
 import { activeIdeaspace } from "../Screens/loginpage";
 //import IdeaPost from "../Views/ideapost.js";
 //import { runInThisContext } from "vm";
-import { addNewIdea } from "../Views/ServiceDesk.js";
+import { addNewIdea } from "../app/services/ServiceDesk.js";
 import IdeaPost from "../Views/ideapost.js";
 
 var DismissKeyboard = require("dismissKeyboard");
@@ -30,18 +30,12 @@ export default class IdeaFeed extends Component {
     super(props);
     const { navigation } = this.props;
     const activeIdeaspace = navigation.getParam("activeIdeaspace", "...");
-    // this.changeProcon = this.changeProcon.bind(this);
     this.state = {
       ideaspaceId: activeIdeaspace.ideaspaceId,
       isLoading: false,
       data: [],
-      // activeProcon: null
     }
   }
-  // changeProcon = (procon) => {
-  //   this.setState({ activeProcon: procon });
-  //  console.log(activeProcon)
-  // }
 
   fetchData = async () => {
     const response = await fetch("https://ideo-api.azurewebsites.net/api/ideas/getideasbyideaspaceid?ideaspaceid=" + this.state.ideaspaceId);
@@ -55,7 +49,7 @@ export default class IdeaFeed extends Component {
 
   addIdea = (state) => {
     addNewIdea(state, function (response) {
-      if(response>=200 && response<300){
+      if (response >= 200 && response < 300) {
         this.fetchData();
       }
     }.bind(this));
@@ -67,9 +61,9 @@ export default class IdeaFeed extends Component {
     this.setState({ idea1: '' });
   }
   _renderItem = ({ item }) => (
-    <TouchableOpacity onPress={() => this.props.navigation.navigate("Comment", { idea: item})}>
+    <TouchableOpacity onPress={() => this.props.navigation.navigate("Comment", { idea: item })}>
       <IdeaPost
-      item ={item}
+        item={item}
         id={item.ideaspaceId}
         ideaId={item.ideaId}
         idea={item.idea1}
@@ -80,11 +74,6 @@ export default class IdeaFeed extends Component {
   _keyExtractor = (item, index) => (item.ideaId.toString());
 
   render() {
-    //     let ideas= this.state.ideaposts.map(function(ideadata) {
-    // return (<IdeaPost ideaposts = {ideadata} key = {ideadata.IdeaId}/>);
-    //     });
-    // Alert.alert(' ', this.state.id)
-
     return (
       <TouchableWithoutFeedback
         onPress={() => {
@@ -95,10 +84,7 @@ export default class IdeaFeed extends Component {
           style={styles.feedi}
           containerStyle={{ alignItems: "center", justifyContent: "center" }}
         >
-          {/* <ScrollView> */}
           <FlatList data={this.state.data} keyExtractor={this._keyExtractor} renderItem={this._renderItem} />
-          {/* </ScrollView> */}
-
           <KeyboardAvoidingView
             behavior="padding"
             enabled
