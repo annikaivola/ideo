@@ -113,7 +113,8 @@ export default class Loginpage extends Component {
                 backgroundColor: "#fff",
                 borderRadius: 10,
                 borderColor: "#fff",
-                width: "80%"
+                width: "80%",
+                marginBottom: '15%'
               }}
               inputStyle={{
                 color: "#1ac5c3",

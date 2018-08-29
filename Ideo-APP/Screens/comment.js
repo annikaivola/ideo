@@ -1,4 +1,4 @@
-import IdeaPost2 from "../Views/ideapost";
+import IdeaToComment from "../Views/ideapost2";
 import RateBtn from "../Views/ratebtn";
 import RateInput from "../Views/rateinput";
 import React, { Component } from "react";
@@ -106,17 +106,17 @@ export default class AddComment extends Component {
       <ScrollView style={{backgroundColor: '#1ac5c3'}}>
         <View style={styles.commentPage}>
           <View style={styles.ideaAndComments}>
-            <IdeaPost2 idea={this.state._idea} />
+            <IdeaToComment idea={this.state._idea} />
             <View style={styles.ratebtndiv}>
               <TouchableOpacity onPress={()=>this.changeProcon(1)}>
                 <Image
-                  style={{ height: 50, width: 50, marginRight: "4%" }}
+                  style={{ height: 60, width: 60, marginRight: "4%", marginBottom: '15%' }}
                   source={require("../Assets/images/plus.png")}
                 />
               </TouchableOpacity>
               <TouchableOpacity onPress={()=>this.changeProcon(-1)}>
                 <Image
-                  style={{ height: 50, width: 50 }}
+                  style={{ height: 60, width: 60, marginBottom: '15%'}}
                   source={require("../Assets/images/minus.png")}
                 />
               </TouchableOpacity>
@@ -127,7 +127,7 @@ export default class AddComment extends Component {
                 justifyContent: "center",
                 marginLeft: '7%',
                 marginRight: '7%',
-                marginBottom: '2%'
+                width:'80%'
               }}
               input
               data={this.state.data}
@@ -143,8 +143,8 @@ export default class AddComment extends Component {
             <View style={styles.commentDiv}>
               <Image
                 style={{
-                  height: 30,
-                  width: 30,
+                  height: 35,
+                  width: 35,
                   alignSelf: "center",
                   justifyContent: "center"
                 }}

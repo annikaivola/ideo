@@ -4,7 +4,7 @@ import { styles } from "../Styles/styles.js";
 import RateBtn from "../Views/ratebtn.js";
 import Ideainput from "./ideainput";
 
-export default class IdeaPost2 extends Component {
+export default class IdeaToComment extends Component {
   static navigationOptions = {
     header: null
   };
@@ -14,7 +14,7 @@ export default class IdeaPost2 extends Component {
   render() {
     return (
       <View style={styles.ideapost2}>
-        <Text style={styles.IdeaPostText}>
+        <Text style={styles.IdeaPostText2}>
           {this.props.idea}
         </Text>
         {/* <View style={styles.ratebtndiv}> */}
