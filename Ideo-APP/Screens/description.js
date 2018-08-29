@@ -23,9 +23,10 @@ export default class Description extends Component {
 
       <View style={styles.container}>
       <Text style={styles.heading2}>Welcome to the Ideaspace</Text>
-      <Text style={styles.heading2}>@{this.state.name}</Text>
+      <Text style={styles.space}>@{this.state.name}</Text>
       <View style={styles.descriptionBox}>
-      <Text style={styles.description}>This Ideaspace is for: {this.state.description}</Text>
+      <Text style={styles.description}>This Ideaspace is for:</Text>
+      <Text style={styles.description2}>{this.state.description}</Text>
       </View>
       <View style={styles.buttonContainer}>
           <Button

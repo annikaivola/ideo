@@ -29,13 +29,13 @@ class IdeaPost extends Component {
         <View style={styles.ratebtndiv}>
           <TouchableOpacity onPress={()=>this.changeProcon(1)}>
           <Image
-            style={{ height: 50, width: 50, marginRight: '4%' }}
+            style={{ height: 50, width: 50, marginRight: '4%', marginTop: '4%'}}
             source={require("../Assets/images/plus.png")}
           />
           </TouchableOpacity>
           <TouchableOpacity onPress={()=>this.changeProcon(-1)}>
           <Image
-            style={{ height: 50, width: 50 }}
+            style={{ height: 50, width: 50, marginTop: '4%' }}
             source={require("../Assets/images/minus.png")}
           />
           </TouchableOpacity>

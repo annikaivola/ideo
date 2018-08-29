@@ -10,6 +10,7 @@ export const styles = StyleSheet.create({
   feedi: {
     flex: 1,
     backgroundColor: "#1ac5c3",
+
   },
   buttonContainer: {
     backgroundColor: "#fff",
@@ -41,11 +42,19 @@ export const styles = StyleSheet.create({
     alignItems: 'center',
     justifyContent: 'center',
     marginBottom: '15%',
-    marginTop: '15%'
+    marginTop: '15%',
+    opacity: 500
   },
   description: {
     color: "#1ac5c3",
-    fontSize: 20,
+    fontSize: 22,
+    marginTop: '5%',
+    marginBottom: '5%'
+  },
+  description2: {
+    color: "#000",
+    fontSize: 22,
+    marginBottom: '5%'
   },
   inputStyle: {
     //fontFamily: "Avenir-Medium",
@@ -58,15 +67,6 @@ export const styles = StyleSheet.create({
     alignItems: "center",
     justifyContent: "center"
   },
-  heading2: {
-
-    //fontFamily: 'Avenir-Medium',
-    fontSize: 25,
-    color: '#fff',
-    alignItems: "center",
-    justifyContent: "center",
-    marginBottom: 5
-  },
   heading1: {
     //fontFamily: 'Avenir-Medium',
     fontSize: 40,
@@ -75,6 +75,22 @@ export const styles = StyleSheet.create({
     justifyContent: "center",
     marginBottom: 10
   },
+  heading2: {
+    //fontFamily: 'Avenir-Medium',
+    fontSize: 25,
+    color: '#fff',
+    alignItems: "center",
+    justifyContent: "center",
+    marginBottom: 5
+  },
+  space: {
+    fontSize: 40,
+    color: '#fff',
+    alignItems: "center",
+    justifyContent: "center",
+    marginBottom: 5
+  },
+ 
   ideapost: {
     alignItems: "center",
     justifyContent: "center",
@@ -119,16 +135,21 @@ export const styles = StyleSheet.create({
     flexDirection: "row",
     alignItems: "center",
     justifyContent: "center",
-    // marginTop: 8
+    marginBottom: 10
   },
   IdeaPostText: {
     fontSize: 19,
     paddingBottom: 5,
     textAlign: 'center'
-
+  },
+  IdeaPostText2: {
+    fontSize: 26,
+    paddingBottom: 5,
+    textAlign: 'center',
   },
   CommentText: {
     fontSize: 17,
+    marginLeft: '3%'
   },
   commentInputText: {
     fontSize: 17,
@@ -161,12 +182,17 @@ export const styles = StyleSheet.create({
   commentPage: {
     flex: 1,
     backgroundColor: "#1ac5c3",
-    justifyContent: "center"
+    justifyContent: "center",
+    marginTop: '10%',
+    marginRight: '5%',
+    marginLeft: '5%',
   },
   iconAndCommentDiv: {
     flexDirection: "row",
-    alignItems: "center",
-    justifyContent: "center",
+    alignItems: "flex-start",
+    justifyContent: "flex-start",
+    width: '90%',
+    // marginBottom: '3%'
   },
   commentDiv: {
     flexDirection: "row",
