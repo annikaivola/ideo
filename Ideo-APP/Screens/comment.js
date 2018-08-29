@@ -67,14 +67,16 @@ export default class AddComment extends Component {
 
   addComment = (state) => {
     addNewComment(state, function (response) {
-
+if(response>=200 && response<300){
+  this.fetchData();
+}
     }.bind(this));
   }
 
   sendComment = (e) => {
     e.preventDefault();
     this.addComment(this.state);
-    this.fetchData();
+     this.fetchData();
     this.setState({ comment1: "" });
   };
 
