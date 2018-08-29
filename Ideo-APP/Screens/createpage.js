@@ -29,6 +29,7 @@ var DismissKeyboard = require("dismissKeyboard");
 export default class Createpage extends Component {
   constructor(props) {
     super(props);
+    // this.createIdeaspace=this.createIdeaspace.bind(this);
 
     this.state = { name: "", password: "", email: "", description: "" };
   }
@@ -66,15 +67,15 @@ export default class Createpage extends Component {
       }
       else {
         Alert.alert(" ",'Ideaspace created')
-        // this.props.navigation.navigate('Ideafeed')
+        this.props.navigation.navigate('Loginpage')
       }
     }.bind(this));
-
+  }
   createIdeaspace = e => {
     e.preventDefault();
     this.addIdeaspace(this.state);
   };
-  }
+  
 
   render() {
     return (
@@ -188,12 +189,9 @@ export default class Createpage extends Component {
 
           <View style={styles.buttonContainer}>
             <Button
-              onPress={this.createIdeaspace
-              }
-              
+              onPress={this.createIdeaspace}              
               title="Create"
               color="#1ac5c3"
-
               />
             </View>
           </KeyboardAvoidingView>
