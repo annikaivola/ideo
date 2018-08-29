@@ -1,6 +1,6 @@
 
 import React, { Component } from "react";
-import { TouchableOpacity, View, Text, Image, Button, StyleSheet } from "react-native";
+import { TouchableOpacity, View, Text, Image, Button, StyleSheet, Alert } from "react-native";
 import { styles } from "../Styles/styles.js";
 import RateBtn from "../Views/ratebtn.js";
 import Ideainput from './ideainput';
@@ -11,10 +11,10 @@ export default class IdeaPost extends Component {
   }
 
   plusorminus=()=>{
-    if(this.props.procon===1){
+    if(this.props.procon==1){
      return true;
     }
-    else if(this.props.procon===-1){
+    else if(this.props.procon==-1){
       return false;
     }  
   }
@@ -25,8 +25,8 @@ export default class IdeaPost extends Component {
       <View style={styles.iconAndCommentDiv}>
        <Image
             style={{ height: 30, width: 30 }}
-            source={this.plusorminus ? require("..//Assets/images/plus.png") : require("..//Assets/images/minus.png")}/>
-          <Text style={styles.CommentText}>{this.props.comment}</Text>
+            source={this.plusorminus() ? require("..//Assets/images/plus.png") : require("..//Assets/images/minus.png")}/>
+          <Text style={styles.CommentText}>{this.props.comment} {this.props.procon}</Text>
       </View>
       </View>
     );

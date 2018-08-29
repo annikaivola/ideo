@@ -57,7 +57,7 @@ export default class Createpage extends Component {
           // this.props.navigation.navigate('Create')
         } else {
           Alert.alert(" ", "Ideaspace created");
-          this.props.navigation.navigate("Ideafeed");
+          this.props.navigation.navigate("Loginpage");
         }
       }.bind(this)
     );
