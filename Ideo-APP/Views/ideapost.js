@@ -3,8 +3,9 @@ import { TouchableOpacity, View, Text, Button, StyleSheet, Image } from "react-n
 import { styles } from "../Styles/styles.js";
 import RateBtn from "../Views/ratebtn.js";
 import Ideainput from "./ideainput";
+import {withNavigation} from 'react-navigation';
 
-export default class IdeaPost extends Component {
+class IdeaPost extends Component {
   static navigationOptions = {
     header: null
   };
@@ -17,7 +18,7 @@ export default class IdeaPost extends Component {
   changeProcon = (vote)=>{
     this.state.procon = vote;
     console.log(this.state.procon)
-    // this.props.navigation.navigate("Comment", {idea:this.props.item})
+    this.props.navigation.navigate("Comment", {idea:this.props.item, procon: this.state.procon})
   }
   render() {
     return (
@@ -44,6 +45,7 @@ export default class IdeaPost extends Component {
     );
   }
 }
+export default withNavigation(IdeaPost);
 
 // import React, { Component } from "react";
 // import { TouchableOpacity, View, Text, Button, StyleSheet } from "react-native";

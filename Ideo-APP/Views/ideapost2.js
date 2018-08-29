@@ -4,7 +4,7 @@ import { styles } from "../Styles/styles.js";
 import RateBtn from "../Views/ratebtn.js";
 import Ideainput from "./ideainput";
 
-export default class IdeaPost2 extends Component {
+export default class IdeaToComment extends Component {
   static navigationOptions = {
     header: null
   };
