@@ -47,7 +47,7 @@ export default class AddComment extends Component {
   fetchData = async () => {
     const response = await fetch(
       "https://ideo-api.azurewebsites.net/api/Comments/GetCommentByIdeaId?id=" +
-        this.state.ideaId
+      this.state.ideaId
     );
     const comments = await response.json();
     this.setState({ data: comments });
@@ -57,24 +57,24 @@ export default class AddComment extends Component {
     this.fetchData();
   }
 
-  onPressPlus=()=>{
-    this.props.procon=1
+  changeProcon = (vote) => {
+    this.state.procon = vote;
+    console.log(this.state.procon)
   }
-  onPressMinus=()=>{
-    this.props.procon=-1
-  }
+
   addComment = (state) => {
     addNewComment(state, function (response) {
 
     }.bind(this));
   }
-  sendComment = (e) => {
 
+  sendComment = (e) => {
     e.preventDefault();
     this.addComment(this.state);
     this.fetchData();
     this.setState({ comment1: "" });
   };
+
   _renderItem = ({ item }) => (
     <Commentpost
       id={item.ideaId}
@@ -83,7 +83,15 @@ export default class AddComment extends Component {
       procon={item.procon}
     />
   );
-
+  
+  plusorminus=()=>{
+    if(this.state.procon===1){
+     return true;
+    }
+    else if(this.state.procon===-1){
+      return false;
+    }  
+  }
   _keyExtractor = (item, index) => item.commentId.toString();
 
   render() {
@@ -97,13 +105,13 @@ export default class AddComment extends Component {
           <View style={styles.ideaAndComments}>
             <IdeaPost idea={this.state._idea} />
             <View style={styles.ratebtndiv}>
-              <TouchableOpacity onPress={this.onPressPlus()}>
+              <TouchableOpacity onPress={()=>this.changeProcon(1)}>
                 <Image
                   style={{ height: 50, width: 50, marginRight: "4%" }}
                   source={require("../Assets/images/plus.png")}
                 />
               </TouchableOpacity>
-              <TouchableOpacity onPress={this.onPressMinus()}>
+              <TouchableOpacity onPress={()=>this.changeProcon(-1)}>
                 <Image
                   style={{ height: 50, width: 50 }}
                   source={require("../Assets/images/minus.png")}
@@ -133,7 +141,7 @@ export default class AddComment extends Component {
                   alignSelf: "center",
                   justifyContent: "center"
                 }}
-                source={require("../Assets/images/plus.png")}
+                source={this.plusorminus() ? require("..//Assets/images/plus.png") : require("..//Assets/images/minus.png")}
               />
 
               <TextInput
@@ -142,7 +150,7 @@ export default class AddComment extends Component {
                 value={this.state.comment1}
                 multiline={true}
                 maxLength={100}
-                placeholder="What's good about this idea?"
+                placeholder={this.plusorminus()? "What's good about this idea?" : "What's bad about this idea?"}
                 placeholderTextColor="#C0C0C0"
               />
               <View>
