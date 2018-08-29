@@ -45,20 +45,35 @@ namespace Ideo_API.Controllers
         }
         //POST api/comment
         [HttpPost]
-        public ActionResult PostComment(int idea, string comment, int plusmiinus)
-        {
-            Comment createComment = new Comment { IdeaId = idea, Comment1 = comment, Procon = plusmiinus};
+        public ActionResult PostComment(Comment comment)
+        {           
             if (!ModelState.IsValid)
             {
                 return BadRequest(ModelState);
             }
-            var vote = dbc.Idea.Where(i => i.IdeaId == idea).FirstOrDefault();
-            vote.Votecounter += plusmiinus;
-            dbc.Comment.Add(createComment);
+            var vote = dbc.Idea.Where(i => i.IdeaId == comment.IdeaId).FirstOrDefault();
+            vote.Votecounter += comment.Procon;
+            dbc.Comment.Add(comment);
             dbc.SaveChanges();
 
-            return Ok(createComment);
-        }
+            return Ok(comment);
+        } 
+        ////POST api/comment
+        //[HttpPost]
+        //public ActionResult PostComment(int idea, string comment, int plusmiinus)
+        //{
+        //    Comment createComment = new Comment { IdeaId = idea, Comment1 = comment, Procon = plusmiinus };
+        //    if (!ModelState.IsValid)
+        //    {
+        //        return BadRequest(ModelState);
+        //    }
+        //    var vote = dbc.Idea.Where(i => i.IdeaId == idea).FirstOrDefault();
+        //    vote.Votecounter += plusmiinus;
+        //    dbc.Comment.Add(createComment);
+        //    dbc.SaveChanges();
+
+        //    return Ok(createComment);
+        //}
 
     }
 }

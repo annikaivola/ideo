@@ -80,14 +80,25 @@ export function getAllIdeaSpaces(callback) {
       return ideaspace;
     });
   }
-  export function addComment(idea, callback){ 
-    fetch( url + "api/ideas/" + idea.IdeaId,{
-      method: 'PUT', // vai POST? put metodia ei vielä apissa
+
+  export function addNewComment(procon, comment, callback){
+    fetch( url + "api/comments/postcomment?procon="+procon,{
+      method: 'POST',
       headers: {'Content-Type': 'application/json'},
-      body: JSON.stringify(idea)
+      body: JSON.stringify(comment)
     })
     .then(function (response){
       callback(response.status);
     });
   }
+  // export function addComment(idea, callback){ 
+  //   fetch( url + "api/ideas/" + idea.IdeaId,{
+  //     method: 'PUT', // vai POST? put metodia ei vielä apissa
+  //     headers: {'Content-Type': 'application/json'},
+  //     body: JSON.stringify(idea)
+  //   })
+  //   .then(function (response){
+  //     callback(response.status);
+  //   });
+  // }
   
