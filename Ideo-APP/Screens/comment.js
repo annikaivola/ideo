@@ -60,8 +60,8 @@ export default class AddComment extends Component {
   onPressMinus=()=>{
     this.props.procon=-1
   }
-  addComment = (procon, state) => {
-    addNewComment(procon, state, function (response) {
+  addComment = (state) => {
+    addNewComment(state, function (response) {
 
     }.bind(this));
   }
