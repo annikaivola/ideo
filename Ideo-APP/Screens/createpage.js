@@ -63,19 +63,19 @@ export default class Createpage extends Component {
       }
       else if (this.state.email != '' ) {
         Communications.email([this.state.email],null,null,'Ideo: Your Shared Ideaspace', 'Ideaspace name: '+ this.state.name + ', ' +'Password: '+ this.state.password + ', '+'Description: ' +this.state.description)
+        this.props.navigation.navigate('Loginpage')
       }
       else {
         Alert.alert(" ",'Ideaspace created')
+        this.props.navigation.navigate('Loginpage')
         // this.props.navigation.navigate('Ideafeed')
       }
     }.bind(this));
-
-  createIdeaspace = e => {
+}
+createIdeaspace = e => {
     e.preventDefault();
     this.addIdeaspace(this.state);
   };
-
-
   render() {
     return (
       <TouchableWithoutFeedback
@@ -85,9 +85,11 @@ export default class Createpage extends Component {
       >
         <View style={styles.container} onPress={Keyboard.dismiss}>
           <Text style={styles.heading1}>Let's brainstorm! </Text>
-
           <Text style={styles.heading2}> First, create an Ideaspace. </Text>
-          <View style={styles.formi}>
+          <KeyboardAvoidingView style={styles.formi}
+          behavior = 'padding'
+          enabled
+          keyboardVerticalOffset ={150}>
         <FormInput
           placeholder="Ideaspace name"
           placeholderTextColor="#1ac5c3"
@@ -183,8 +185,7 @@ export default class Createpage extends Component {
 
           <View style={styles.buttonContainer}>
             <Button
-              onPress={this.createIdeaspace
-              }
+              onPress={this.createIdeaspace}
               
               title="Create"
               color="#1ac5c3"
@@ -194,6 +195,7 @@ export default class Createpage extends Component {
           </KeyboardAvoidingView>
         </View>
       </TouchableWithoutFeedback>
+      
     );
   }
 }
