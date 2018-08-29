@@ -115,7 +115,8 @@ export default class Createinput extends Component {
             borderRadius: 10,
             borderColor: "#fff",
             marginBottom: 5,
-            width: "80%"
+            width: "80%",
+            height: "20%"
           }}
           inputStyle={{
             color: "#1ac5c3",

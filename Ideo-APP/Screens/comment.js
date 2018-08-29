@@ -11,6 +11,7 @@ import {
   Alert,
   Text,
   FlatList,
+  ScrollView,
   Image,
   TextInput,
   TouchableOpacity
@@ -96,11 +97,13 @@ export default class AddComment extends Component {
 
   render() {
     return (
+
       <TouchableWithoutFeedback
         onPress={() => {
           DismissKeyboard();
         }}
       >
+      <ScrollView style={{backgroundColor: '#1ac5c3'}}>
         <View style={styles.commentPage}>
           <View style={styles.ideaAndComments}>
             <IdeaPost idea={this.state._idea} />
@@ -131,7 +134,7 @@ export default class AddComment extends Component {
           <KeyboardAvoidingView
             behavior="position"
             enabled
-            keyboardVerticalOffset={170}
+            // keyboardVerticalOffset={120}
           >
             <View style={styles.commentDiv}>
               <Image
@@ -167,6 +170,7 @@ export default class AddComment extends Component {
             {/* <RateInput /> */}
           </KeyboardAvoidingView>
         </View>
+        </ScrollView>
       </TouchableWithoutFeedback>
     );
   }
