@@ -29,6 +29,7 @@ var DismissKeyboard = require("dismissKeyboard");
 export default class Createpage extends Component {
   constructor(props) {
     super(props);
+    // this.createIdeaspace=this.createIdeaspace.bind(this);
 
     this.state = { name: "", password: "", email: "", description: "" };
   }
@@ -68,14 +69,15 @@ export default class Createpage extends Component {
       else {
         Alert.alert(" ",'Ideaspace created')
         this.props.navigation.navigate('Loginpage')
-        // this.props.navigation.navigate('Ideafeed')
       }
     }.bind(this));
-}
-createIdeaspace = e => {
+  }
+  createIdeaspace = e => {
     e.preventDefault();
     this.addIdeaspace(this.state);
   };
+  
+
   render() {
     return (
       <TouchableWithoutFeedback
@@ -86,10 +88,13 @@ createIdeaspace = e => {
         <View style={styles.container} onPress={Keyboard.dismiss}>
           <Text style={styles.heading1}>Let's brainstorm! </Text>
           <Text style={styles.heading2}> First, create an Ideaspace. </Text>
-          <KeyboardAvoidingView style={styles.formi}
-          behavior = 'padding'
-          enabled
-          keyboardVerticalOffset ={150}>
+          
+          <KeyboardAvoidingView 
+          style={styles.formi} 
+          behavior="padding" 
+          enabled 
+          keyboardVerticalOffset={150}>
+
         <FormInput
           placeholder="Ideaspace name"
           placeholderTextColor="#1ac5c3"
@@ -185,11 +190,10 @@ createIdeaspace = e => {
 
           <View style={styles.buttonContainer}>
             <Button
-              onPress={this.createIdeaspace}
-              
+              onPress={this.createIdeaspace}              
+
               title="Create"
               color="#1ac5c3"
-
               />
             </View>
           </KeyboardAvoidingView>
@@ -198,6 +202,7 @@ createIdeaspace = e => {
       
     );
   }
+
 }
 // import React, { Component } from "react";
 // import { View, Button, KeyboardAvoidingView, Keyboard, TouchableWithoutFeedback, StyleSheet, Text, Alert } from "react-native";

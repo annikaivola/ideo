@@ -81,6 +81,15 @@ namespace Ideo_API.Controllers
             else
                 return NotFound();
         }
+        
+        // GET api/ideaspace/getideaspacebyid
+        [HttpGet]
+        public ActionResult<Ideaspace> GetIdeaspaceById(int ideaspaceid)
+        {
+            Ideaspace ideaspace = dbc.Ideaspace.Where(i => i.IdeaspaceId == ideaspaceid).FirstOrDefault();
+
+            return Ok(ideaspace);
+        }
         // GET api/ideaspaces/:name/:password
         //[HttpGet]
         //public ActionResult GetIdeaspace(string name, string password)
