@@ -36,7 +36,7 @@ namespace Ideo_API.Controllers
                 return NotFound();
             }
             List<Comment> comments=new List<Comment>();
-            var q = dbc.Comment.Where(i => i.IdeaId == id);
+            var q = dbc.Comment.Where(i => i.IdeaId == id).OrderByDescending(i=>i.Procon);
             foreach (var a in q)
             {
                 comments.Add(a);
