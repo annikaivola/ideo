@@ -49,7 +49,7 @@ export default class Loginpage extends Component {
           //this.activateIdeaspace(ideaspace);
           this.setState({ activeIdeaspace: ideaspace });
           //Alert.alert('Login successful', ideaspace);
-          this.props.navigation.navigate("Ideafeed", {
+          this.props.navigation.navigate("Description", {
             activeIdeaspace: ideaspace
           });
         })
