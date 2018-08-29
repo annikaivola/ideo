@@ -55,7 +55,9 @@ export default class IdeaFeed extends Component {
 
   addIdea = (state) => {
     addNewIdea(state, function (response) {
-
+      if(response>=200 && response<300){
+        this.fetchData();
+      }
     }.bind(this));
   }
   sendIdea = (e) => {
