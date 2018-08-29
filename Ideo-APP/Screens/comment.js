@@ -56,16 +56,20 @@ export default class AddComment extends Component {
   componentDidMount() {
     this.fetchData();
   }
-  onPressPlus = () => {
-    this.props.procon = 1;
-  };
-  onPressMinus = () => {
-    this.props.procon = -1;
-  };
-  addComment = (procon, state) => {
-    addNewComment(procon, state, function(response) {}.bind(this));
-  };
-  sendComment = e => {
+
+  onPressPlus=()=>{
+    this.props.procon=1
+  }
+  onPressMinus=()=>{
+    this.props.procon=-1
+  }
+  addComment = (state) => {
+    addNewComment(state, function (response) {
+
+    }.bind(this));
+  }
+  sendComment = (e) => {
+
     e.preventDefault();
     this.addComment(this.state);
     this.fetchData();
