@@ -1,4 +1,4 @@
-import IdeaPost from "../Views/ideapost";
+import IdeaPost2 from "../Views/ideapost";
 import RateBtn from "../Views/ratebtn";
 import RateInput from "../Views/rateinput";
 import React, { Component } from "react";
@@ -84,7 +84,7 @@ export default class AddComment extends Component {
       procon={item.procon}
     />
   );
-  
+
   plusorminus=()=>{
     if(this.state.procon===1){
      return true;
@@ -106,7 +106,7 @@ export default class AddComment extends Component {
       <ScrollView style={{backgroundColor: '#1ac5c3'}}>
         <View style={styles.commentPage}>
           <View style={styles.ideaAndComments}>
-            <IdeaPost idea={this.state._idea} />
+            <IdeaPost2 idea={this.state._idea} />
             <View style={styles.ratebtndiv}>
               <TouchableOpacity onPress={()=>this.changeProcon(1)}>
                 <Image
@@ -124,8 +124,12 @@ export default class AddComment extends Component {
             <FlatList
               contentContainerStyle={{
                 alignItems: "flex-start",
-                justifyContent: "center"
+                justifyContent: "center",
+                marginLeft: '7%',
+                marginRight: '7%',
+                marginBottom: '2%'
               }}
+              input
               data={this.state.data}
               keyExtractor={this._keyExtractor}
               renderItem={this._renderItem}
@@ -134,7 +138,7 @@ export default class AddComment extends Component {
           <KeyboardAvoidingView
             behavior="position"
             enabled
-            // keyboardVerticalOffset={120}
+            // keyboardVerticalOffset={65}
           >
             <View style={styles.commentDiv}>
               <Image

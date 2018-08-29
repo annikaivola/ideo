@@ -90,6 +90,21 @@ export const styles = StyleSheet.create({
     marginBottom: 5,
     marginTop: 5
   },
+  ideapost2: {
+    alignItems: "center",
+    justifyContent: "center",
+    backgroundColor: "#fff",
+    borderWidth: 1,
+    borderRadius: 20,
+    borderColor: "#fff",
+    // width: "90%",
+    paddingBottom: 15,
+    paddingLeft: 15,
+    paddingRight: 15,
+    paddingTop: 15,
+    marginBottom: 5,
+    marginTop: 5
+  },
   commentDiv: {
     flexDirection: "row",
     alignItems: "center",
