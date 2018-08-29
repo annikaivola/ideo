@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import { getIdeas, addNewIdea } from "../app/services/ServiceDesk.js";
+import { getIdeas, addNewIdea } from "./ServiceDesk.js";
 import { Alert, View, Button, TextInput, KeyboardAvoidingView, TouchableOpacity, Image } from "react-native";
 import { styles } from "../Styles/styles.js";
 import IdeaBtn from "../Views/ideabtn.js";

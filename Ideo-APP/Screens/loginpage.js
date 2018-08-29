@@ -13,7 +13,7 @@ import {
 } from "react-native";
 import { StackNavigator } from "react-navigation";
 import { styles } from "../Styles/styles";
-import { getIdeaspace } from "../app/services/ServiceDesk.js";
+import { getIdeaspace } from "../Views/ServiceDesk.js";
 import {
   FormLabel,
   FormInput,
