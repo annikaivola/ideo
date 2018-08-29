@@ -81,8 +81,8 @@ export function getAllIdeaSpaces(callback) {
     });
   }
 
-  export function addNewComment(procon, comment, callback){
-    fetch( url + "api/comments/postcomment?procon="+procon,{
+  export function addNewComment(comment, callback){
+    fetch( url + "api/comments/postcomment",{
       method: 'POST',
       headers: {'Content-Type': 'application/json'},
       body: JSON.stringify(comment)
