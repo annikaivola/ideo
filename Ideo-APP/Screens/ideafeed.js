@@ -67,6 +67,7 @@ export default class IdeaFeed extends Component {
   _renderItem = ({ item }) => (
     <TouchableOpacity onPress={() => this.props.navigation.navigate("Comment", { idea: item})}>
       <IdeaPost
+      item ={item}
         id={item.ideaspaceId}
         ideaId={item.ideaId}
         idea={item.idea1}
