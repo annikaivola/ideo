@@ -74,7 +74,7 @@ export default class Createpage extends Component {
     e.preventDefault();
     this.addIdeaspace(this.state);
   };
-
+  }
 
   render() {
     return (
@@ -87,7 +87,12 @@ export default class Createpage extends Component {
           <Text style={styles.heading1}>Let's brainstorm! </Text>
 
           <Text style={styles.heading2}> First, create an Ideaspace. </Text>
-          <View style={styles.formi}>
+          
+          <KeyboardAvoidingView 
+          style={styles.formi} 
+          behavior="padding" 
+          enabled 
+          keyboardVerticalOffset={150}>
         <FormInput
           placeholder="Ideaspace name"
           placeholderTextColor="#1ac5c3"
@@ -196,6 +201,7 @@ export default class Createpage extends Component {
       </TouchableWithoutFeedback>
     );
   }
+
 }
 // import React, { Component } from "react";
 // import { View, Button, KeyboardAvoidingView, Keyboard, TouchableWithoutFeedback, StyleSheet, Text, Alert } from "react-native";
