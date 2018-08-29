@@ -46,7 +46,6 @@ export const styles = StyleSheet.create({
   description: {
     color: "#1ac5c3",
     fontSize: 20,
-
   },
   inputStyle: {
     //fontFamily: "Avenir-Medium",
@@ -93,6 +92,10 @@ export const styles = StyleSheet.create({
   },
   commentDiv: {
     flexDirection: "row",
+    alignItems: "center",
+    justifyContent: "center"
+  },
+  commentsList: {
     alignItems: "center",
     justifyContent: "center"
 

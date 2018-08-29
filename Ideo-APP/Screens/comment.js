@@ -29,7 +29,7 @@ export default class AddComment extends Component {
   constructor(props) {
     super(props);
     const { navigation } = this.props;
-    const idea = navigation.getParam('idea', '...');
+    const idea = navigation.getParam("idea", "...");
     // this.props.activeProcon=navigation.getParam('activeProcon','...');
     // changeProcon()=navigation.getParam('changeProcon','...');
     // this.props.procon=this.props.procon.bind(this);
@@ -41,19 +41,22 @@ export default class AddComment extends Component {
       activeProcon: this.props.activeProcon,
       isLoading: false,
       procon: 1
-    }
-
+    };
   }
 
   fetchData = async () => {
-    const response = await fetch("https://ideo-api.azurewebsites.net/api/Comments/GetCommentByIdeaId?id=" + this.state.ideaId);
+    const response = await fetch(
+      "https://ideo-api.azurewebsites.net/api/Comments/GetCommentByIdeaId?id=" +
+        this.state.ideaId
+    );
     const comments = await response.json();
     this.setState({ data: comments });
-  }
+  };
 
   componentDidMount() {
     this.fetchData();
   }
+
   onPressPlus=()=>{
     this.props.procon=1
   }
@@ -66,11 +69,12 @@ export default class AddComment extends Component {
     }.bind(this));
   }
   sendComment = (e) => {
+
     e.preventDefault();
     this.addComment(this.state);
     this.fetchData();
-    this.setState({ comment1: '' });
-  }
+    this.setState({ comment1: "" });
+  };
   _renderItem = ({ item }) => (
     <Commentpost
       id={item.ideaId}
@@ -80,7 +84,7 @@ export default class AddComment extends Component {
     />
   );
 
-  _keyExtractor = (item, index) => (item.commentId.toString());
+  _keyExtractor = (item, index) => item.commentId.toString();
 
   render() {
     return (
@@ -95,7 +99,7 @@ export default class AddComment extends Component {
             <View style={styles.ratebtndiv}>
               <TouchableOpacity onPress={this.onPressPlus()}>
                 <Image
-                  style={{ height: 50, width: 50, marginRight: '4%' }}
+                  style={{ height: 50, width: 50, marginRight: "4%" }}
                   source={require("../Assets/images/plus.png")}
                 />
               </TouchableOpacity>
@@ -106,17 +110,31 @@ export default class AddComment extends Component {
                 />
               </TouchableOpacity>
             </View>
-            <FlatList data={this.state.data} keyExtractor={this._keyExtractor} renderItem={this._renderItem} />
+            <FlatList
+              contentContainerStyle={{
+                alignItems: "flex-start",
+                justifyContent: "center"
+              }}
+              data={this.state.data}
+              keyExtractor={this._keyExtractor}
+              renderItem={this._renderItem}
+            />
           </View>
           <KeyboardAvoidingView
-            behavior="padding"
+            behavior="position"
             enabled
             keyboardVerticalOffset={170}
           >
             <View style={styles.commentDiv}>
               <Image
-                style={{ height: 30, width: 30, alignSelf: 'center', justifyContent: 'center' }}
-                source={require("../Assets/images/plus.png")} />
+                style={{
+                  height: 30,
+                  width: 30,
+                  alignSelf: "center",
+                  justifyContent: "center"
+                }}
+                source={require("../Assets/images/plus.png")}
+              />
 
               <TextInput
                 style={styles.commentInputText}
@@ -130,10 +148,9 @@ export default class AddComment extends Component {
               <View>
                 <TouchableOpacity onPress={this.sendComment}>
                   <Image
-
                     style={styles.arrow}
                     source={require("../Assets/images/ideo_arrow.png")}
-                    resizeMode='contain'
+                    resizeMode="contain"
                   />
                 </TouchableOpacity>
               </View>
@@ -146,8 +163,6 @@ export default class AddComment extends Component {
     );
   }
 }
-
-
 
 // import IdeaPost from "../Views/ideapost";
 // import RateBtn from "../Views/ratebtn";
@@ -196,4 +211,3 @@ export default class AddComment extends Component {
 //     );
 //   }
 // }
-
