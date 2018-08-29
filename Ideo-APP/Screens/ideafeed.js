@@ -7,101 +7,81 @@ import {
   ScrollView,
   TouchableOpacity,
   FlatList,
-
   keyExtractor,
-  Alert
+  Alert,
+  TextInput,
+  Image
 } from "react-native";
 import IdeaPostList from "../Views/ideapostlist.js";
 import IdeaBtn from "../Views/ideabtn.js";
 import IdeaInput from "../Views/ideainput";
 import { styles } from "../Styles/styles.js";
-
-import Comment from './comment';
-import { activeIdeaspace } from '../Screens/loginpage';
+import Comment from "./comment";
+import { activeIdeaspace } from "../Screens/loginpage";
 //import IdeaPost from "../Views/ideapost.js";
 //import { runInThisContext } from "vm";
-import { getIdeas } from "../Views/ServiceDesk.js";
-
+import { addNewIdea } from "../Views/ServiceDesk.js";
 import IdeaPost from "../Views/ideapost.js";
 
 var DismissKeyboard = require("dismissKeyboard");
 
 export default class IdeaFeed extends Component {
-
   constructor(props) {
     super(props);
     const { navigation } = this.props;
-    const activeIdeaspace = navigation.getParam('activeIdeaspace', '...')
-
-
+    const activeIdeaspace = navigation.getParam("activeIdeaspace", "...");
+    // this.changeProcon = this.changeProcon.bind(this);
     this.state = {
-      id: activeIdeaspace.ideaspaceId,
+      ideaspaceId: activeIdeaspace.ideaspaceId,
       isLoading: false,
-      ideaposts: [
-        {
-          id: 1,
-
-        },
-        {
-          id: 2,
-
-        },
-        {
-          id: 3,
-
-        }
-      ]
-
+      data: [],
+      // activeProcon: null
     }
-    this.componentDidMount = this.componentDidMount.bind(this);
-    // this.componentDidUpdate = this.componentDidUpdate.bind(this);
-    this.updateIdeas = this.updateIdeas.bind(this);
-    this.getAllIdeas = this.getAllIdeas.bind(this);
   }
-  componentDidMount() {
-    this.setState({
-      isLoading: true,
-
-
-    });
-    getIdeas(this.state.id).then( function (list) {
-      this.updateIdeas(list);
-    }.bind(this));
-  }
-  // componentDidUpdate (prevProps) {
-  // if ()
+  // changeProcon = (procon) => {
+  //   this.setState({ activeProcon: procon });
+  //  console.log(activeProcon)
   // }
-  getAllIdeas() {
-    this.setState({
-      isLoading: true,
 
-    })
-    getIdeas(function (list) {
-      this.updateIdeas(list);
+  fetchData = async () => {
+    const response = await fetch("https://ideo-api.azurewebsites.net/api/ideas/getideasbyideaspaceid?ideaspaceid=" + this.state.ideaspaceId);
+    const ideas = await response.json(); //ideas have array data
+    this.setState({ data: ideas }); //filled data with dynamic array
+  }
+
+  componentDidMount() {
+    this.fetchData();
+  }
+
+  addIdea = (state) => {
+    addNewIdea(state, function (response) {
+
     }.bind(this));
   }
-  updateIdeas(ideas) {
-    this.setState({
-      ideaposts: ideas,
-      isLoading: false
-    });
+  sendIdea = (e) => {
+    e.preventDefault();
+    this.addIdea(this.state);
+    this.fetchData();
+    this.setState({ idea1: '' });
   }
-
   _renderItem = ({ item }) => (
-    <TouchableOpacity onPress={() => this.props.navigation.navigate("Comment")}>
-      <IdeaPost />
-
+    <TouchableOpacity onPress={() => this.props.navigation.navigate("Comment", { idea: item})}>
+      <IdeaPost
+        id={item.ideaspaceId}
+        ideaId={item.ideaId}
+        idea={item.idea1}
+      />
     </TouchableOpacity>
   );
 
-  _keyExtractor = (item, index) => item.id.toString();
+  _keyExtractor = (item, index) => (item.ideaId.toString());
 
   render() {
     //     let ideas= this.state.ideaposts.map(function(ideadata) {
     // return (<IdeaPost ideaposts = {ideadata} key = {ideadata.IdeaId}/>);
     //     });
+    // Alert.alert(' ', this.state.id)
 
-    Alert.alert(' ', this.state.id)
     return (
       <TouchableWithoutFeedback
         onPress={() => {
@@ -112,22 +92,47 @@ export default class IdeaFeed extends Component {
           style={styles.feedi}
           containerStyle={{ alignItems: "center", justifyContent: "center" }}
         >
-
-          <ScrollView>
-            <FlatList data={this.state.ideaposts} keyExtractor={this._keyExtractor} renderItem={this._renderItem} />
-          </ScrollView>
+          {/* <ScrollView> */}
+          <FlatList data={this.state.data} keyExtractor={this._keyExtractor} renderItem={this._renderItem} />
+          {/* </ScrollView> */}
 
           <KeyboardAvoidingView
             behavior="padding"
             enabled
             keyboardVerticalOffset={65}
           >
+            <View
+              style={styles.commentDiv}>
+              <View style={styles.ideaInputandButton}>
 
-            <IdeaInput
-              activeIdeaspace={this.state.activeIdeaspace}
-              updateIdeas={this.updateIdeas}
-              ideaposts={this.state.ideaposts} />
+                <TextInput
+                  style={styles.ideaInputText}
+                  onChangeText={idea1 => this.setState({ idea1 })}
+                  value={this.state.idea1}
+                  multiline={true}
+                  maxLength={100}
+                  placeholder="Your idea:"
+                  placeholderTextColor="#C0C0C0"
 
+                />
+                {""}
+
+                <View>
+                  <TouchableOpacity onPress={this.sendIdea}>
+                    <Image
+
+                      style={styles.arrow}
+                      source={require("../Assets/images/ideo_arrow.png")}
+                      resizeMode="contain"
+                    />
+                  </TouchableOpacity>
+                </View>
+              </View>
+            </View>
+            {/* <IdeaInput
+              activeIdeaspace={this.state.id}
+              // updateIdeas={this.updateIdeas}
+              data={this.state.data} /> */}
 
           </KeyboardAvoidingView>
         </View>
@@ -135,3 +140,143 @@ export default class IdeaFeed extends Component {
     );
   }
 }
+
+// import React, { Component } from "react";
+// import {
+//   View,
+//   Text,
+//   KeyboardAvoidingView,
+//   TouchableWithoutFeedback,
+//   ScrollView,
+//   TouchableOpacity,
+//   FlatList,
+
+//   keyExtractor,
+//   Alert
+// } from "react-native";
+// import IdeaPostList from "../Views/ideapostlist.js";
+// import IdeaBtn from "../Views/ideabtn.js";
+// import IdeaInput from "../Views/ideainput";
+// import { styles } from "../Styles/styles.js";
+
+// import Comment from './comment';
+// import { activeIdeaspace } from '../Screens/loginpage';
+// //import IdeaPost from "../Views/ideapost.js";
+// //import { runInThisContext } from "vm";
+// import { getIdeas } from "../Views/ServiceDesk.js";
+
+// import IdeaPost from "../Views/ideapost.js";
+
+// var DismissKeyboard = require("dismissKeyboard");
+
+// export default class IdeaFeed extends Component {
+
+//   constructor(props) {
+//     super(props);
+//     const { navigation } = this.props;
+//     const activeIdeaspace = navigation.getParam('activeIdeaspace', '...')
+
+
+//     this.state = {
+//       id: activeIdeaspace.ideaspaceId,
+//       isLoading: false,
+//       ideaposts: [
+//         {
+//           id: 1,
+
+//         },
+//         {
+//           id: 2,
+
+//         },
+//         {
+//           id: 3,
+
+//         }
+//       ]
+
+//     }
+//     this.componentDidMount = this.componentDidMount.bind(this);
+//     // this.componentDidUpdate = this.componentDidUpdate.bind(this);
+//     this.updateIdeas = this.updateIdeas.bind(this);
+//     this.getAllIdeas = this.getAllIdeas.bind(this);
+//   }
+//   componentDidMount() {
+//     this.setState({
+//       isLoading: true,
+
+
+//     });
+//     getIdeas(this.state.id).then( function (list) {
+//       this.updateIdeas(list);
+//     }.bind(this));
+//   }
+//   // componentDidUpdate (prevProps) {
+//   // if ()
+//   // }
+//   getAllIdeas() {
+//     this.setState({
+//       isLoading: true,
+
+//     })
+//     getIdeas(function (list) {
+//       this.updateIdeas(list);
+//     }.bind(this));
+//   }
+//   updateIdeas(ideas) {
+//     this.setState({
+//       ideaposts: ideas,
+//       isLoading: false
+//     });
+//   }
+
+//   _renderItem = ({ item }) => (
+//     <TouchableOpacity onPress={() => this.props.navigation.navigate("Comment")}>
+//       <IdeaPost 
+//       id={item.id}
+//       />
+
+//     </TouchableOpacity>
+//   );
+
+//   _keyExtractor = (item, index) => (item.id.toString());
+
+//   render() {
+//     //     let ideas= this.state.ideaposts.map(function(ideadata) {
+//     // return (<IdeaPost ideaposts = {ideadata} key = {ideadata.IdeaId}/>);
+//     //     });
+
+//     Alert.alert(' ', this.state.id)
+//     return (
+//       <TouchableWithoutFeedback
+//         onPress={() => {
+//           DismissKeyboard();
+//         }}
+//       >
+//         <View
+//           style={styles.feedi}
+//           containerStyle={{ alignItems: "center", justifyContent: "center" }}
+//         >
+
+//           <ScrollView>
+//             <FlatList data={this.state.ideaposts} keyExtractor={this._keyExtractor} renderItem={this._renderItem} />
+//           </ScrollView>
+
+//           <KeyboardAvoidingView
+//             behavior="padding"
+//             enabled
+//             keyboardVerticalOffset={65}
+//           >
+
+//             <IdeaInput
+//               activeIdeaspace={this.state.activeIdeaspace}
+//               updateIdeas={this.updateIdeas}
+//               ideaposts={this.state.ideaposts} />
+
+
+//           </KeyboardAvoidingView>
+//         </View>
+//       </TouchableWithoutFeedback>
+//     );
+//   }
+// }

@@ -20,9 +20,10 @@ export function getIdeas(id) {
     });
 }
 export function sortIdeaswithVoteCounter(votecounter, callback)
+{}
 
-{}export function addNewIdea (idea, callback) {
-    fetch(url + "api/ideas/", {
+export function addNewIdea (idea, callback) {
+    fetch(url + "api/ideas/postidea", {
         method: 'POST',
         headers: {'Content-Type': 'application/json'},
         body: JSON.stringify(idea)
@@ -79,14 +80,25 @@ export function getAllIdeaSpaces(callback) {
       return ideaspace;
     });
   }
-  export function addComment(idea, callback){ 
-    fetch( url + "api/ideas/" + idea.IdeaId,{
-      method: 'PUT', // vai POST? put metodia ei vielä apissa
+
+  export function addNewComment(comment, callback){
+    fetch( url + "api/comments/postcomment",{
+      method: 'POST',
       headers: {'Content-Type': 'application/json'},
-      body: JSON.stringify(idea)
+      body: JSON.stringify(comment)
     })
     .then(function (response){
       callback(response.status);
     });
   }
+  // export function addComment(idea, callback){ 
+  //   fetch( url + "api/ideas/" + idea.IdeaId,{
+  //     method: 'PUT', // vai POST? put metodia ei vielä apissa
+  //     headers: {'Content-Type': 'application/json'},
+  //     body: JSON.stringify(idea)
+  //   })
+  //   .then(function (response){
+  //     callback(response.status);
+  //   });
+  // }
   
