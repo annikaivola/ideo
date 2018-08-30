@@ -7,7 +7,8 @@ import {
   FlatList,
   TextInput,
   Image,
-  Text
+  Text,
+  RefreshControl
 } from "react-native";
 import { styles } from "../Styles/styles.js";
 import { addNewIdea } from "../Views/ServiceDesk.js";
@@ -21,7 +22,7 @@ export default class IdeaFeed extends Component {
   static navigationOptions = ({ navigation }) => {
     return {
       headerTitle: "Ideafeed",
-      headerRight: (<TouchableOpacity onPress={()=>navigation.navigate("Landingpage")}><Text style={{color:"#1ac5c3"}}>Log Out</Text></TouchableOpacity>
+      headerRight: (<TouchableOpacity onPress={()=>navigation.navigate("Landingpage")}><Text style={{color:"#1ac5c3", marginRight: 15, fontSize: 15}}>Log Out</Text></TouchableOpacity>
       ),
     };
   };
@@ -33,6 +34,7 @@ export default class IdeaFeed extends Component {
       ideaspaceId: activeIdeaspace.ideaspaceId,
       isLoading: false,
       data: [],
+      refreshing: false,
     }
   }
 
@@ -70,6 +72,13 @@ export default class IdeaFeed extends Component {
     </TouchableOpacity>
   );
 
+  _onRefresh = () => {
+    this.setState({refreshing: true});
+    this.fetchData().then(() => {
+      this.setState({refreshing: false});
+    });
+  }
+
   _keyExtractor = (item, index) => (item.ideaId.toString());
 
   render() {
@@ -83,7 +92,10 @@ export default class IdeaFeed extends Component {
           style={styles.feedi}
           containerStyle={{ alignItems: "center", justifyContent: "center" }}
         >
-          <FlatList data={this.state.data} keyExtractor={this._keyExtractor} renderItem={this._renderItem} />
+          <FlatList data={this.state.data} keyExtractor={this._keyExtractor} renderItem={this._renderItem}  refreshControl={<RefreshControl
+           refreshing={this.state.refreshing}
+           onRefresh={this._onRefresh}
+          />}/>
           <KeyboardAvoidingView
             behavior="padding"
             enabled

@@ -32,13 +32,12 @@ export default class Loginpage extends Component {
 
   foundInDatabase = () => {
     if (this.state.name === "") {
-      Alert.alert("", "Ideaspace name is a required field");
+      Alert.alert("Ideaspace name is a required field", "");
     } else if (this.state.password === "") {
-      Alert.alert("", "Password is a required field");
+      Alert.alert("Password is a required field","");
     } else {
       getIdeaspace(this.state.name, this.state.password)
         .then(ideaspace => {
-          //this.activateIdeaspace(ideaspace);
           this.setState({ activeIdeaspace: ideaspace });
           //Alert.alert('Login successful', ideaspace);
           this.props.navigation.navigate("Description", {
@@ -46,7 +45,7 @@ export default class Loginpage extends Component {
           });
         })
         .catch(err => {
-          Alert.alert("", "Login failed, wrong Ideaspace name or password!");
+          Alert.alert("Login failed, wrong Ideaspace name or password!", "");
           console.log(err);
         });
     }
