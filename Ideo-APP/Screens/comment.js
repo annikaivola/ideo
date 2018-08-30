@@ -7,7 +7,9 @@ import {
   ScrollView,
   Image,
   TextInput,
-  TouchableOpacity
+  TouchableOpacity,
+  Text,
+  RefreshControl
 } from "react-native";
 import Commentpost from "../Views/commentpost";
 import { styles } from "../Styles/styles";
@@ -17,6 +19,12 @@ import IdeaToComment from "../Views/ideapost2";
 var DismissKeyboard = require("dismissKeyboard");
 
 export default class AddComment extends Component {
+  static navigationOptions = ({ navigation }) => {
+    return {
+      headerRight: (<TouchableOpacity onPress={()=>navigation.navigate("Landingpage")}><Text style={{color:"#1ac5c3"}}>Log Out</Text></TouchableOpacity>
+      ),
+    };
+  };
   constructor(props) {
     super(props);
     const { navigation } = this.props;
@@ -29,7 +37,8 @@ export default class AddComment extends Component {
       _idea: idea.idea1,
       activeProcon: this.props.activeProcon,
       isLoading: false,
-      procon: procon
+      procon: procon,
+      refreshing: false,
     };
   }
 
@@ -74,6 +83,13 @@ export default class AddComment extends Component {
       procon={item.procon}
     />
   );
+
+  _onRefresh = () => {
+    this.setState({refreshing: true});
+    this.fetchData().then(() => {
+      this.setState({refreshing: false});
+    });
+  }
 
   plusorminus = () => {
     if (this.state.procon === 1) {
@@ -123,12 +139,14 @@ export default class AddComment extends Component {
                 data={this.state.data}
                 keyExtractor={this._keyExtractor}
                 renderItem={this._renderItem}
+                refreshControl={<RefreshControl
+                  refreshing={this.state.refreshing}
+                  onRefresh={this._onRefresh}
+                 />}
               />
             </View>
             <KeyboardAvoidingView
               behavior="padding"
-              //enabled
-            //keyboardVerticalOffset={65}
             >
               <View style={styles.commentDiv}>
                 <Image
