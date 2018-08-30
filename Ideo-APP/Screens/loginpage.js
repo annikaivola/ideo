@@ -1,15 +1,24 @@
 import React, { Component } from "react";
+import Logininput from "../Views/logininput.js";
+import Loginbtn from "../Views/loginbtn.js";
 import {
   View,
   KeyboardAvoidingView,
   Text,
   TouchableWithoutFeedback,
+  StyleSheet,
+  TextInput,
   Button,
   Alert
 } from "react-native";
+import { StackNavigator } from "react-navigation";
 import { styles } from "../Styles/styles";
 import { getIdeaspace } from "../Views/ServiceDesk.js";
-import {FormInput} from "react-native-elements";
+import {
+  FormLabel,
+  FormInput,
+  FormValidationMessage
+} from "react-native-elements";
 
 var DismissKeyboard = require("dismissKeyboard");
 
@@ -28,26 +37,28 @@ export default class Loginpage extends Component {
   passwordChanged = e => {
     this.setState({ password: e.target.value });
   };
+
   foundInDatabase = () => {
     if (this.state.name === "") {
-      Alert.alert('','Ideaspace name is a required field');
+      Alert.alert("", "Ideaspace name is a required field");
     } else if (this.state.password === "") {
-      Alert.alert('','Password is a required field');
-    } 
-    else {
+      Alert.alert("", "Password is a required field");
+    } else {
       getIdeaspace(this.state.name, this.state.password)
         .then(ideaspace => {
+          //this.activateIdeaspace(ideaspace);
           this.setState({ activeIdeaspace: ideaspace });
+          //Alert.alert('Login successful', ideaspace);
           this.props.navigation.navigate("Description", {
             activeIdeaspace: ideaspace
           });
         })
         .catch(err => {
-          Alert.alert('','Login failed, wrong Ideaspace name or password');
+          Alert.alert("", "Login failed");
+          console.log(err);
         });
     }
   };
-
 
   loginn = e => {
     e.preventDefault();

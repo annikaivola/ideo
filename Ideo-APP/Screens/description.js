@@ -1,9 +1,16 @@
 import React, { Component } from "react";
-import { View, Text, Button } from "react-native";
+import { View, Text, StyleSheet, Image, Button, TouchableOpacity } from "react-native";
+import { StackNavigator } from "react-navigation";
 import { styles } from "../Styles/styles.js";
 
 
 export default class Description extends Component {
+  static navigationOptions = ({ navigation }) => {
+    return {
+        headerRight: (<TouchableOpacity onPress={()=>navigation.navigate("Landingpage")}><Text style={{color:"#1ac5c3"}}>Log Out</Text></TouchableOpacity>
+      ),
+    };
+  };
   constructor(props) {
     super(props);
     const { navigation } = this.props;
