@@ -92,7 +92,7 @@ export const styles = StyleSheet.create({
     justifyContent: "center",
     marginBottom: 15
   },
- 
+
   ideapost: {
     alignItems: "center",
     justifyContent: "center",
@@ -149,7 +149,7 @@ export const styles = StyleSheet.create({
     justifyContent: "center",
     marginBottom: 10
   },
- 
+
   CommentText: {
     fontFamily: 'Muli-Regular',
     fontSize: 19,
@@ -168,7 +168,7 @@ export const styles = StyleSheet.create({
     justifyContent: "center",
     paddingBottom: '3%',
     paddingLeft: 15,
-    paddingRight: 15, 
+    paddingRight: 15,
   },
   ideaInputandButton: {
     flexDirection: "row",
@@ -212,9 +212,9 @@ export const styles = StyleSheet.create({
   },
   EmptyFeed: {
     fontFamily: 'Muli-Regular',
-    flex: 1, 
-    color: '#fff', 
-    fontSize: 25, 
+    flex: 1,
+    color: '#fff',
+    fontSize: 25,
     justifyContent: 'center',
     textAlign: 'center',
     marginTop: 150,
@@ -222,5 +222,55 @@ export const styles = StyleSheet.create({
   arrow: {
     height: 30,
     width: 30,
+  },
+  helpButtonContainer: {
+    paddingTop: 10,    
+  },
+  helpHeading: {
+    fontFamily: 'Muli-Regular',
+    fontSize: 40,
+    color: '#fff',
+    marginBottom: 10,
+    marginTop: 20,
+    textAlign: 'center',
+    paddingLeft: '2%',
+    paddingRight: '2%'
+  },
+  helpSubheading: {
+    fontFamily: 'Muli-Regular',
+    fontSize: 25,
+    color: '#fff',
+    textAlign: 'center',
+    paddingLeft: 1,
+    paddingRight: 1
+  },
+  helpPhaseTitle: {
+    color: '#fff',
+    fontFamily: 'Muli-Bold',
+    fontSize: 23,
+    paddingBottom: 5,
+    paddingLeft: 1,
+    paddingRight: 1,
+    paddingTop: 10,
+    textAlign: 'center'
+  },
+  helpPhaseText: {
+    fontFamily: 'Muli-Regular',
+    fontSize: 22,
+    color: '#fff',
+    textAlign: 'justify',
+    marginBottom: 10,
+    paddingLeft: '3%',
+    paddingRight: '3%'
+  },
+  helpText:{
+    fontFamily: 'Muli-Regular',
+    fontSize: 22,
+    color: '#fff',
+    textAlign: 'center',
+    marginBottom: 10,
+    paddingLeft: '3%',
+    paddingRight: '3%'
   }
+
 });

@@ -6,14 +6,16 @@ import {
   KeyboardAvoidingView,
   Keyboard,
   TouchableWithoutFeedback,
-  StyleSheet,
+  TouchableOpacity,
   Text,
   Alert
 } from "react-native";
 import { styles } from "../Styles/styles";
 import {
-  FormInput,} 
-from "react-native-elements";
+  FormInput,
+  Icon
+}
+  from "react-native-elements";
 import { addNewIdeaspace } from "../Views/ServiceDesk";
 import Communications from 'react-native-communications';
 
@@ -34,26 +36,24 @@ export default class Createpage extends Component {
 
   addIdeaspace = (state) => {
     addNewIdeaspace(state, function (response) {
-      if(this.state.name  === '') {
-        Alert.alert("Ideaspace name is a required field","");
+      if (this.state.name === '') {
+        Alert.alert("Ideaspace name is a required field", "");
       }
-      else if (this.state.password === '')
-      {
-        Alert.alert("Password is a required field","")
+      else if (this.state.password === '') {
+        Alert.alert("Password is a required field", "")
       }
-      else if (this.state.description === '')
-      {
-        Alert.alert("Description is a required field","")
-      } 
+      else if (this.state.description === '') {
+        Alert.alert("Description is a required field", "")
+      }
       else if (response === 401) {
-        Alert.alert("This Ideaspace name is already taken, please try something else","")
+        Alert.alert("This Ideaspace name is already taken, please try something else", "")
       }
-      else if (this.state.email != '' ) {
-        Communications.email([this.state.email],null,null,'Ideo: Your Shared Ideaspace', 'Ideaspace name: '+ this.state.name + ', ' +'Password: '+ this.state.password + ', '+'Description: ' +this.state.description)
+      else if (this.state.email != '') {
+        Communications.email([this.state.email], null, null, 'Ideo: Your Shared Ideaspace', 'Ideaspace name: ' + this.state.name + ', ' + 'Password: ' + this.state.password + ', ' + 'Description: ' + this.state.description)
         this.props.navigation.navigate('Loginpage')
       }
       else {
-        Alert.alert("Ideaspace created",'')
+        Alert.alert("Ideaspace created", '')
         this.props.navigation.navigate('Loginpage')
       }
     }.bind(this));
@@ -62,7 +62,7 @@ export default class Createpage extends Component {
     e.preventDefault();
     this.addIdeaspace(this.state);
   };
-  
+
 
   render() {
     return (
@@ -74,122 +74,126 @@ export default class Createpage extends Component {
         <View style={styles.container} onPress={Keyboard.dismiss}>
           <Text style={styles.heading1}>Let's brainstorm! </Text>
           <Text style={styles.heading2}> First, create an Ideaspace. </Text>
-          
-          <KeyboardAvoidingView 
-          style={styles.formi} 
-          behavior="padding" 
-          enabled 
-          keyboardVerticalOffset={150}>
 
-        <FormInput
-          placeholder="Ideaspace name"
-          placeholderTextColor="#1ac5c3"
-          onChangeText={name => this.setState({ name })}
-          value={this.state.name}
-          maxLength={20}
-          containerStyle={{
-            backgroundColor: "#fff",
-            borderRadius: 10,
-            borderColor: "#fff",
-            marginBottom: 5,
-            width: "80%",
-            height: 40
-          }}
-          inputStyle={{
-            color: "#1ac5c3",
-            fontSize: 18,
-            paddingLeft: 15,
-            paddingRight: 15,
-            width: "80%"
-          }}
-        />
-  
-        <FormInput
-          placeholder="Password"
-          placeholderTextColor="#1ac5c3"
-          onChangeText={password => this.setState({ password })}
-          value={this.state.password}
-          maxLength={20}
-          containerStyle={{
-            backgroundColor: "#fff",
-            borderRadius: 10,
-            borderColor: "#fff",
-            marginBottom: 5,
-            width: "80%"
-          }}
-          inputStyle={{
-            color: "#1ac5c3",
-            fontSize: 18,
-            paddingLeft: 15,
-            paddingRight: 15,
-            width: "80%"
-          }}
-        />
+          <KeyboardAvoidingView
+            style={styles.formi}
+            behavior="padding"
+            enabled
+            keyboardVerticalOffset={150}>
 
-        <FormInput
-          placeholder="What's the topic of your brainstorming session?"
-          placeholderTextColor="#1ac5c3"
-          onChangeText={description => this.setState({ description })}
-          value={this.state.description}
-          multiline={true}
-          maxLength={120}
-          containerStyle={{
-            backgroundColor: "#fff",
-            borderRadius: 10,
-            borderColor: "#fff",
-            marginBottom: 5,
-            width: "80%",
-            height: "auto"
-          }}
-          inputStyle={{
-            color: "#1ac5c3",
-            fontSize: 18,
-            paddingLeft: 15,
-            paddingRight: 15,
-            paddingBottom: 5,
-            paddingTop: 5,
-            width: "80%"
-          }}
-        />
+            <FormInput
+              placeholder="Ideaspace name"
+              placeholderTextColor="#1ac5c3"
+              onChangeText={name => this.setState({ name })}
+              value={this.state.name}
+              maxLength={20}
+              containerStyle={{
+                backgroundColor: "#fff",
+                borderRadius: 10,
+                borderColor: "#fff",
+                marginBottom: 5,
+                width: "80%",
+                height: 40
+              }}
+              inputStyle={{
+                color: "#1ac5c3",
+                fontSize: 18,
+                paddingLeft: 15,
+                paddingRight: 15,
+                width: "80%"
+              }}
+            />
 
-        <FormInput
-          placeholder="Share Ideaspace info via email (optional)"
-          placeholderTextColor="#1ac5c3"
-          onChangeText={email => this.setState({ email })}
-          value={this.state.email}
-          multiline= {true}
-          maxLength={40}
-          containerStyle={{
-            backgroundColor: "#fff",
-            borderRadius: 10,
-            borderColor: "#fff",
-            marginBottom: 15,
-            width: "80%",
-            height: 'auto'
-          }}
-          inputStyle={{
-            color: "#1ac5c3",
-            fontSize: 18,
-            paddingLeft: 15,
-            paddingRight: 15,
-            paddingBottom: 5,
-            paddingTop: 5,
-            width: "80%"
-          }}
-        />
+            <FormInput
+              placeholder="Password"
+              placeholderTextColor="#1ac5c3"
+              onChangeText={password => this.setState({ password })}
+              value={this.state.password}
+              maxLength={20}
+              containerStyle={{
+                backgroundColor: "#fff",
+                borderRadius: 10,
+                borderColor: "#fff",
+                marginBottom: 5,
+                width: "80%"
+              }}
+              inputStyle={{
+                color: "#1ac5c3",
+                fontSize: 18,
+                paddingLeft: 15,
+                paddingRight: 15,
+                width: "80%"
+              }}
+            />
 
-          <View style={styles.buttonContainer}>
-            <Button
-              onPress={this.createIdeaspace}              
+            <FormInput
+              placeholder="What's the topic of your brainstorming session?"
+              placeholderTextColor="#1ac5c3"
+              onChangeText={description => this.setState({ description })}
+              value={this.state.description}
+              multiline={true}
+              maxLength={120}
+              containerStyle={{
+                backgroundColor: "#fff",
+                borderRadius: 10,
+                borderColor: "#fff",
+                marginBottom: 5,
+                width: "80%",
+                height: "auto"
+              }}
+              inputStyle={{
+                color: "#1ac5c3",
+                fontSize: 18,
+                paddingLeft: 15,
+                paddingRight: 15,
+                paddingBottom: 5,
+                paddingTop: 5,
+                width: "80%"
+              }}
+            />
 
-              title="Create"
-              color="#1ac5c3"
+            <FormInput
+              placeholder="Share Ideaspace info via email (optional)"
+              placeholderTextColor="#1ac5c3"
+              onChangeText={email => this.setState({ email })}
+              value={this.state.email}
+              multiline={true}
+              maxLength={40}
+              containerStyle={{
+                backgroundColor: "#fff",
+                borderRadius: 10,
+                borderColor: "#fff",
+                marginBottom: 15,
+                width: "80%",
+                height: 'auto'
+              }}
+              inputStyle={{
+                color: "#1ac5c3",
+                fontSize: 18,
+                paddingLeft: 15,
+                paddingRight: 15,
+                paddingBottom: 5,
+                paddingTop: 5,
+                width: "80%"
+              }}
+            />
+
+            <View style={styles.buttonContainer}>
+              <Button
+                onPress={this.createIdeaspace}
+
+                title="Create"
+                color="#1ac5c3"
               />
+            </View>
+            <View style={styles.helpButtonContainer}>
+              <TouchableOpacity onPress={() => this.props.navigation.navigate("HelpCreate")}>
+                <Icon name="help" size={28} color={'#fff'} /></TouchableOpacity>
             </View>
           </KeyboardAvoidingView>
         </View>
       </TouchableWithoutFeedback>
-      
+
     );
   }
 
