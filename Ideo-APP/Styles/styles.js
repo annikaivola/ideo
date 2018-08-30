@@ -57,7 +57,7 @@ export const styles = StyleSheet.create({
     marginBottom: '5%'
   },
   inputStyle: {
-    //fontFamily: "Avenir-Medium",
+    fontFamily: "Avenir-Medium",
     color: "#fff",
   },
 
@@ -68,7 +68,7 @@ export const styles = StyleSheet.create({
     justifyContent: "center"
   },
   heading1: {
-    //fontFamily: 'Avenir-Medium',
+    fontFamily: 'Avenir-Medium',
     fontSize: 40,
     color: '#fff',
     alignItems: "center",
@@ -76,7 +76,7 @@ export const styles = StyleSheet.create({
     marginBottom: 10
   },
   heading2: {
-    //fontFamily: 'Avenir-Medium',
+    fontFamily: 'Avenir-Medium',
     fontSize: 25,
     color: '#fff',
     alignItems: "center",
@@ -98,7 +98,6 @@ export const styles = StyleSheet.create({
     borderWidth: 8,
     borderRadius: 20,
     borderColor: "#1ac5c3",
-    // width: "90%",
     paddingBottom: 15,
     paddingLeft: 15,
     paddingRight: 15,
@@ -113,7 +112,6 @@ export const styles = StyleSheet.create({
     borderWidth: 1,
     borderRadius: 20,
     borderColor: "#fff",
-    // width: "90%",
     paddingBottom: 15,
     paddingLeft: 15,
     paddingRight: 15,
@@ -156,16 +154,6 @@ export const styles = StyleSheet.create({
     width: '70%',
     paddingLeft: '5%'
   },
-  // inputDiv: {
-  //   flexDirection: "row",
-  //   backgroundColor: "#fff",
-  //   borderWidth: 4,
-  //   borderRadius: 15,
-  //   borderColor: "#1ac5c3",
-  //   height: '10%',
-  //   alignItems: "center",
-  //   justifyContent: "flex-end"
-  // },
   ideaInputText: {
     color: "#000",
     width: "80%",
@@ -192,7 +180,6 @@ export const styles = StyleSheet.create({
     alignItems: "flex-start",
     justifyContent: "flex-start",
     width: '90%',
-    // marginBottom: '3%'
   },
   commentDiv: {
     flexDirection: "row",
@@ -220,6 +207,5 @@ export const styles = StyleSheet.create({
   arrow: {
     height: 30,
     width: 30,
-    // marginBottom: '20%',
   }
 });

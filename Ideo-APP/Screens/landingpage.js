@@ -1,9 +1,5 @@
 import React, { Component } from "react";
 import { View, Text, StyleSheet, Image, Button } from "react-native";
-import ChooseLogin from "../Views/chooselogin.js";
-import ChooseCreate from "../Views/choosecreate.js";
-import IdeaInput from "../Views/ideainput.js";
-import { StackNavigator } from "react-navigation";
 import { styles } from "../Styles/styles.js";
 
 export default class Landingpage extends Component {

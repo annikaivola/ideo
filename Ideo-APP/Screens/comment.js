@@ -1,32 +1,22 @@
-import RateBtn from "../Views/ratebtn";
-import RateInput from "../Views/rateinput";
 import React, { Component } from "react";
 import {
   View,
   KeyboardAvoidingView,
   TouchableWithoutFeedback,
-  Button,
-  StyleSheet,
-  Alert,
-  Text,
   FlatList,
   ScrollView,
   Image,
   TextInput,
   TouchableOpacity
 } from "react-native";
-import { StackNavigator } from "react-navigation";
-import Ideafeed from "./ideafeed";
 import Commentpost from "../Views/commentpost";
 import { styles } from "../Styles/styles";
-import IdeaBtn from "../Views/ideabtn";
 import { addNewComment } from "../Views/ServiceDesk";
 import IdeaToComment from "../Views/ideapost2";
 
 var DismissKeyboard = require("dismissKeyboard");
 
 export default class AddComment extends Component {
-  //navigoi submitin jälkeen takaisin ideafeediin
   constructor(props) {
     super(props);
     const { navigation } = this.props;
@@ -136,9 +126,9 @@ export default class AddComment extends Component {
               />
             </View>
             <KeyboardAvoidingView
-              behavior="position"
-              enabled
-            // keyboardVerticalOffset={65}
+              behavior="padding"
+              //enabled
+            //keyboardVerticalOffset={65}
             >
               <View style={styles.commentDiv}>
                 <Image
@@ -169,9 +159,8 @@ export default class AddComment extends Component {
                     />
                   </TouchableOpacity>
                 </View>
-                {/* <IdeaBtn /> */}
               </View>
-              {/* <RateInput /> */}
+              <View style={{height:60}}/>>
             </KeyboardAvoidingView>
           </View>
         </ScrollView>
