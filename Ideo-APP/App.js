@@ -9,6 +9,9 @@ import Ideafeed from './Screens/ideafeed';
 import AddComment from './Screens/comment';
 import Description from './Screens/description';
 import {Font} from 'expo';
+import Help from './Screens/help';
+import HelpCreate from './Screens/helpcreate';
+import HelpLogin from './Screens/helplogin';
 
 
 export const RootStack = StackNavigator(
@@ -19,6 +22,9 @@ export const RootStack = StackNavigator(
     Description: Description,
     Ideafeed: Ideafeed,
     Comment: AddComment,
+    Help: Help,
+    HelpCreate: HelpCreate,
+    HelpLogin: HelpLogin,
   },
   {
     initialRouteName: 'Landingpage',

@@ -5,11 +5,12 @@ import {
   Text,
   TouchableWithoutFeedback,
   Button,
-  Alert
+  Alert,
+  TouchableOpacity
 } from "react-native";
 import { styles } from "../Styles/styles";
 import { getIdeaspace } from "../Views/ServiceDesk.js";
-import {FormInput} from "react-native-elements";
+import {FormInput, Icon} from "react-native-elements";
 
 var DismissKeyboard = require("dismissKeyboard");
 
@@ -117,6 +118,10 @@ export default class Loginpage extends Component {
             />
             <View style={styles.buttonContainer}>
               <Button onPress={this.loginn} title="Log in" color="#1ac5c3" />
+            </View>
+            <View style={styles.helpButtonContainer}>
+              <TouchableOpacity onPress={() => this.props.navigation.navigate("HelpLogin")}>
+                <Icon name="help" size={28} color={'#fff'} /></TouchableOpacity>
             </View>
           </KeyboardAvoidingView>
         </View>
