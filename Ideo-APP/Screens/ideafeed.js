@@ -37,6 +37,7 @@ export default class IdeaFeed extends Component {
       isLoading: false,
       data: [],
       refreshing: false,
+      
     }
   }
 
@@ -44,16 +45,23 @@ export default class IdeaFeed extends Component {
     const response = await fetch("https://ideo-api.azurewebsites.net/api/ideas/getideasbyideaspaceid?ideaspaceid=" + this.state.ideaspaceId);
     const ideas = await response.json(); //ideas have array data
     this.setState({ data: ideas }); //filled data with dynamic array
+    if (this.state.data.length > 0) {
+      this.setState({ EmptyFeed: false });
   }
+}
 
   componentDidMount() {
     this.fetchData();
+    if (this.state.data.length <= 0) {
+      this.setState({ EmptyFeed: true });
   }
+}
 
   addIdea = (state) => {
     addNewIdea(state, function (response) {
       if (response >= 200 && response < 300) {
         this.fetchData();
+     
       }
     }.bind(this));
   }
@@ -62,6 +70,7 @@ export default class IdeaFeed extends Component {
     this.addIdea(this.state);
     this.fetchData();
     this.setState({ idea1: '' });
+  
   }
   _renderItem = ({ item }) => (
     <TouchableOpacity onPress={() => this.props.navigation.navigate("Comment", { idea: item })}>
@@ -94,10 +103,11 @@ export default class IdeaFeed extends Component {
           style={styles.feedi}
           containerStyle={{ alignItems: "center", justifyContent: "center" }}
         >
-          <FlatList data={this.state.data} keyExtractor={this._keyExtractor} renderItem={this._renderItem}  refreshControl={<RefreshControl
+
+          {this.state.EmptyFeed ? <Text style={styles.EmptyFeed}>This Ideaspace is still empty.</Text> : <FlatList data={this.state.data} keyExtractor={this._keyExtractor} renderItem={this._renderItem}  refreshControl={<RefreshControl
            refreshing={this.state.refreshing}
            onRefresh={this._onRefresh}
-          />}/>
+          />}/>}
           <KeyboardAvoidingView
             behavior="padding"
             enabled

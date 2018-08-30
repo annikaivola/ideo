@@ -127,7 +127,7 @@ export default class Createpage extends Component {
         />
 
         <FormInput
-          placeholder="What do you need ideas on? Describe."
+          placeholder="What's the topic of your brainstorming session?"
           placeholderTextColor="#1ac5c3"
           onChangeText={description => this.setState({ description })}
           value={this.state.description}
@@ -139,7 +139,7 @@ export default class Createpage extends Component {
             borderColor: "#fff",
             marginBottom: 5,
             width: "80%",
-            height: "25%"
+            height: "auto"
           }}
           inputStyle={{
             color: "#1ac5c3",
@@ -153,23 +153,27 @@ export default class Createpage extends Component {
         />
 
         <FormInput
-          placeholder="Share Ideaspace login info"
+          placeholder="Share Ideaspace info via email (optional)"
           placeholderTextColor="#1ac5c3"
           onChangeText={email => this.setState({ email })}
           value={this.state.email}
+          multiline= {true}
           maxLength={40}
           containerStyle={{
             backgroundColor: "#fff",
             borderRadius: 10,
             borderColor: "#fff",
             marginBottom: 15,
-            width: "80%"
+            width: "80%",
+            height: 'auto'
           }}
           inputStyle={{
             color: "#1ac5c3",
             fontSize: 18,
             paddingLeft: 15,
             paddingRight: 15,
+            paddingBottom: 5,
+            paddingTop: 5,
             width: "80%"
           }}
         />
