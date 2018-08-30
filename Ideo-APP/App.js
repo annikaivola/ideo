@@ -24,7 +24,8 @@ export const RootStack = StackNavigator(
     initialRouteName: 'Landingpage',
     //headerMode:"screen",
     //mode:"card"
-  }
+  },
+  console.disableYellowBox = true
 )
 
 export default class App extends Component {
@@ -32,6 +33,7 @@ export default class App extends Component {
   render() {
     return (
       <RootStack />
+      
     );
   }
 }

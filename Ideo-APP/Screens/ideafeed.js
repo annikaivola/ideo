@@ -64,12 +64,13 @@ export default class IdeaFeed extends Component {
     this.setState({ idea1: '' });
   }
   _renderItem = ({ item }) => (
-    <TouchableOpacity onPress={() => this.props.navigation.navigate("Comment", { idea: item })}>
+    <TouchableOpacity onPress={() => this.props.navigation.navigate("Comment", { idea: item, procon: 1 })}>
       <IdeaPost
         item={item}
         id={item.ideaspaceId}
         ideaId={item.ideaId}
         idea={item.idea1}
+        procon={1}
       />
     </TouchableOpacity>
   );
