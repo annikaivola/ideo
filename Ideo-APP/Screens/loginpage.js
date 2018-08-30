@@ -54,7 +54,7 @@ export default class Loginpage extends Component {
           });
         })
         .catch(err => {
-          Alert.alert("", "Login failed");
+          Alert.alert("", "Login failed, wrong Ideaspace name or password!");
           console.log(err);
         });
     }
