@@ -45,6 +45,7 @@ export default class AddComment extends Component {
     };
   }
 
+ 
   fetchData = async () => {
     const response = await fetch(
       "https://ideo-api.azurewebsites.net/api/Comments/GetCommentByIdeaId?id=" +

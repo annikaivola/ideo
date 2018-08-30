@@ -37,27 +37,28 @@ export const styles = StyleSheet.create({
     borderWidth: 8,
     borderRadius: 10,
     borderColor: "#fff",
-    width: '75%',
+    width: '80%',
     height: 'auto',
     alignItems: 'center',
     justifyContent: 'center',
-    marginBottom: '15%',
-    marginTop: '15%',
-
+    marginBottom: 15,
+    marginTop: 15,
+    paddingBottom: 15,
+    paddingLeft: 15,
+    paddingRight: 15,
+    paddingTop: 15,
+    marginBottom: 10,
+    marginTop: 5
   },
   description: {
     color: "#1ac5c3",
     fontSize: 22,
-    width:'80%',
-    marginTop: '15%',
-    marginBottom: '5%'
   },
   description2: {
-    color: "#000",
-    fontSize: 22,
-    // width: '80%',
+    color: "#837E7C",
+    fontSize: 21,
+    width: '90%',
     textAlign: 'center',
- 
   },
   inputStyle: {
     //fontFamily: "Avenir-Medium",
@@ -71,7 +72,6 @@ export const styles = StyleSheet.create({
     justifyContent: "center"
   },
   heading1: {
-    //fontFamily: 'Avenir-Medium',
     fontSize: 40,
     color: '#fff',
     alignItems: "center",
@@ -84,14 +84,14 @@ export const styles = StyleSheet.create({
     color: '#fff',
     alignItems: "center",
     justifyContent: "center",
-    marginBottom: 5
+    marginBottom: 10
   },
   spacename: {
     fontSize: 40,
     color: '#fff',
     alignItems: "center",
     justifyContent: "center",
-    marginBottom: 5
+    marginBottom: 15
   },
  
   ideapost: {
@@ -122,6 +122,16 @@ export const styles = StyleSheet.create({
     marginBottom: 5,
     marginTop: 5
   },
+  IdeaPostText: {
+    fontSize: 19,
+    paddingBottom: 5,
+    textAlign: 'center'
+  },
+  IdeaPostText2: {
+    fontSize: 26,
+    paddingBottom: 5,
+    textAlign: 'center',
+  },
   commentDiv: {
     flexDirection: "row",
     alignItems: "center",
@@ -138,16 +148,7 @@ export const styles = StyleSheet.create({
     justifyContent: "center",
     marginBottom: 10
   },
-  IdeaPostText: {
-    fontSize: 19,
-    paddingBottom: 5,
-    textAlign: 'center'
-  },
-  IdeaPostText2: {
-    fontSize: 26,
-    paddingBottom: 5,
-    textAlign: 'center',
-  },
+ 
   CommentText: {
     fontSize: 17,
     marginLeft: '3%'
@@ -206,6 +207,14 @@ export const styles = StyleSheet.create({
     paddingTop: 15,
     marginBottom: 5,
     marginTop: 5
+  },
+  EmptyFeed: {
+    flex: 1, 
+    color: '#fff', 
+    fontSize: 20, 
+    justifyContent: 'center',
+    textAlign: 'center',
+    marginTop: 150,
   },
   arrow: {
     height: 30,
