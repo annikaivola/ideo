@@ -22,10 +22,19 @@ import { activeIdeaspace } from "../Screens/loginpage";
 //import { runInThisContext } from "vm";
 import { addNewIdea } from "../Views/ServiceDesk.js";
 import IdeaPost from "../Views/ideapost.js";
+import { Button } from "react-native-elements";
+
 
 var DismissKeyboard = require("dismissKeyboard");
 
 export default class IdeaFeed extends Component {
+  static navigationOptions = ({ navigation }) => {
+    return {
+      headerTitle: "Ideafeed",
+      headerRight: (<TouchableOpacity onPress={()=>navigation.navigate("Landingpage")}><Text style={{color:"#1ac5c3"}}>Log Out</Text></TouchableOpacity>
+      ),
+    };
+  };
   constructor(props) {
     super(props);
     const { navigation } = this.props;

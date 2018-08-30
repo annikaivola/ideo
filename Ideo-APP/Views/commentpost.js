@@ -26,7 +26,7 @@ export default class IdeaPost extends Component {
        <Image
             style={{ height: 35, width: 35 }}
             source={this.plusorminus() ? require("..//Assets/images/plus.png") : require("..//Assets/images/minus.png")}/>
-          <Text style={styles.CommentText}>{this.props.comment} {this.props.procon}</Text>
+          <Text style={styles.CommentText}>{this.props.comment}</Text>
       </View>
       </View>
     );
