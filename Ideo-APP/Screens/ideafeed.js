@@ -6,11 +6,9 @@ import {
   TouchableOpacity,
   FlatList,
   TextInput,
-
   Image,
   Text,
   RefreshControl
-
 } from "react-native";
 import { styles } from "../Styles/styles.js";
 import { addNewIdea } from "../Views/ServiceDesk.js";
@@ -73,12 +71,13 @@ export default class IdeaFeed extends Component {
   
   }
   _renderItem = ({ item }) => (
-    <TouchableOpacity onPress={() => this.props.navigation.navigate("Comment", { idea: item })}>
+    <TouchableOpacity onPress={() => this.props.navigation.navigate("Comment", { idea: item, procon: 1 })}>
       <IdeaPost
         item={item}
         id={item.ideaspaceId}
         ideaId={item.ideaId}
         idea={item.idea1}
+        procon={1}
       />
     </TouchableOpacity>
   );

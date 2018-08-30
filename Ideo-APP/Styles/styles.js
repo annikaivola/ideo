@@ -61,7 +61,7 @@ export const styles = StyleSheet.create({
     textAlign: 'center',
   },
   inputStyle: {
-    fontFamily: "Avenir-Medium",
+    //fontFamily: "Avenir-Medium",
     color: "#fff",
   },
 
@@ -79,7 +79,7 @@ export const styles = StyleSheet.create({
     marginBottom: 10
   },
   heading2: {
-    fontFamily: 'Avenir-Medium',
+    //fontFamily: 'Avenir-Medium',
     fontSize: 25,
     color: '#fff',
     alignItems: "center",

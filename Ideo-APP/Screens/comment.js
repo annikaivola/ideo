@@ -9,19 +9,22 @@ import {
   TextInput,
   TouchableOpacity,
   Text,
-  RefreshControl
+  RefreshControl,
 } from "react-native";
 import Commentpost from "../Views/commentpost";
+import {DrawerButton} from 'react-navigation';
 import { styles } from "../Styles/styles";
 import { addNewComment } from "../Views/ServiceDesk";
 import IdeaToComment from "../Views/ideapost2";
+import RateInput from "../Views/rateinput";
 
 var DismissKeyboard = require("dismissKeyboard");
 
 export default class AddComment extends Component {
   static navigationOptions = ({ navigation }) => {
     return {
-      headerRight: (<TouchableOpacity onPress={()=>navigation.navigate("Landingpage")}><Text style={{color:"#1ac5c3"}}>Log Out</Text></TouchableOpacity>
+      // headerLeft: (<DrawerButton onPress={()=>navigation.goBack()} procon={this.procon}/>),
+      headerRight: (<TouchableOpacity onPress={() => navigation.navigate("Landingpage")}><Text style={{ color: "#1ac5c3" }}>Log Out</Text></TouchableOpacity>
       ),
     };
   };
@@ -52,11 +55,20 @@ export default class AddComment extends Component {
     this.setState({ data: comments });
   };
 
+
   componentDidMount() {
     this.fetchData();
   }
 
-  changeProcon = (vote) => {
+  componentDidUpdate(){
+    this.fetchData();
+  }
+
+  componentWillUnmount(){
+    this.fetchData();
+  }
+
+   changeProcon = (vote) => {
     this.state.procon = vote;
     console.log(this.state.procon)
   }
@@ -70,7 +82,7 @@ export default class AddComment extends Component {
   }
 
   sendComment = (e) => {
-    e.preventDefault();
+   e.preventDefault();
     this.addComment(this.state);
     this.fetchData();
     this.setState({ comment1: "" });
@@ -86,9 +98,9 @@ export default class AddComment extends Component {
   );
 
   _onRefresh = () => {
-    this.setState({refreshing: true});
+    this.setState({ refreshing: true });
     this.fetchData().then(() => {
-      this.setState({refreshing: false});
+      this.setState({ refreshing: false });
     });
   }
 
@@ -143,9 +155,11 @@ export default class AddComment extends Component {
                 refreshControl={<RefreshControl
                   refreshing={this.state.refreshing}
                   onRefresh={this._onRefresh}
-                 />}
+                />}
               />
             </View>
+            {/* <RateInput procon={this.state.procon}/> */}
+
             <KeyboardAvoidingView
               behavior="padding"
             >
@@ -158,6 +172,10 @@ export default class AddComment extends Component {
                     justifyContent: "center"
                   }}
                   source={this.plusorminus() ? require("..//Assets/images/plus.png") : require("..//Assets/images/minus.png")}
+
+                // refreshControl={<RefreshControl
+                //   refreshing={this.state.refreshing}
+                //   onRefresh={this._onRefresh}/>}
                 />
 
                 <TextInput
@@ -168,6 +186,9 @@ export default class AddComment extends Component {
                   maxLength={100}
                   placeholder={this.plusorminus() ? "What's good about this idea?" : "What's bad about this idea?"}
                   placeholderTextColor="#C0C0C0"
+                // refreshControl={<RefreshControl
+                //   refreshing={this.state.refreshing}
+                //   onRefresh={this._onRefresh}/>}
                 />
                 <View>
                   <TouchableOpacity onPress={this.sendComment}>
