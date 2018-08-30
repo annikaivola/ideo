@@ -31,7 +31,7 @@ export default class AddComment extends Component {
     return {
       headerRight: (
         <TouchableOpacity onPress={() => navigation.navigate("Landingpage")}>
-          <Text style={{ color: "#1ac5c3", marginRight: 15, fontSize: 15 }}>
+          <Text style={{ color: "#1ac5c3", marginRight: 15, fontSize: 17 }}>
             Log Out
           </Text>
         </TouchableOpacity>
@@ -166,6 +166,7 @@ export default class AddComment extends Component {
                   justifyContent: "center",
                   marginLeft: "7%",
                   marginRight: "7%",
+                  marginBottom: "7%",
                   width: "80%"
                 }}
                 input

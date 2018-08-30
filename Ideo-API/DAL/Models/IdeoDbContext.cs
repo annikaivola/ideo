@@ -82,12 +82,6 @@ namespace DAL.Models
 
                 entity.Property(e => e.Votecounter).HasColumnName("votecounter");
 
-                //entity.HasOne(d => d.IdeaNavigation)
-                //    .WithOne(p => p.InverseIdeaNavigation)
-                //    .HasForeignKey<Idea>(d => d.IdeaId)
-                //    .OnDelete(DeleteBehavior.ClientSetNull)
-                //    .HasConstraintName("FK_Idea_Idea");
-
                 entity.HasOne(d => d.Ideaspace)
                     .WithMany(p => p.Idea)
                     .HasForeignKey(d => d.IdeaspaceId)
