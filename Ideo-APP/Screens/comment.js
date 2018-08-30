@@ -128,7 +128,8 @@ export default class AddComment extends Component {
           DismissKeyboard();
         }}
       >
-        <KeyboardAwareScrollView style={{ backgroundColor: '#1ac5c3' }} >
+        {/* <KeyboardAwareScrollView style={{ backgroundColor: '#1ac5c3' }} > */}
+        <ScrollView style={{ backgroundColor: '#1ac5c3' }}>
           <View style={styles.commentPage}>
             <View style={styles.ideaAndComments}>
               <IdeaToComment idea={this.state._idea} />
@@ -166,12 +167,14 @@ export default class AddComment extends Component {
             </View>
             {/* <RateInput procon={this.state.procon}/> */}
 
-            {/* <KeyboardAvoidingView 
-            style ={{flex: 1}}
-            keyboardVerticalOffset = {1}
-              behavior="position"
-              enabled
-            > */}
+            <KeyboardAvoidingView 
+            behavior="padding"
+            enabled
+            // style ={{flex: 1}}
+            // keyboardVerticalOffset = {1}
+            //   behavior="position"
+            //   enabled
+            >
               <View style={styles.commentDiv}>
                 <Image
                   style={{
@@ -202,9 +205,10 @@ export default class AddComment extends Component {
                   </TouchableOpacity>
                 </View>
               </View>
-            {/* </KeyboardAvoidingView> */}
+            </KeyboardAvoidingView>
           </View>
-        </KeyboardAwareScrollView>
+          </ScrollView>
+        {/* </KeyboardAwareScrollView> */}
        </TouchableWithoutFeedback>
     );
   }
