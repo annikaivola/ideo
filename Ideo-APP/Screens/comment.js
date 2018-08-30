@@ -1,5 +1,8 @@
 import React, { Component } from "react";
-import {KeyboardAwareScrollView, KeyboardAwareFlatList} from 'react-native-keyboard-aware-scroll-view';
+import {
+  KeyboardAwareScrollView,
+  KeyboardAwareFlatList
+} from "react-native-keyboard-aware-scroll-view";
 import {
   View,
   KeyboardAvoidingView,
@@ -12,10 +15,10 @@ import {
   Text,
   RefreshControl,
   keyboardHeight,
-  Header,
+  Header
 } from "react-native";
 import Commentpost from "../Views/commentpost";
-import {DrawerButton} from 'react-navigation';
+import { DrawerButton } from "react-navigation";
 import { styles } from "../Styles/styles";
 import { addNewComment } from "../Views/ServiceDesk";
 import IdeaToComment from "../Views/ideapost2";
@@ -26,12 +29,15 @@ var DismissKeyboard = require("dismissKeyboard");
 export default class AddComment extends Component {
   static navigationOptions = ({ navigation }) => {
     return {
+      headerRight: (
+        <TouchableOpacity onPress={() => navigation.navigate("Landingpage")}>
+          <Text style={{ color: "#1ac5c3", marginRight: 15, fontSize: 15 }}>
+            Log Out
+          </Text>
+        </TouchableOpacity>
 
-      headerRight: (<TouchableOpacity onPress={()=>navigation.navigate("Landingpage")}><Text style={{color:"#1ac5c3", marginRight: 15, fontSize: 15}}>Log Out</Text></TouchableOpacity>
-
-      // headerLeft: (<DrawerButton onPress={()=>navigation.goBack()} procon={this.procon}/>),
-   
-      ),
+        // headerLeft: (<DrawerButton onPress={()=>navigation.goBack()} procon={this.procon}/>),
+      )
     };
   };
   constructor(props) {
@@ -48,50 +54,54 @@ export default class AddComment extends Component {
       isLoading: false,
       procon: procon,
       refreshing: false,
+      comment1: ""
     };
   }
 
- 
   fetchData = async () => {
     const response = await fetch(
       "https://ideo-api.azurewebsites.net/api/Comments/GetCommentByIdeaId?id=" +
-      this.state.ideaId
+        this.state.ideaId
     );
     const comments = await response.json();
     this.setState({ data: comments });
   };
 
-
   componentDidMount() {
     this.fetchData();
   }
 
-  componentDidUpdate(){
+  componentDidUpdate() {
     this.fetchData();
   }
 
-  componentWillUnmount(){
+  componentWillUnmount() {
     this.fetchData();
   }
 
-   changeProcon = (vote) => {
+  changeProcon = vote => {
     this.state.procon = vote;
-    console.log(this.state.procon)
-  }
+    console.log(this.state.procon);
+  };
 
-  addComment = (state) => {
-    addNewComment(state, function (response) {
-      if (response >= 200 && response < 300) {
-        this.fetchData();
-      }
-    }.bind(this));
-  }
+  addComment = state => {
+    addNewComment(
+      state,
+      function(response) {
+        if (response >= 200 && response < 300) {
+          this.fetchData();
+        }
+      }.bind(this)
+    );
+  };
 
-  sendComment = (e) => {
-   e.preventDefault();
-    this.addComment(this.state);
-    this.fetchData();
-    this.setState({ comment1: "" });
+  sendComment = e => {
+    if (!this.state.comment1 == "") {
+      e.preventDefault();
+      this.addComment(this.state);
+      this.fetchData();
+      this.setState({ comment1: "" });
+    }
   };
 
   _renderItem = ({ item }) => (
@@ -108,41 +118,44 @@ export default class AddComment extends Component {
     this.fetchData().then(() => {
       this.setState({ refreshing: false });
     });
-  }
+  };
 
   plusorminus = () => {
     if (this.state.procon === 1) {
       return true;
-    }
-    else if (this.state.procon === -1) {
+    } else if (this.state.procon === -1) {
       return false;
     }
-  }
+  };
   _keyExtractor = (item, index) => item.commentId.toString();
 
   render() {
     return (
-
       <TouchableWithoutFeedback
         onPress={() => {
           DismissKeyboard();
         }}
       >
         {/* <KeyboardAwareScrollView style={{ backgroundColor: '#1ac5c3' }} > */}
-        <ScrollView style={{ backgroundColor: '#1ac5c3' }}>
+        <ScrollView style={{ backgroundColor: "#1ac5c3" }}>
           <View style={styles.commentPage}>
             <View style={styles.ideaAndComments}>
               <IdeaToComment idea={this.state._idea} />
               <View style={styles.ratebtndiv}>
                 <TouchableOpacity onPress={() => this.changeProcon(1)}>
                   <Image
-                    style={{ height: 60, width: 60, marginRight: "4%", marginBottom: '15%' }}
+                    style={{
+                      height: 60,
+                      width: 60,
+                      marginRight: "4%",
+                      marginBottom: "15%"
+                    }}
                     source={require("../Assets/images/plus.png")}
                   />
                 </TouchableOpacity>
                 <TouchableOpacity onPress={() => this.changeProcon(-1)}>
                   <Image
-                    style={{ height: 60, width: 60, marginBottom: '15%' }}
+                    style={{ height: 60, width: 60, marginBottom: "15%" }}
                     source={require("../Assets/images/minus.png")}
                   />
                 </TouchableOpacity>
@@ -151,29 +164,31 @@ export default class AddComment extends Component {
                 contentContainerStyle={{
                   alignItems: "flex-start",
                   justifyContent: "center",
-                  marginLeft: '7%',
-                  marginRight: '7%',
-                  width: '80%'
+                  marginLeft: "7%",
+                  marginRight: "7%",
+                  width: "80%"
                 }}
                 input
                 data={this.state.data}
                 keyExtractor={this._keyExtractor}
                 renderItem={this._renderItem}
-                refreshControl={<RefreshControl
-                  refreshing={this.state.refreshing}
-                  onRefresh={this._onRefresh}
-                />}
+                refreshControl={
+                  <RefreshControl
+                    refreshing={this.state.refreshing}
+                    onRefresh={this._onRefresh}
+                  />
+                }
               />
             </View>
             {/* <RateInput procon={this.state.procon}/> */}
 
-            <KeyboardAvoidingView 
-            behavior="padding"
-            enabled
-            // style ={{flex: 1}}
-            // keyboardVerticalOffset = {1}
-            //   behavior="position"
-            //   enabled
+            <KeyboardAvoidingView
+              behavior="padding"
+              enabled
+              // style ={{flex: 1}}
+              keyboardVerticalOffset={200}
+              //   behavior="position"
+              //   enabled
             >
               <View style={styles.commentDiv}>
                 <Image
@@ -183,7 +198,11 @@ export default class AddComment extends Component {
                     alignSelf: "center",
                     justifyContent: "center"
                   }}
-                  source={this.plusorminus() ? require("..//Assets/images/plus.png") : require("..//Assets/images/minus.png")}
+                  source={
+                    this.plusorminus()
+                      ? require("..//Assets/images/plus.png")
+                      : require("..//Assets/images/minus.png")
+                  }
                 />
 
                 <TextInput
@@ -192,7 +211,11 @@ export default class AddComment extends Component {
                   value={this.state.comment1}
                   multiline={true}
                   maxLength={100}
-                  placeholder={this.plusorminus() ? "What's good about this idea?" : "What's bad about this idea?"}
+                  placeholder={
+                    this.plusorminus()
+                      ? "What's good about this idea?"
+                      : "What's bad about this idea?"
+                  }
                   placeholderTextColor="#C0C0C0"
                 />
                 <View>
@@ -207,9 +230,9 @@ export default class AddComment extends Component {
               </View>
             </KeyboardAvoidingView>
           </View>
-          </ScrollView>
+        </ScrollView>
         {/* </KeyboardAwareScrollView> */}
-       </TouchableWithoutFeedback>
+      </TouchableWithoutFeedback>
     );
   }
 }

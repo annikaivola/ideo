@@ -35,6 +35,7 @@ export default class IdeaFeed extends Component {
       isLoading: false,
       data: [],
       refreshing: false,
+      idea1 : ''
       
     }
   }
@@ -64,10 +65,12 @@ export default class IdeaFeed extends Component {
     }.bind(this));
   }
   sendIdea = (e) => {
+    if (!this.state.idea1 == '') {
     e.preventDefault();
     this.addIdea(this.state);
     this.fetchData();
     this.setState({ idea1: '' });
+    }
   
   }
   _renderItem = ({ item }) => (
