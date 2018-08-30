@@ -1,4 +1,5 @@
 import React, { Component } from "react";
+import {KeyboardAwareScrollView, KeyboardAwareFlatList} from 'react-native-keyboard-aware-scroll-view';
 import {
   View,
   KeyboardAvoidingView,
@@ -10,6 +11,8 @@ import {
   TouchableOpacity,
   Text,
   RefreshControl,
+  keyboardHeight,
+  Header,
 } from "react-native";
 import Commentpost from "../Views/commentpost";
 import {DrawerButton} from 'react-navigation';
@@ -121,7 +124,7 @@ export default class AddComment extends Component {
           DismissKeyboard();
         }}
       >
-        <ScrollView style={{ backgroundColor: '#1ac5c3' }}>
+        <KeyboardAwareScrollView style={{ backgroundColor: '#1ac5c3' }} >
           <View style={styles.commentPage}>
             <View style={styles.ideaAndComments}>
               <IdeaToComment idea={this.state._idea} />
@@ -159,9 +162,12 @@ export default class AddComment extends Component {
             </View>
             {/* <RateInput procon={this.state.procon}/> */}
 
-            <KeyboardAvoidingView
-              behavior="padding"
-            >
+            {/* <KeyboardAvoidingView 
+            style ={{flex: 1}}
+            keyboardVerticalOffset = {1}
+              behavior="position"
+              enabled
+            > */}
               <View style={styles.commentDiv}>
                 <Image
                   style={{
@@ -171,10 +177,6 @@ export default class AddComment extends Component {
                     justifyContent: "center"
                   }}
                   source={this.plusorminus() ? require("..//Assets/images/plus.png") : require("..//Assets/images/minus.png")}
-
-                // refreshControl={<RefreshControl
-                //   refreshing={this.state.refreshing}
-                //   onRefresh={this._onRefresh}/>}
                 />
 
                 <TextInput
@@ -185,9 +187,6 @@ export default class AddComment extends Component {
                   maxLength={100}
                   placeholder={this.plusorminus() ? "What's good about this idea?" : "What's bad about this idea?"}
                   placeholderTextColor="#C0C0C0"
-                // refreshControl={<RefreshControl
-                //   refreshing={this.state.refreshing}
-                //   onRefresh={this._onRefresh}/>}
                 />
                 <View>
                   <TouchableOpacity onPress={this.sendComment}>
@@ -199,10 +198,10 @@ export default class AddComment extends Component {
                   </TouchableOpacity>
                 </View>
               </View>
-            </KeyboardAvoidingView>
+            {/* </KeyboardAvoidingView> */}
           </View>
-        </ScrollView>
-      </TouchableWithoutFeedback>
+        </KeyboardAwareScrollView>
+       </TouchableWithoutFeedback>
     );
   }
 }
