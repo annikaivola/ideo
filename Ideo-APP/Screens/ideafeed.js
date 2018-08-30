@@ -6,7 +6,8 @@ import {
   TouchableOpacity,
   FlatList,
   TextInput,
-  Image
+  Image,
+  Text
 } from "react-native";
 import { styles } from "../Styles/styles.js";
 import { addNewIdea } from "../Views/ServiceDesk.js";

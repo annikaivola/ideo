@@ -1,31 +1,23 @@
 import React, { Component } from "react";
-import Logininput from "../Views/logininput.js";
-import Loginbtn from "../Views/loginbtn.js";
 import {
   View,
   KeyboardAvoidingView,
   Text,
   TouchableWithoutFeedback,
-  StyleSheet,
-  TextInput,
   Button,
   Alert
 } from "react-native";
-import { StackNavigator } from "react-navigation";
 import { styles } from "../Styles/styles";
 import { getIdeaspace } from "../Views/ServiceDesk.js";
-import {
-  FormLabel,
-  FormInput,
-  FormValidationMessage
-} from "react-native-elements";
+import {FormInput} from "react-native-elements";
 
 var DismissKeyboard = require("dismissKeyboard");
 
 export default class Loginpage extends Component {
+  
   constructor(props) {
     super(props);
-    this.state = { name: "", password: "", activeIdeaspace: null };
+    this.state = { name: "", password: "", activeIdeaspace: null};
   }
 
   activateIdeaspace = ideaspace =>

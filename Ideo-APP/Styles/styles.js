@@ -57,7 +57,7 @@ export const styles = StyleSheet.create({
     marginBottom: '5%'
   },
   inputStyle: {
-    fontFamily: "Avenir-Medium",
+    //fontFamily: "Avenir-Medium",
     color: "#fff",
   },
 
@@ -68,7 +68,7 @@ export const styles = StyleSheet.create({
     justifyContent: "center"
   },
   heading1: {
-    fontFamily: 'Avenir-Medium',
+    //fontFamily: 'Avenir-Medium',
     fontSize: 40,
     color: '#fff',
     alignItems: "center",
@@ -76,7 +76,7 @@ export const styles = StyleSheet.create({
     marginBottom: 10
   },
   heading2: {
-    fontFamily: 'Avenir-Medium',
+    //fontFamily: 'Avenir-Medium',
     fontSize: 25,
     color: '#fff',
     alignItems: "center",
