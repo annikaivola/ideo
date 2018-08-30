@@ -22,7 +22,7 @@ export default class IdeaFeed extends Component {
   static navigationOptions = ({ navigation }) => {
     return {
       headerTitle: "Ideafeed",
-      headerRight: (<TouchableOpacity onPress={()=>navigation.navigate("Landingpage")}><Text style={{color:"#1ac5c3", marginRight: 15, fontSize: 15}}>Log Out</Text></TouchableOpacity>
+      headerRight: (<TouchableOpacity onPress={()=>navigation.navigate("Landingpage")}><Text style={{color:"#1ac5c3", marginRight: 15, fontSize: 17}}>Log Out</Text></TouchableOpacity>
       ),
     };
   };

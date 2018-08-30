@@ -37,26 +37,11 @@ namespace Ideo_API
             options.UseSqlServer(Configuration.GetConnectionString("IdeoDb")));
             services.AddMvc()
                 .SetCompatibilityVersion(CompatibilityVersion.Version_2_1)
-                //.AddJsonOptions(c => c.SerializerSettings.ContractResolver = new Newtonsoft.Json.Serialization.DefaultContractResolver()
                 .AddJsonOptions(options => options.SerializerSettings.ReferenceLoopHandling = Newtonsoft.Json.ReferenceLoopHandling.Ignore);
             services.AddSwaggerGen(c =>
             {
                 c.SwaggerDoc("v1", new Info { Title = "IdeoDb API", Version = "v1", Description = "API for Ideo APP", Contact = new Contact { Email = "joku@jossain.fi", Name = "Admin" } });
             });
-            //services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_1);
-            //services.AddDbContext<IdeoDbContext>(options =>
-            //        options.UseSqlServer(Configuration.GetConnectionString("IdeoDb"),
-            //         sqlServerOptionsAction: sqlOptions =>
-            //         {
-            //             sqlOptions.EnableRetryOnFailure(maxRetryCount: 10, maxRetryDelay: TimeSpan.FromSeconds(60), errorNumbersToAdd: null);
-            //         }
-            //        ));
-            //services.AddSwaggerGen(c =>
-            //{
-            //    c.SwaggerDoc("v1",
-            //                        new Info { Title = "IdeoDb WebAPI", Version = "v1" });
-            //});
-
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.

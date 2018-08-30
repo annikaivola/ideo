@@ -8,7 +8,7 @@ import Loginpage from './Screens/loginpage';
 import Ideafeed from './Screens/ideafeed';
 import AddComment from './Screens/comment';
 import Description from './Screens/description';
-
+import {Font} from 'expo';
 
 
 export const RootStack = StackNavigator(
@@ -29,6 +29,12 @@ export const RootStack = StackNavigator(
 )
 
 export default class App extends Component {
+  componentDidMount() {
+    Font.loadAsync({
+      'Muli-Regular': require('./Assets/fonts/Muli-Regular.ttf'),
+      'Muli-Bold': require('./Assets/fonts/Muli-Bold.ttf')
+    });
+  }
   
   render() {
     return (

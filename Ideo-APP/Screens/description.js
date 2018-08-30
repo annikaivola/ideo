@@ -10,7 +10,7 @@ export default class Description extends Component {
 
       gesturesEnabled: false,
       headerLeft: null,
-        headerRight: (<TouchableOpacity onPress={()=>navigation.navigate("Landingpage")}><Text style={{color:"#1ac5c3",marginRight: 15, fontSize: 15}}>Log Out</Text></TouchableOpacity>
+        headerRight: (<TouchableOpacity onPress={()=>navigation.navigate("Landingpage")}><Text style={{color:"#1ac5c3",marginRight: 15, fontSize: 17}}>Log Out</Text></TouchableOpacity>
 
       ),
     };

@@ -51,20 +51,17 @@ export const styles = StyleSheet.create({
     marginTop: 5
   },
   description: {
+    fontFamily: 'Muli-Regular',
     color: "#1ac5c3",
     fontSize: 22,
   },
   description2: {
-    color: "#837E7C",
+    fontFamily: 'Muli-Regular',
+    color: "#000",
     fontSize: 21,
     width: '90%',
     textAlign: 'center',
   },
-  inputStyle: {
-    //fontFamily: "Avenir-Medium",
-    color: "#fff",
-  },
-
   LPcontainer: {
     flex: 1,
     backgroundColor: "#1ac5c3",
@@ -72,6 +69,7 @@ export const styles = StyleSheet.create({
     justifyContent: "center"
   },
   heading1: {
+    fontFamily: 'Muli-Regular',
     fontSize: 40,
     color: '#fff',
     alignItems: "center",
@@ -79,7 +77,7 @@ export const styles = StyleSheet.create({
     marginBottom: 10
   },
   heading2: {
-    //fontFamily: 'Avenir-Medium',
+    fontFamily: 'Muli-Regular',
     fontSize: 25,
     color: '#fff',
     alignItems: "center",
@@ -87,6 +85,7 @@ export const styles = StyleSheet.create({
     marginBottom: 10
   },
   spacename: {
+    fontFamily: 'Muli-Bold',
     fontSize: 40,
     color: '#fff',
     alignItems: "center",
@@ -123,12 +122,14 @@ export const styles = StyleSheet.create({
     marginTop: 5
   },
   IdeaPostText: {
-    fontSize: 19,
+    fontFamily: 'Muli-Regular',
+    fontSize: 22,
     paddingBottom: 5,
     textAlign: 'center'
   },
   IdeaPostText2: {
-    fontSize: 26,
+    fontFamily: 'Muli-Bold',
+    fontSize: 24,
     paddingBottom: 5,
     textAlign: 'center',
   },
@@ -150,7 +151,8 @@ export const styles = StyleSheet.create({
   },
  
   CommentText: {
-    fontSize: 17,
+    fontFamily: 'Muli-Regular',
+    fontSize: 19,
     marginLeft: '3%'
   },
   commentInputText: {
@@ -209,9 +211,10 @@ export const styles = StyleSheet.create({
     marginTop: 5
   },
   EmptyFeed: {
+    fontFamily: 'Muli-Regular',
     flex: 1, 
     color: '#fff', 
-    fontSize: 20, 
+    fontSize: 25, 
     justifyContent: 'center',
     textAlign: 'center',
     marginTop: 150,
