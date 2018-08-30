@@ -38,23 +38,26 @@ export const styles = StyleSheet.create({
     borderRadius: 10,
     borderColor: "#fff",
     width: '75%',
-    height: '30%',
+    height: 'auto',
     alignItems: 'center',
     justifyContent: 'center',
     marginBottom: '15%',
     marginTop: '15%',
-    opacity: 500
+
   },
   description: {
     color: "#1ac5c3",
     fontSize: 22,
-    marginTop: '5%',
+    width:'80%',
+    marginTop: '15%',
     marginBottom: '5%'
   },
   description2: {
     color: "#000",
     fontSize: 22,
-    marginBottom: '5%'
+    // width: '80%',
+    textAlign: 'center',
+ 
   },
   inputStyle: {
     fontFamily: "Avenir-Medium",
@@ -83,7 +86,7 @@ export const styles = StyleSheet.create({
     justifyContent: "center",
     marginBottom: 5
   },
-  space: {
+  spacename: {
     fontSize: 40,
     color: '#fff',
     alignItems: "center",
@@ -177,7 +180,7 @@ export const styles = StyleSheet.create({
   },
   iconAndCommentDiv: {
     flexDirection: "row",
-    alignItems: "flex-start",
+    alignItems: "center",
     justifyContent: "flex-start",
     width: '90%',
   },

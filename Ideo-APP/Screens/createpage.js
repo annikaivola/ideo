@@ -35,25 +35,25 @@ export default class Createpage extends Component {
   addIdeaspace = (state) => {
     addNewIdeaspace(state, function (response) {
       if(this.state.name  === '') {
-        Alert.alert(" ","Ideaspace name is a required field");
+        Alert.alert("Ideaspace name is a required field","");
       }
       else if (this.state.password === '')
       {
-        Alert.alert(" ","Password is a required field")
+        Alert.alert("Password is a required field","")
       }
       else if (this.state.description === '')
       {
-        Alert.alert(" ","Description is a required field")
+        Alert.alert("Description is a required field","")
       } 
       else if (response === 401) {
-        Alert.alert(" ","This Ideaspace name is already taken, please try something else")
+        Alert.alert("This Ideaspace name is already taken, please try something else","")
       }
       else if (this.state.email != '' ) {
         Communications.email([this.state.email],null,null,'Ideo: Your Shared Ideaspace', 'Ideaspace name: '+ this.state.name + ', ' +'Password: '+ this.state.password + ', '+'Description: ' +this.state.description)
         this.props.navigation.navigate('Loginpage')
       }
       else {
-        Alert.alert(" ",'Ideaspace created')
+        Alert.alert("Ideaspace created",'')
         this.props.navigation.navigate('Loginpage')
       }
     }.bind(this));
