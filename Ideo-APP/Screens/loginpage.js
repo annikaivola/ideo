@@ -54,6 +54,7 @@ export default class Loginpage extends Component {
           });
         })
         .catch(err => {
+          Alert.alert("", "Login failed");
           console.log(err);
         });
     }
@@ -62,7 +63,6 @@ export default class Loginpage extends Component {
   loginn = e => {
     e.preventDefault();
     this.foundInDatabase();
-    //this.props.navigation.navigate('Ideafeed')
   };
 
   render() {
