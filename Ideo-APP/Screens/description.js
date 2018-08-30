@@ -7,7 +7,11 @@ import { styles } from "../Styles/styles.js";
 export default class Description extends Component {
   static navigationOptions = ({ navigation }) => {
     return {
-        headerRight: (<TouchableOpacity onPress={()=>navigation.navigate("Landingpage")}><Text style={{color:"#1ac5c3", marginRight: 15, fontSize: 15}}>Log Out</Text></TouchableOpacity>
+
+      gesturesEnabled: false,
+      headerLeft: null,
+        headerRight: (<TouchableOpacity onPress={()=>navigation.navigate("Landingpage")}><Text style={{color:"#1ac5c3",marginRight: 15, fontSize: 15}}>Log Out</Text></TouchableOpacity>
+
       ),
     };
   };
