@@ -178,7 +178,6 @@ export default class AddComment extends Component {
                   </TouchableOpacity>
                 </View>
               </View>
-              <View style={{height:60}}/>>
             </KeyboardAvoidingView>
           </View>
         </ScrollView>
