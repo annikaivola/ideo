@@ -21,7 +21,7 @@ var DismissKeyboard = require("dismissKeyboard");
 export default class AddComment extends Component {
   static navigationOptions = ({ navigation }) => {
     return {
-      headerRight: (<TouchableOpacity onPress={()=>navigation.navigate("Landingpage")}><Text style={{color:"#1ac5c3"}}>Log Out</Text></TouchableOpacity>
+      headerRight: (<TouchableOpacity onPress={()=>navigation.navigate("Landingpage")}><Text style={{color:"#1ac5c3", marginRight: 15, fontSize: 15}}>Log Out</Text></TouchableOpacity>
       ),
     };
   };
