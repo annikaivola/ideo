@@ -22,7 +22,9 @@ export default class IdeaFeed extends Component {
   static navigationOptions = ({ navigation }) => {
     return {
       headerTitle: "Ideafeed",
-      headerRight: (<TouchableOpacity onPress={()=>navigation.navigate("Landingpage")}><Text style={{color:"#1ac5c3", marginRight: 15, fontSize: 17}}>Log Out</Text></TouchableOpacity>
+      headerRight: (<TouchableOpacity onPress={() => navigation.navigate("Landingpage")}>
+        <Text style={{ color: "#1ac5c3", marginRight: 15, fontSize: 17 }}>Log Out</Text>
+      </TouchableOpacity>
       ),
     };
   };
@@ -35,8 +37,7 @@ export default class IdeaFeed extends Component {
       isLoading: false,
       data: [],
       refreshing: false,
-      idea1 : ''
-      
+      idea1: ''
     }
   }
 
@@ -46,33 +47,34 @@ export default class IdeaFeed extends Component {
     this.setState({ data: ideas }); //filled data with dynamic array
     if (this.state.data.length > 0) {
       this.setState({ EmptyFeed: false });
+    }
   }
-}
 
   componentDidMount() {
     this.fetchData();
     if (this.state.data.length <= 0) {
       this.setState({ EmptyFeed: true });
+    }
   }
-}
 
   addIdea = (state) => {
     addNewIdea(state, function (response) {
       if (response >= 200 && response < 300) {
         this.fetchData();
-     
+
       }
     }.bind(this));
   }
   sendIdea = (e) => {
     if (!this.state.idea1 == '') {
-    e.preventDefault();
-    this.addIdea(this.state);
-    this.fetchData();
-    this.setState({ idea1: '' });
+      e.preventDefault();
+      this.addIdea(this.state);
+      this.fetchData();
+      this.setState({ idea1: '' });
     }
-  
+
   }
+
   _renderItem = ({ item }) => (
     <TouchableOpacity onPress={() => this.props.navigation.navigate("Comment", { idea: item, procon: 1 })}>
       <IdeaPost
@@ -86,9 +88,9 @@ export default class IdeaFeed extends Component {
   );
 
   _onRefresh = () => {
-    this.setState({refreshing: true});
+    this.setState({ refreshing: true });
     this.fetchData().then(() => {
-      this.setState({refreshing: false});
+      this.setState({ refreshing: false });
     });
   }
 
@@ -106,10 +108,10 @@ export default class IdeaFeed extends Component {
           containerStyle={{ alignItems: "center", justifyContent: "center" }}
         >
 
-          {this.state.EmptyFeed ? <Text style={styles.EmptyFeed}>This Ideaspace is still empty.</Text> : <FlatList data={this.state.data} keyExtractor={this._keyExtractor} renderItem={this._renderItem}  refreshControl={<RefreshControl
-           refreshing={this.state.refreshing}
-           onRefresh={this._onRefresh}
-          />}/>}
+          {this.state.EmptyFeed ? <Text style={styles.EmptyFeed}>This Ideaspace is still empty.</Text> : <FlatList data={this.state.data} keyExtractor={this._keyExtractor} renderItem={this._renderItem} refreshControl={<RefreshControl
+            refreshing={this.state.refreshing}
+            onRefresh={this._onRefresh}
+          />} />}
           <KeyboardAvoidingView
             behavior="padding"
             enabled

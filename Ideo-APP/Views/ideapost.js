@@ -40,7 +40,6 @@ class IdeaPost extends Component {
           />
           </TouchableOpacity>
         </View>
-        {/* <RateBtn /> */}
       </View>
     );
   }
