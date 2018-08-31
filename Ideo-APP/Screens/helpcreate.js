@@ -25,7 +25,8 @@ export default class HelpCreate extends Component {
                                 resizeMode="contain"
                             /></View>
                         <View style={{ height: 30 }} />
-                        <Text style={styles.helpPhaseTitle}>Ideaspce name.</Text>
+                        <View style={{width:'95%'}}>
+                        <Text style={styles.helpPhaseTitle}>Ideaspace name.</Text>
                         <Text style={styles.helpPhaseText}>Give a name to your Ideaspace. This name will be used as a username when logging in.</Text>
                         <Text style={styles.helpPhaseTitle}>Password.</Text>
                         <Text style={styles.helpPhaseText}>Create a shared password for your Ideaspace. Notice that the password cannot be changed at a later time.
@@ -33,7 +34,7 @@ export default class HelpCreate extends Component {
                         <Text style={styles.helpPhaseTitle}>Topic of your brainstorming session.</Text>
                         <Text style={styles.helpPhaseText}>What are you brainstorming about? Write it down here!</Text>
                         <Text style={styles.helpPhaseTitle}>Share Ideaspace via email.</Text>
-                        <Text style={styles.helpPhaseText}>This field is optional, however it is recommended. Here you can the email address of someone you wish to join your brainstorming session.
+                        <Text style={styles.helpPhaseText}>This field is optional, however it is recommended. Add the email address of someone you wish to join your brainstorming session.
                         It will open the email app on your phone and you can send the info from your own address and edit the message if needed, how convenient!</Text>
                         <View style={{ height: 20 }} />
                         <View style={styles.LPcontainer}>
@@ -46,6 +47,7 @@ export default class HelpCreate extends Component {
                         </View>
                         <View style={{ height: 20 }} />
                     </View>
+                </View>
                 </View>
             </ScrollView>
         );

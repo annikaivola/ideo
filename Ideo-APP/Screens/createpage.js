@@ -49,7 +49,7 @@ export default class Createpage extends Component {
         Alert.alert("This Ideaspace name is already taken, please try something else", "")
       }
       else if (this.state.email != '') {
-        Communications.email([this.state.email], null, null, 'Ideo: Your Shared Ideaspace', 'Ideaspace name: ' + this.state.name + ', ' + 'Password: ' + this.state.password + ', ' + 'Description: ' + this.state.description)
+        Communications.email([this.state.email], null, null, 'Ideo: Your Shared Ideaspace', " Hi! \n\nI'd like to invite you to my Ideo Ideaspace. \nYou can use the following credentials to log in." + "\n\n" + 'Ideaspace name: ' + this.state.name + '\n ' + 'Password: ' + this.state.password )
         this.props.navigation.navigate('Loginpage')
       }
       else {

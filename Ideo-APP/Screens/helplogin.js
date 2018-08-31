@@ -13,7 +13,7 @@ export default class HelpLogin extends Component {
             <ScrollView style={{ backgroundColor: "#1ac5c3" }}>
                 <View style={styles.container}>
                     <View>
-                        <View style={styles.LPcontainer}><Text style={styles.helpHeading}>Loggin in to an Ideaspace </Text>
+                        <View style={styles.LPcontainer}><Text style={styles.helpHeading}>Logging in to an Ideaspace </Text>
                             <Image
                                 style={{ height: 75, width: 80 }}
                                 source={require("../Assets/images/lightbulb2.png")}
@@ -25,13 +25,15 @@ export default class HelpLogin extends Component {
                                 resizeMode="contain"
                             /></View>
                         <View style={{ height: 30 }} />
-                        <Text style={styles.helpPhaseTitle}>Ideaspce name.</Text>
+                        <View style={{width:'95%'}}>
+                        <Text style={styles.helpPhaseTitle}>Ideaspace name.</Text>
                         <Text style={styles.helpText}>The name of your shared Ideaspace.</Text>
                         <Text style={styles.helpPhaseTitle}>Password.</Text>
                         <Text style={styles.helpText}>Your shared Ideaspace password.   </Text>
                         <Text style={styles.helpPhaseTitle}>Help, I forgot my password!</Text>
                         <Text style={styles.helpPhaseText}>...Oops! Be sure to check your email in case you were sent the Ideaspace information via email or if you were the one sharing the Ideaspace. Unfortunately, the password cannot be changed at a later time.</Text>
                         <View style={{ height: 20 }} />
+                        
                         <View style={styles.LPcontainer}>
                             <Image
                                 style={{ height: 47, width: 50 }}
@@ -42,6 +44,7 @@ export default class HelpLogin extends Component {
                         </View>
                         <View style={{ height: 20 }} />
                     </View>
+                </View>
                 </View>
             </ScrollView>
         );
