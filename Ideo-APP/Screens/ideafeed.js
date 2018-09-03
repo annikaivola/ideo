@@ -131,8 +131,6 @@ export default class IdeaFeed extends Component {
                   placeholderTextColor="#C0C0C0"
 
                 />
-                {""}
-
                 <View>
                   <TouchableOpacity onPress={this.sendIdea}>
                     <Image
