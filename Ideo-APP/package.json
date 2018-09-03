@@ -27,8 +27,8 @@
     "react-native-keyboard-aware-scroll-view": "^0.7.2",
     "react-navigation": "^1.5.11"
   },
-  "rnpm":{
-    "assets":[
+  "rnpm": {
+    "assets": [
       "./Assets/fonts/"
     ]
   }
